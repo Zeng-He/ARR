@@ -5,7 +5,7 @@ class Persona(models.Model):
 	apellido = models.CharField(max_length=30)
 	direccion = models.CharField(max_length=30)
 	edad = models.IntegerField()
-	dni = models.IntegerField()
+	dni = models.IntegerField(unique)
 
 class Reo(Persona):
 	tiempo_condena = models.CharField(max_length=30)
@@ -34,6 +34,7 @@ class Policia(Persona):
 	cargo = models.CharField(max_length=50)
 	sueldo = models.FloatField()
 	es_jefe = models.ForeignKey('Policia',related_name='jefe')
+	tarea = models.TextField()
 
 class Administrativo(Policia):
 	cant_horas = models.IntegerField()
