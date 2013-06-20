@@ -10,7 +10,7 @@ class Persona(models.Model):
 class Reo(Persona):
 	tiempo_condena = models.CharField(max_length=30)
 	fecha_ingreso = models.DateField()
-	id_huella = models.IntegerField()
+	id_huella = models.IntegerField(unique=True)
 	calabozo = models.OneToOneField('Calabozo')
 
 class Traslados(models.Model):
