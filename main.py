@@ -23,10 +23,17 @@ def altaAntecedente(**kw):
 		alta(a,**kw)
 		return(a)
 	except Exception, e:
-		raise Exception
+		raise e
 
 def buscarAntecedentes(idReo):
-	return(Antecedentes.objects.filter(Reo_id=idReo))
+	a=Antecedentes.objects.filter(Reo_id=idReo)
+	if a :
+		returned=[]
+		for x in a:
+			returned.append(x.antecedente)
+		return(returned)
+	else:
+		return (str('Antecedente no encontrado.'))
 
 def realizarTraslado(**kw):
 	a = Traslados()
@@ -34,25 +41,30 @@ def realizarTraslado(**kw):
 		if((isinstance(kw["descripcion"],str))and(isinstance(kw["responsable"],Efectivo))and(isinstance(kw["fecha"],datetime.date))and(isinstance(kw["reo"],Reo))):
 			try:
 				alta(a,**kw)
-			except Exception:
-				return False
+			except Exception,e:
+				raise e
 		else:
-			return False
+			raise Exception
 	else:
-		return False
+		raise Exception
 
 def buscarTraslado(idReo):
-	return(Traslados.objects.filter(Reo_id=idReo))
+	r=Traslados.objects.filter(Reo_id=idReo)
+	if r :
+		return(str(r[0].pk))
+	else:
+		return('Traslado no encontrado.')
 
 def altaEfectivo(**kw):
 	a = Efectivo()
 	if(('nombre' in kw)and('apellido' in kw)and('direccion' in kw)and('edad' in kw)and('dni' in kw)and("num_placa" in kw)and("fecha_ingreso" in kw)and("cargo" in kw)and("sueldo" in kw)and("es_jefe" in kw)and("tarea" in kw)and("horario_patrull" in kw)):
 		if((isinstance(kw['nombre'],str))and(isinstance(kw['apellido'],str))and(isinstance(kw['direccion'],str))and(isinstance(kw['edad'],int))and(isinstance(kw['dni'],int))and(isinstance(kw["num_placa"],int))and(isinstance(kw["fecha_ingreso"],datetime.date))and(isinstance(kw["cargo"],str))and(isinstance(kw["saldo"],float))and(isinstance(kw["es_jefe"],Policia))and(isinstance(kw["tarea"],str))and(isinstance(kw["horario_patrull"],str))):
 			try:
-				alta(a,**kw)			
-			except Exception:
-					return False
-	return False
+				alta(a,**kw)
+				return(a)
+			except Exception, e:
+				raise e
+	raise Exception
 
 def modificarEfectivo(r,**kw):
 	error = False
@@ -93,15 +105,24 @@ def modificarEfectivo(r,**kw):
 		if not(isinstance(kw['horario_patrull'],str)):
 			error=True	
 	if(error):
-		return False
+		raise Exception
 	else:
 		modificar(r,**kw)
+		return(str('Modificacion exitosa'))
 
 def buscarEfectivo(idEfe):
-	return(Efectivo.objects.filter(Efectivo_id=idEfe))
+	e=Efectivo.objects.filter(Efectivo_id=idEfe)
+	if e:
+		return(e[0].pk)
+	else:
+		return('Efectivo no encontrado.')
 
 def baja(r):
-	r.delete()
+	try:
+		r.delete()
+		return('Baja exitosa')
+	except Exception, e:
+		raise e
 
 def modif(r,campo,nuevo):
 	setattr(r,campo,nuevo)
@@ -126,51 +147,55 @@ def altaReo(**kw):
 			try:
 				alta(r,**kw)
 				return (r)
-			except Exception:
-				return False
-	return False
-
-def instance(x,tipo):
-	if isinstance(x,tipo):
-		return True
-	return False
+			except Exception, e:
+				raise e
+	raise e
 
 def modifReo(r,**kw):
 	if 'nombre' in kw:
 		if not(isinstance(kw['nombre'],str)):
-			return False
+			raise Exception
 	if 'apellido' in kw:
 		if not(isinstance(kw['apellido'],str)):
-			return False
+			raise Exception
 	if 'direccion' in kw:
 		if not(isinstance(kw['direccion'],str)):
-			return False
+			raise Exception
 	if 'edad' in kw:
 		if not(isinstance(kw['edad'],int)):
-			return False
+			raise Exception
 	if 'dni' in kw:
 		if not(isinstance(kw['dni'],int)):
-			return False
+			raise Exception
 	if 'tiempo_condena' in kw:
 		if not(isinstance(kw['tiempo_condena'],str)):
-			return False
+			raise Exception
 	if 'fecha_ingreso' in kw:
 		if not(isinstance(kw['fecha_ingreso'],datetime.date)):
-			return False
+			raise Exception
 	if 'id_huella' in kw:
 		if not(isinstance(kw['id_huella'],int)):
-			return False
+			raise Exception
 	if 'calabozo' in kw:
 		if not(isinstance(kw['calabozo'],Calabozo)):
-			return False
+			raise Exception
 	modificar(r,**kw)
+	return(str('Modificacion exitosa'))
 
 
 def busquedaReoDNI(dni):
-	return (Reo.objects.filter(dni=dni))
+	r=Reo.objects.filter(dni=dni)
+	if r:
+		return (r[0].pk)
+	else:
+		return (str('Reo no encontrado.'))
 
 def busquedaReoHuella(id_h):
-	return (Reo.objects.filter(id_huella=id_h))
+	r=Reo.objects.filter(id_huella=id_h)
+	if r:
+		return (r[0].pk)
+	else:
+		return (str('Reo no encontrado.'))
 
 def altaArticulo(**kw):
 	a = Articulos
@@ -178,9 +203,9 @@ def altaArticulo(**kw):
 		if((isinstance(kw("nombre"),str))and(isinstance(kw("estado"),str))and(isinstance(kw("tipo"),str))):
 			try:
 				alta(a,**kw)
-			except Exception:
-				return False
-	return False
+			except Exception, e:
+				raise e
+	raise Exception
 
 def altaAdministrativo(**kw):
 	a=Administrativo()
@@ -188,55 +213,63 @@ def altaAdministrativo(**kw):
 		if ((isinstance(kw['nombre'],str)) and (isinstance(kw['apellido'],str)) and (isinstance(kw['direccion'],str)) and (isinstance(kw['edad'],int)) and (isinstance(kw['dni'],int)) and (isinstance(kw['num_placa'],int)) and (isinstance(kw['fecha_ingreso'],datetime.date)) and (isinstance(kw['cargo'],str)) and (isinstance(kw['sueldo'],float)) and (isinstance(kw['es_jefe'],Policia)) and (isinstance(kw['tarea'],str)) and (isinstance(kw['cant_horas'],int))):
 			try:
 				alta(a,**kw)
-				return(a)
-			except Exception:
-				return False
-	return False
+			except Exception,e:
+				raise e
+	raise Exception
 
 def buscarArticulo(idAr):
-	return(Articulos.objects.filter(Articulos=idAr))
+	a=Articulos.objects.filter(Articulos=idAr)
+	if a :
+		return(a[0].pk)
+	else:
+		return(str('Articulo no encontrado.'))
 
 def modifAdmin(r,**kw):
 	if 'nombre' in kw:
 		if not(isinstance(kw['nombre'],str)):
-			return False
+			raise Exception
 	if 'apellido' in kw:
 		if not(isinstance(kw['apellido'],str)):
-			return False
+			raise Exception
 	if 'direccion' in kw:
 		if not(isinstance(kw['direccion'],str)):
-			return False
+			raise Exception
 	if 'edad' in kw:
 		if not(isinstance(kw['edad'],int)):
-			return False
+			raise Exception
 	if 'dni' in kw:
 		if not(isinstance(kw['dni'],int)):
-			return False
+			raise Exception
 	if 'num_placa' in kw:
 		if not(isinstance(kw['num_placa'],int)):
-			return False
+			raise Exception
 	if 'fecha_ingreso' in kw:
 		if not(isinstance(kw['fecha_ingreso'],datetime.date)):
-			return False
+			raise Exception
 	if 'cargo' in kw:
 		if not(isinstance(kw['cargo'],str)):
-			return False
+			raise Exception
 	if 'sueldo' in kw:
 		if not(isinstance(kw['sueldo'],float)):
-			return False
+			raise Exception
 	if 'es_jefe' in kw:
 		if not(isinstance(kw['es_jefe'],Policia)):
-			return False
+			raise Exception
 	if 'tarea' in kw:
 		if not(isinstance(kw['tarea'],str)):
-			return False
+			raise Exception
 	if 'cant_horas' in kw:
 		if not(isinstance(kw['cant_horas'],int)):
-			return False
+			raise Exception
 	modificar(r,**kw)
+	return(str('Modificacion exitosa'))
 
 def busquedaAdmin(dni):
-	return (Administrativo.objects.filter(dni=dni))
+	a=Administrativo.objects.filter(dni=dni)
+	if a :
+		return (a[0].pk)
+	else:
+		return(str('Administrativo no encontrado'))
 	
 def altaCalabozo(**kw):
 	c=Calabozo()
@@ -244,19 +277,19 @@ def altaCalabozo(**kw):
 		if (isinstance(kw['tipo'],str)) and (isinstance(kw['estado'],str)):
 			try:
 				alta(c,**kw)
-				return(c)
-			except Exception:
-				return False
-	return False
+			except Exception,e:
+				raise e
+	raise Exception
 
 def modifCalab(c,**kw):
 	if 'estado' in kw:
 		if not(isinstance(kw['estado'],str)):
-			return False
+			raise Exception
 	if 'tipo' in kw:
 		if not(isinstance(kw['tipo'],int)):
-			return False
+			raise Exception
 	modificar(r,**kw)
+	return(str('Modificacion exitosa'))
 	
 def altaArmamento(**kw):
 	a=Armamento()
@@ -264,25 +297,25 @@ def altaArmamento(**kw):
 		if (isinstance(kw['nombre'],str)) and (isinstance(kw['estado'],str)) and (isinstance(kw['tipo_municion'],str)) and (isinstance(kw['codigo'],str)):
 			try:
 				alta(a,**kw)
-				return(a)
-			except Exception:
-				return False
-	return False
+			except Exception,e:
+				raise e
+	raise Exception
 
 def modifArmamento(a,**kw):
 	if 'nombre' in kw:
 		if not(isinstance(kw['nombre'],str)):
-			return False
+			raise Exception
 	if 'estado' in kw:
 		if not(isinstance(kw['estado'],str)):
-			return False
+			raise Exception
 	if 'tipo_municion' in kw:
 		if not(isinstance(kw['tipo_municion'],str)):
-			return False
+			raise Exception
 	if 'codigo' in kw:
 		if not(isinstance(kw['codigo'],str)):
-			return False
+			raise Exception
 	modificar(a,**kw)
+	return(str('Modificacion exitosa'))
 
 def altaMunicion(**kw):
 	m=municion()
@@ -290,25 +323,25 @@ def altaMunicion(**kw):
 		if (isinstance(kw['nombre'],str)) and (isinstance(kw['estado'],str)) and (isinstance(kw['tipo'],str)) and (isinstance(kw['cantidad'],int)):
 			try:
 				alta(m,**kw)
-				return(m)
-			except Exception:
-				return False
-	return False
+			except Exception,e:
+				raise e
+	raise Exception
 
 def modifMuncion(m,**kw):
 	if 'nombre' in kw:
 		if not(isinstance(kw['nombre'],str)):
-			return False
+			raise Exception
 	if 'estado' in kw:
 		if not(isinstance(kw['estado'],str)):
-			return False
+			raise Exception
 	if 'tipo' in kw:
 		if not(isinstance(kw['tipo_municion'],str)):
-			return False
+			raise Exception
 	if 'cantidad' in kw:
 		if not(isinstance(kw['codigo'],int)):
-			return False
+			raise Exception
 	modificar(m,**kw)
+	return(str('Modificacion exitosa'))
 
 def modificacionArticulo(r,**kw):
 	error = False
@@ -322,9 +355,10 @@ def modificacionArticulo(r,**kw):
 		if not(isinstance(kw['tipo'],str)):
 			error=True
 	if (error):
-		return False
+		raise Exception
 	else:
 		modificar(r,**kw)
+		return(str('Modificacion exitosa'))
 
 def AsignacionEquipamiento(**kw):
 	a = Asignasiones()
@@ -332,12 +366,12 @@ def AsignacionEquipamiento(**kw):
 		if((isinstance(kw("equipamiento"),Equipamiento))and(isinstance(kw("policia"),Policia))and(isinstance(kw("asignado_por"),Policia))and(isinstance(kw("fecha_asignacion"),datetime.date))):	
 			try:
 				alta(a,**kw)
-			except Exception:
-				return False
+			except Exception,e:
+				raise e
 		else:
-			return False
+			raise Exception
 	else:
-		return False
+		raise Exception
 
 def altaVehiculo(**kw):
 	a = Vehiculo
@@ -345,108 +379,8 @@ def altaVehiculo(**kw):
 		if((isinstance(kw("nombre"),str))and(isinstance(kw("estado"),str))and(isinstance(kw("marca"),str))and(isinstance(kw("modelo"),str))and(isinstance(kw("capacidad"),int))):
 			try:
 				alta(a,**kw)		
-			except Exception:
-					return False
+			except Exception,e:
+				raise e
 		else:
-			return False
-	return False
-
-#ESTO VA EN EL WINDOWS.PY
-def altaAntecedenteInterf(self, antecedente, condena, id_reo):
-	try:
-		a = altaAntecedente(antecedente,condena,Reo.objects.get(pk=id_reo))
-		return str("Antecedente almacenado exitosamente")
-	except Exception:
-		return str("Error, verifique campos")
-
-def buscarAntecedentesInterf(self, valor, op):
-	if isinstance(valor,int):
-		if(op=0):
-			reo = busquedaReoHuella(valor)
-		else:
-			reo = busquedaReoDNI(valor)
-	else:
-		return str("Error, verifique los valor de la búsqueda")
-	return (buscarAntecedentes(reo))
-	
-def realizarTrasladoInterf(self, descripcion, responsable, fecha, id_reo):
-	try:
-		b = realizarTraslado(descripcion,responsable,fecha,Reo.objects.get(pk=id_reo))
-		return str("Traslado almacenado exitosamente")
-	except Exception:
-		return str("Error, verifique campos")	
-
-def buscarTrasladoInterf(self, valor, op):
-	if isinstance(valor,int):
-		if(op=0):
-			reo = busquedaReoHuella(valor)
-		else:
-			reo = busquedaReoDNI(valor)
-	else:
-		return str("Error, verifique los valor de la búsqueda")
-	return (buscarTraslado(reo))
-
-def altaEfectivoInterf(self, nombre, apellido, direccion, edad, dni, num_placa, fecha_ingreso, cargo, sueldo, id_es_jefe, tarea, horario_patrull):
-	try:
-		c = altaEfectivo(nombre, apellido, direccion, edad, dni, num_placa, fecha_ingreso, cargo, sueldo, Policia.objects.get(pk=id_es_jefe), tarea, horario_patrull)
-		return str("Datos Efectivo almacenado exitosamente")
-	except Exception:
-		return str("Error, verifique campos")
-
-def modificarEfectivoInterf(self, **kw):
-	try:
-		d = modificarEfectivo(**kw)
-		return str("Datos del Efectivo modificados exitosamente")
-	except Exception:
-		return str("Error, verifique campos")
-
-def buscarEfectivoInterf(self, valor):
-	if isinstance(valor,int):
-		efectivo = busquedaReoDNI(valor)
-	else:
-		return str("Error, verifique los valor de la búsqueda")
-	return (buscarEfectivo(efectivo))
-
-def bajaEfectivoInterf(self, valor):
-	if isinstance(valor,int):
-		efectivo = busquedaReoDNI(valor)
-	else:
-		return str("Error, verifique los valor de la búsqueda")
-	try:
-		baja(efectivo)
-		return ("El Efectivo ha sido dado de baja correctamente")
-	except Exception:
-		return ("Error, verifique los valores de la búsqueda")
-
-def altaReoInterf(self, nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, id_calabozo):
-	try:
-		c = altaReo(nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, Calabozo.objects.get(id_calabozo)) 
-		return str("Datos Reo almacenado exitosamente")
-	except Exception:
-		return str("Error, verifique campos")
-
-def modificarReoInterf(self, **kw):
-	try:
-		d = modifReo(**kw)
-		return str("Datos del Reo modificados exitosamente")
-	except Exception:
-		return str("Error, verifique campos")	
-
-def buscarReoInterf(self, valor, op):
-	if isinstance(valor,int):
-		if(op=0):
-			reo = busquedaReoHuella(valor)
-		else:
-			reo = busquedaReoDNI(valor)
-	else:
-		return str("Error, verifique los valor de la búsqueda")
-	#FALTA DEFINIR LA FUNCION TOSTRING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	returned = toString(Reo.objects.get(reo))
-	return(returned)
-
-def altaArticuloInterf(self, nombre, estado, tipo):
-	try:
-		a = altaArticulo(nombre,estado,tipo)
-		return str("Articulo almacenado exitosamente")
-	except Exception:
-		return str("Error, verifique campos")	
+			raise Exception
+	raise Exception
