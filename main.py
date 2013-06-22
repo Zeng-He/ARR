@@ -16,14 +16,14 @@ def altaAntecedente(**kw):
 		error=True
 
 	if(error):
-		return False
+		raise Exception
 
 	a = Antecedentes()
 	try:
 		alta(a,**kw)
 		return(a)
 	except Exception, e:
-		return False
+		raise Exception
 
 def buscarAntecedentes(idReo):
 	return(Antecedentes.objects.filter(Reo_id=idReo))
@@ -37,9 +37,9 @@ def realizarTraslado(**kw):
 			except Exception:
 				return False
 		else:
-			False
+			return False
 	else:
-		False
+		return False
 
 def buscarTraslado(idReo):
 	return(Traslados.objects.filter(Reo_id=idReo))
@@ -350,3 +350,103 @@ def altaVehiculo(**kw):
 		else:
 			return False
 	return False
+
+#ESTO VA EN EL WINDOWS.PY
+def altaAntecedenteInterf(self, antecedente, condena, id_reo):
+	try:
+		a = altaAntecedente(antecedente,condena,Reo.objects.get(pk=id_reo))
+		return str("Antecedente almacenado exitosamente")
+	except Exception:
+		return str("Error, verifique campos")
+
+def buscarAntecedentesInterf(self, valor, op):
+	if isinstance(valor,int):
+		if(op=0):
+			reo = busquedaReoHuella(valor)
+		else:
+			reo = busquedaReoDNI(valor)
+	else:
+		return str("Error, verifique los valor de la búsqueda")
+	return (buscarAntecedentes(reo))
+	
+def realizarTrasladoInterf(self, descripcion, responsable, fecha, id_reo):
+	try:
+		b = realizarTraslado(descripcion,responsable,fecha,Reo.objects.get(pk=id_reo))
+		return str("Traslado almacenado exitosamente")
+	except Exception:
+		return str("Error, verifique campos")	
+
+def buscarTrasladoInterf(self, valor, op):
+	if isinstance(valor,int):
+		if(op=0):
+			reo = busquedaReoHuella(valor)
+		else:
+			reo = busquedaReoDNI(valor)
+	else:
+		return str("Error, verifique los valor de la búsqueda")
+	return (buscarTraslado(reo))
+
+def altaEfectivoInterf(self, nombre, apellido, direccion, edad, dni, num_placa, fecha_ingreso, cargo, sueldo, id_es_jefe, tarea, horario_patrull):
+	try:
+		c = altaEfectivo(nombre, apellido, direccion, edad, dni, num_placa, fecha_ingreso, cargo, sueldo, Policia.objects.get(pk=id_es_jefe), tarea, horario_patrull)
+		return str("Datos Efectivo almacenado exitosamente")
+	except Exception:
+		return str("Error, verifique campos")
+
+def modificarEfectivoInterf(self, **kw):
+	try:
+		d = modificarEfectivo(**kw)
+		return str("Datos del Efectivo modificados exitosamente")
+	except Exception:
+		return str("Error, verifique campos")
+
+def buscarEfectivoInterf(self, valor):
+	if isinstance(valor,int):
+		efectivo = busquedaReoDNI(valor)
+	else:
+		return str("Error, verifique los valor de la búsqueda")
+	return (buscarEfectivo(efectivo))
+
+def bajaEfectivoInterf(self, valor):
+	if isinstance(valor,int):
+		efectivo = busquedaReoDNI(valor)
+	else:
+		return str("Error, verifique los valor de la búsqueda")
+	try:
+		baja(efectivo)
+		return ("El Efectivo ha sido dado de baja correctamente")
+	except Exception:
+		return ("Error, verifique los valores de la búsqueda")
+
+def altaReoInterf(self, nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, id_calabozo):
+	try:
+		c = altaReo(nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, Calabozo.objects.get(id_calabozo)) 
+		return str("Datos Reo almacenado exitosamente")
+	except Exception:
+		return str("Error, verifique campos")
+
+def modificarReoInterf(self, **kw):
+	try:
+		d = modifReo(**kw)
+		return str("Datos del Reo modificados exitosamente")
+	except Exception:
+		return str("Error, verifique campos")	
+
+def buscarReoInterf(self, valor, op):
+	if isinstance(valor,int):
+		if(op=0):
+			reo = busquedaReoHuella(valor)
+		else:
+			reo = busquedaReoDNI(valor)
+	else:
+		return str("Error, verifique los valor de la búsqueda")
+	#FALTA DEFINIR LA FUNCION TOSTRING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	returned = toString(Reo.objects.get(reo))
+	return(returned)
+
+def altaArticuloInterf(self, nombre, estado, tipo):
+	try:
+		a = altaArticulo(nombre,estado,tipo)
+		return str("Articulo almacenado exitosamente")
+	except Exception:
+		return str("Error, verifique campos")	
