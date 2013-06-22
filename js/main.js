@@ -1,4 +1,15 @@
 $(document).ready(function() {
+	$('#cal').click(function() {
+		t=$('#inputCalT').val()
+		e=$('#inputCalE').val()
+		PyAsync('altaCalabozoInterf',{
+			args:[t,e],
+			callback: function(data) {
+				alert(data)
+			}
+		})
+	})
+
 	/*$('#cCal').click(function() {
 		PyAsync('test_calabozo',{
 			args:['Ladero','Ladero2'],

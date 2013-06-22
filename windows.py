@@ -58,8 +58,24 @@ class SimpleWindow(QWebView):
 	def evaluateJavaScript(self, script):
 		return self.page().mainFrame().evaluateJavaScript(script)
 	
-	# @listen_js
+	# Altas
+	@listen_js
+	def altaCalabozoInterf(self,tipo,estado):
+		try:
+			main.altaCalabozo(tipo=str(tipo), estado=str(estado))
+			return('Creacion exitosa')
+		except Exception, e:
+			return('Error')
 
+	@listen_js
+	def altaReoInterf(self, nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, id_calabozo):
+		try:
+			c = altaReo(nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, Calabozo.objects.get(id_calabozo)) 
+			return str("Datos Reo almacenado exitosamente")
+		except Exception:
+			return str("Error, verifique campos")
+
+	# Fin Altas
 
 def start_app(window_class, *args, **kwargs):
 	app = QApplication(sys.argv)
@@ -84,7 +100,7 @@ if __name__ == "__main__":
 # 		else:
 # 			reo = busquedaReoDNI(valor)
 # 	else:
-# 		return str("Error, verifique los valor de la búsqueda")
+# 		return str("Error, verifique los valor de la busqueda")
 # 	return (buscarAntecedentes(reo))
 	
 # def realizarTrasladoInterf(self, descripcion, responsable, fecha, id_reo):
@@ -101,7 +117,7 @@ if __name__ == "__main__":
 # 		else:
 # 			reo = busquedaReoDNI(valor)
 # 	else:
-# 		return str("Error, verifique los valor de la búsqueda")
+# 		return str("Error, verifique los valor de la busqueda")
 # 	return (buscarTraslado(reo))
 
 # def altaEfectivoInterf(self, nombre, apellido, direccion, edad, dni, num_placa, fecha_ingreso, cargo, sueldo, id_es_jefe, tarea, horario_patrull):
@@ -122,26 +138,19 @@ if __name__ == "__main__":
 # 	if isinstance(valor,int):
 # 		efectivo = busquedaReoDNI(valor)
 # 	else:
-# 		return str("Error, verifique los valor de la búsqueda")
+# 		return str("Error, verifique los valor de la busqueda")
 # 	return (buscarEfectivo(efectivo))
 
 # def bajaEfectivoInterf(self, valor):
 # 	if isinstance(valor,int):
 # 		efectivo = busquedaReoDNI(valor)
 # 	else:
-# 		return str("Error, verifique los valor de la búsqueda")
+# 		return str("Error, verifique los valor de la busqueda")
 # 	try:
 # 		baja(efectivo)
 # 		return ("El Efectivo ha sido dado de baja correctamente")
 # 	except Exception:
-# 		return ("Error, verifique los valores de la búsqueda")
-
-# def altaReoInterf(self, nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, id_calabozo):
-# 	try:
-# 		c = altaReo(nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, Calabozo.objects.get(id_calabozo)) 
-# 		return str("Datos Reo almacenado exitosamente")
-# 	except Exception:
-# 		return str("Error, verifique campos")
+# 		return ("Error, verifique los valores de la busqueda")
 
 # def modificarReoInterf(self, **kw):
 # 	try:
@@ -157,7 +166,7 @@ if __name__ == "__main__":
 # 		else:
 # 			reo = busquedaReoDNI(valor)
 # 	else:
-# 		return str("Error, verifique los valor de la búsqueda")
+# 		return str("Error, verifique los valor de la busqueda")
 # 	#FALTA DEFINIR LA FUNCION TOSTRING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # 	returned = toString(Reo.objects.get(reo))
 # 	return(returned)
