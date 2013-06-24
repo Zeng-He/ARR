@@ -131,21 +131,203 @@ class SimpleWindow(QWebView):
 		except Exception:
 			return ("Error, verifique campos")
 	
-	@listen_js
-	def function(self):
-
 	# Busquedas
+		
+	@listen_js
+	def buscarAdministrativoInterf(self, valor):
+		if isinstance(valor,int):
+			adm=main.busquedaAdmin(valor)
+		else:
+			return str("Error, verifique los valor de la busqueda")
+		try:
+			returned=toString(adm)
+		except Exception:
+			return(str('Administrativo no encontrado'))
+		return (returned)
+
+	@listen_js
+	def buscarArticulos(self):
+		if isinstance(valor,int):
+			art=main.busquedaArticulo(valor)
+		else:
+			return str("Error, verifique los valor de la busqueda")
+		try:
+			returned=toString(art)
+		except Exception:
+			return (str('Articulos no encontrado.'))
+		return (returned)
+
+	@listen_js
+	def buscarReoInterf(self, valor, op):
+		if isinstance(valor,int):
+			if(op=0):
+				reo = main.busquedaReoHuella(valor)
+			else:
+				reo = main.busquedaReoDNI(valor)
+		else:
+			return str("Error, verifique los valor de la busqueda")
+		try:
+			returned = toString(reo)
+		except Exception:
+			return (str('Reo no encontrado.'))
+		return(returned)
+
+	@listen_js
+	def buscarEfectivoInterf(self, valor):
+		if isinstance(valor,int):
+			efec=main.busquedaEfectivo(valor)
+		else:
+			return str("Error, verifique los valor de la busqueda")
+		try:
+			returned=toString(efec)
+		except Exception:
+			return('Efectivo no encontrado.')
+		return (returned)
+
+	@listen_js
+	def buscarTrasladoInterf(self, valor, op):
+		if isinstance(valor,int):
+			if(op=0):
+				reo = main.busquedaReoHuella(valor)
+			else:
+				reo = main.busquedaReoDNI(valor)
+		else:
+			return str("Error, verifique los valor de la busqueda")
+		try:
+			t=main.buscarTraslado(reo.pk)
+			returned=toString(t)
+		except Exception:
+			return('Traslado no encontrado.')
+		return (returned)
+
 	@listen_js
 	def buscarAntecedentesInterf(self, valor, op=1):
 		if isinstance(valor,int):
 			if op :
-				reo = busquedaReoHuella(valor)
+				reo = main.busquedaReoHuella(valor)
 			else:
-				reo = busquedaReoDNI(valor) # Cuando es 0
+				reo = main.busquedaReoDNI(valor) # Cuando es 0
 		else:
 			return str("Error, verifique los valor de la busqueda")
-		return (buscarAntecedentes(reo))
-		
+		try:
+			a=main.buscarAntecedentes(reo.pk)
+			returned=toString(a)
+		except Exception:
+			return (str('Antecedente no encontrado.'))
+		return (returned)
+
+	@listen_js
+	def buscarArmamento(self,valor):
+		if isinstance(valor,int):
+			art=main.busquedaArmamento(valor)
+		else:
+			return str("Error, verifique los valor de la busqueda")
+		try:
+			returned=toString(art)
+		except Exception:
+			return (str('Armamento no encontrado.'))
+		return (returned)
+
+	@listen_js
+	def buscarMunicion(self,valor):
+		if isinstance(valor,int):
+			art=main.busquedaMunicion(valor)
+		else:
+			return str("Error, verifique los valor de la busqueda")
+		try:
+			returned=toString(art)
+		except Exception:
+			return (str('Municion no encontrada.'))
+		return (returned)
+
+	@listen_js
+	def buscarVehiculo(self,valor):
+		if isinstance(valor,int):
+			art=main.busquedaVehiculo(valor)
+		else:
+			return str("Error, verifique los valor de la busqueda")
+		try:
+			returned=toString(art)
+		except Exception:
+			return (str('Vehiculo no encontrado.'))
+		return (returned)
+
+	# Bajas
+
+	@listen_js
+	def bajaAntecedenteInterf(self,idO):
+		try:
+			baja(main.Antecedentes.objects.get(id0))
+			return('Eliminación exitosa.')
+		except:
+			return('Error.')
+
+	@listen_js
+	def bajaEfectivoInterf(self,idO):
+		try:
+			baja(main.Efectivo.objects.get(id0))
+			return('Eliminación exitosa.')
+		except:
+			return('Error.')
+
+	@listen_js
+	def bajaReoInterf(self,idO):
+		try:
+			baja(main.Reo.objects.get(id0))
+			return('Eliminación exitosa.')
+		except:
+			return('Error.')
+
+	@listen_js
+	def bajaArticuloInterf(self,idO):
+		try:
+			baja(main.Articulos.objects.get(id0))
+			return('Eliminación exitosa.')
+		except:
+			return('Error.')
+
+	@listen_js
+	def bajaAdministrativoInterf(self,idO):
+		try:
+			baja(main.Administrativo.objects.get(id0))
+			return('Eliminación exitosa.')
+		except:
+			return('Error.')
+
+	@listen_js
+	def bajaCalabozoInterf(self,idO):
+		try:
+			baja(main.Calabozo.objects.get(id0))
+			return('Eliminación exitosa.')
+		except:
+			return('Error.')
+
+	@listen_js
+	def bajaArmamentoInterf(self,idO):
+		try:
+			baja(main.Armamento.objects.get(id0))
+			return('Eliminación exitosa.')
+		except:
+			return('Error.')
+
+	@listen_js
+	def bajaMunicionInterf(self,idO):
+		try:
+			baja(main.Municion.objects.get(id0))
+			return('Eliminación exitosa.')
+		except:
+			return('Error.')
+
+	@listen_js
+	def bajaVehiculoInterf(self,idO):
+		try:
+			baja(main.Vehiculo.objects.get(id0))
+			return('Eliminación exitosa.')
+		except:
+			return('Error.')
+
+
+
 
 def start_app(window_class, *args, **kwargs):
 	app = QApplication(sys.argv)
@@ -165,30 +347,12 @@ if __name__ == "__main__":
 # 	except Exception:
 # 		return str("Error, verifique campos")	
 
-# def buscarTrasladoInterf(self, valor, op):
-# 	if isinstance(valor,int):
-# 		if(op=0):
-# 			reo = busquedaReoHuella(valor)
-# 		else:
-# 			reo = busquedaReoDNI(valor)
-# 	else:
-# 		return str("Error, verifique los valor de la busqueda")
-# 	return (buscarTraslado(reo))
-
-
 # def modificarEfectivoInterf(self, **kw):
 # 	try:
 # 		d = modificarEfectivo(**kw)
 # 		return str("Datos del Efectivo modificados exitosamente")
 # 	except Exception:
 # 		return str("Error, verifique campos")
-
-# def buscarEfectivoInterf(self, valor):
-# 	if isinstance(valor,int):
-# 		efectivo = busquedaReoDNI(valor)
-# 	else:
-# 		return str("Error, verifique los valor de la busqueda")
-# 	return (buscarEfectivo(efectivo))
 
 # def bajaEfectivoInterf(self, valor):
 # 	if isinstance(valor,int):
@@ -207,15 +371,3 @@ if __name__ == "__main__":
 # 		return str("Datos del Reo modificados exitosamente")
 # 	except Exception:
 # 		return str("Error, verifique campos")	
-
-# def buscarReoInterf(self, valor, op):
-# 	if isinstance(valor,int):
-# 		if(op=0):
-# 			reo = busquedaReoHuella(valor)
-# 		else:
-# 			reo = busquedaReoDNI(valor)
-# 	else:
-# 		return str("Error, verifique los valor de la busqueda")
-# 	#FALTA DEFINIR LA FUNCION TOSTRING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# 	returned = toString(Reo.objects.get(reo))
-# 	return(returned)
