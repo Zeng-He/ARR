@@ -71,7 +71,7 @@ class SimpleWindow(QWebView):
 	def altaReoInterf(self, nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, id_calabozo):
 		try:
 			main.altaReo(nombre=nombre, apellido=apellido, direccion=direccion, edad=edad, dni=dni, tiempo_condena=tiempo_condena, fecha_ingreso=fecha_ingreso, id_huella=id_huella, calabozo=main.Calabozo.objects.get(id_calabozo)) 
-			return ("Datos Reo almacenado exitosamente")
+			return ("Reo almacenado exitosamente")
 		except Exception:
 			return ("Error, verifique campos")
 
@@ -160,7 +160,7 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def buscarReoInterf(self, valor, op):
 		if isinstance(valor,int):
-			if(op=0):
+			if(op==0):
 				reo = main.busquedaReoHuella(valor)
 			else:
 				reo = main.busquedaReoDNI(valor)
@@ -187,7 +187,7 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def buscarTrasladoInterf(self, valor, op):
 		if isinstance(valor,int):
-			if(op=0):
+			if(op==0):
 				reo = main.busquedaReoHuella(valor)
 			else:
 				reo = main.busquedaReoDNI(valor)
@@ -258,7 +258,7 @@ class SimpleWindow(QWebView):
 	def bajaAntecedenteInterf(self,idO):
 		try:
 			baja(main.Antecedentes.objects.get(id0))
-			return('Eliminación exitosa.')
+			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
 
@@ -266,7 +266,7 @@ class SimpleWindow(QWebView):
 	def bajaEfectivoInterf(self,idO):
 		try:
 			baja(main.Efectivo.objects.get(id0))
-			return('Eliminación exitosa.')
+			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
 
@@ -274,7 +274,7 @@ class SimpleWindow(QWebView):
 	def bajaReoInterf(self,idO):
 		try:
 			baja(main.Reo.objects.get(id0))
-			return('Eliminación exitosa.')
+			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
 
@@ -282,7 +282,7 @@ class SimpleWindow(QWebView):
 	def bajaArticuloInterf(self,idO):
 		try:
 			baja(main.Articulos.objects.get(id0))
-			return('Eliminación exitosa.')
+			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
 
@@ -290,7 +290,7 @@ class SimpleWindow(QWebView):
 	def bajaAdministrativoInterf(self,idO):
 		try:
 			baja(main.Administrativo.objects.get(id0))
-			return('Eliminación exitosa.')
+			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
 
@@ -298,7 +298,7 @@ class SimpleWindow(QWebView):
 	def bajaCalabozoInterf(self,idO):
 		try:
 			baja(main.Calabozo.objects.get(id0))
-			return('Eliminación exitosa.')
+			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
 
@@ -306,7 +306,7 @@ class SimpleWindow(QWebView):
 	def bajaArmamentoInterf(self,idO):
 		try:
 			baja(main.Armamento.objects.get(id0))
-			return('Eliminación exitosa.')
+			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
 
@@ -314,7 +314,7 @@ class SimpleWindow(QWebView):
 	def bajaMunicionInterf(self,idO):
 		try:
 			baja(main.Municion.objects.get(id0))
-			return('Eliminación exitosa.')
+			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
 
@@ -322,9 +322,14 @@ class SimpleWindow(QWebView):
 	def bajaVehiculoInterf(self,idO):
 		try:
 			baja(main.Vehiculo.objects.get(id0))
-			return('Eliminación exitosa.')
+			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
+
+	@listen_js
+	def regHuella(self):
+		returned=main.registrarHuella()
+		return(returned)
 		
 
 def start_app(window_class, *args, **kwargs):

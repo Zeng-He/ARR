@@ -2,6 +2,8 @@ import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "ARR.settings")
 import datetime
 from Desktop.models import *
+import Huella2
+
 
 # Basicas
 

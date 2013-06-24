@@ -85,10 +85,30 @@ $(document).ready(function() {
 		$("#reoBusqueda").css({'display':'inline'});
 	})
 
+	$('')
+
 	$("#buttonAltaReo").click(function(e){
 		e.preventDefault();
 		$("#reoInicio").css({'display':'none'});
 		$("#reoAlta").css({'display':'inline'});
+		$('#buttonGuardarReoAlta').click(function(e) {
+			e.preventDefault();
+			nom=$('inputNombreReoAlta').val()
+			ap=$('inputApellidoReoAlta').val()
+			direc=$('inputDirreccionReoAlta').val()
+			edad=$('inputEdadReoAlta').val()
+			dni=$('inputDniReoAlta').val()
+			tiem=$('inputTiempoCondenaReoAlta').val()
+			fec=$('inputFechaIngresoReoAlta').val()
+			hue=$('inputHuellaReoAlta').val()
+			cal=$('inputCalabozoReoAlta').val()
+			PyAsync('altaReoInterf',{
+				args:[nom,ap,direc,edad,dni,tiem,fec,hue,cal],
+				callback: function(data) {
+					alert(data)
+				}
+			})
+		})
 	})	
 
 	$("#buttonModificarReo").click(function(e){
@@ -131,36 +151,4 @@ $(document).ready(function() {
 		e.preventDefault();
 		$("#formularioModificacionReo").css({'display':'inline'})
 	})	
-
-	// $('#cal').click(function() {
-	// 	t=$('#inputCalT').val()
-	// 	e=$('#inputCalE').val()
-	// 	PyAsync('altaCalabozoInterf',{
-	// 		args:[t,e],
-	// 		callback: function(data) {
-	// 			alert(data)
-	// 		}
-	// 	})
-	// })
-
-	// $('#cCal').click(function() {
-	// 	PyAsync('test_calabozo',{
-	// 		args:['Ladero','Ladero2'],
-	// 		callback:function(data) {
-	// 			alert(data)
-	// 		}
-	// 	})
-	// })
-	// $('#cCal').click(function() {
-	// 	tipo=$('#inputTipo').val()
-	// 	estado=$('#inputEstado').val()
-	// 	alert(tipo)
-	// 	PyAsinc('test_calabozo',{
-	// 		args:[tipo,estado],
-	// 		callback:function(data) {
-	// 			alert('ladero')
-	// 			$('#cCal').attr('class','btn btn-success disabled')
-	// 		}
-	// 	})
-	// })
 })
