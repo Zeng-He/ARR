@@ -145,6 +145,10 @@ header{
   padding-top: 30px;
 }
 
+#datosBusquedaReo{
+  display: none;
+}
+
 /*---------------ALTA REOS------------*/
 #reoAlta{
   color: black;
@@ -162,9 +166,17 @@ header{
   display:none;
 }
 
+#formularioModificacionReo{
+  display: none;
+}
+
 /*---------------BAJA REO---------------*/
 #reoBaja{
   color: black;
+  display: none;
+}
+
+#datosBajaReo{
   display: none;
 }
 

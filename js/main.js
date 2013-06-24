@@ -11,6 +11,11 @@ $(document).ready(function() {
 		$("#asignacionEquipamiento").attr('class','');
 		$("#reos").attr('class','active');
 		$("#reoInicio").css({'display':'inline'})
+		//Buttons de Reos
+		$("#reoBusqueda").css({'display':'none'});
+		$("#reoAlta").css({'display':'none'});
+		$("#reoModificacion").css({'display':'none'});
+		$("#reoBaja").css({'display':'none'});
 	})
 
 	$("#policias").click(function(e){
@@ -98,6 +103,34 @@ $(document).ready(function() {
 		$("#reoBaja").css({'display':'inline'});
 	})
 
+	$("#buttonBusquedaBajaReo").click(function(e){
+		e.preventDefault();
+		$("#datosBajaReo").css({'display':'inline'})
+	})
+
+	$("#buttonEliminarReoBaja").click(function(e){
+		e.preventDefault();
+		$("#datosBajaReo").css({'display':'none'})
+		$("#reoBaja").css({'display':'none'})
+		$("#reoInicio").css({'display':'inline'})
+	})
+	
+	$("#buttonCancelarReoBaja").click(function(e){
+		e.preventDefault();
+		$("#datosBajaReo").css({'display':'none'})
+		$("#reoBaja").css({'display':'none'})
+		$("#reoInicio").css({'display':'inline'})
+	})
+
+	$("#buttonDatosBusquedaReo").click(function(e){
+		e.preventDefault();
+		$("#datosBusquedaReo").css({'display':'inline'})
+	})	
+
+	$("#buttonDatosBusquedaModificacionReo").click(function(e){
+		e.preventDefault();
+		$("#formularioModificacionReo").css({'display':'inline'})
+	})	
 
 	// $('#cal').click(function() {
 	// 	t=$('#inputCalT').val()

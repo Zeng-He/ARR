@@ -17,7 +17,7 @@
         <div class="container-fluid">
             <header class="row-fluid">
                 <div class="span3" id="imgLogo">
-                    <a href="#" style="color:white; text-transform: none;"><img src="img/logo.png"></a>
+                    <a href="index.html" style="color:white; text-transform: none;"><img src="img/logo.png"></a>
                 </div>
                 <div class="span9" id="textoLogo">
                         SARR
@@ -124,8 +124,46 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn">Buscar</button>
+                                    <button id="buttonDatosBusquedaReo" type="submit" class="btn">Buscar</button>
                                 </fieldset>
+                            </form>
+                            <form class="form-horizontal" id="datosBusquedaReo">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputNombre">NOMBRE:</label>
+                                    <label class="control-label" for="inputNombre" id="nombreBusquedaReo">Nombre..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputApellido">APELLIDO:</label>
+                                    <label class="control-label" for="inputNombre" id="apellidoBusquedaReo">Apellido..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDirrecion">DIRECCIÓN:</label>
+                                    <label class="control-label" for="inputNombre" id="direccionBusquedaReo">Dirreción..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEdad">EDAD:</label>
+                                    <label class="control-label" for="inputNombre" id="edadBusquedaReo">Edad..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDni">DNI:</label>
+                                    <label class="control-label" for="inputNombre" id="dnBusquedaReo">DNI..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputTiempoCondena">TIEMPO DE CONDENA:</label>
+                                    <label class="control-label" for="inputNombre" id="tiempoCondenaBusquedaReo">Tiempo de condena...</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputFechaIngreso">FECHA DE INGRESO:</label>
+                                    <label class="control-label" for="inputNombre" id="fechaIngresoBusquedaReo">Fecha de Ingreso....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputIdHuella">ID HUELLA:</label>
+                                    <label class="control-label" for="inputNombre" id="idHuellaBusquedaReo">Id Huella....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">CALABOZO ASIGNADO:</label>
+                                    <label class="control-label" for="inputNombre" id="calabozoBusquedaReo">Calabozo....</label>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -205,9 +243,29 @@
                             </form>
                         </div>
                     </div>
-                    <div class="row-fluid" id="reoModificacion" style="">
+                    <div class="row-fluid" id="reoModificacion">
                         <div class="span12">
                             <h1>MODIFICACIÓN REO</h1>
+                            <form>
+                                <fieldset id="buscadorReo">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div class="row-fluid">
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                              Huella Digital
+                                            </label>
+                                        </div>
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                              DNI
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button id="buttonDatosBusquedaModificacionReo" type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
                             <form class="form-horizontal" id="formularioModificacionReo">
                                 <div class="control-group">
                                     <label class="control-label" for="inputNombre">Nombre:</label>
@@ -301,22 +359,53 @@
                                             </label>
                                         </div>
                                     </div>
-                                    <button type="submit" class="btn">Buscar</button>
+                                    <button id="buttonBusquedaBajaReo" type="submit" class="btn">Buscar</button>
                                 </fieldset>
                             </form>
-                            <div class="row-fluid" >
-                                <div calss="span6" id="EtiquetasBajaReo">
-                                    <label class="control-label" for="inputNombre">Nombre:</label>
-                                    <label class="control-label" for="inputApellido">Apellido:</label>
-                                    <label class="control-label" for="inputDirrecion">Dirreción:</label>
-                                    <label class="control-label" for="inputEdad">Edad:</label>
-                                    <label class="control-label" for="inputDNI">DNI:</label>
-                                    <label class="control-label" for="inputTiempoCondena">Tiempo de Condena:</label>
-                                    <label class="control-label" for="inputFechaIngreso">Fecha de Ingreso:</label>
-                                    <label class="control-label" for="inputIdHuella">Id Huella:</label>
-                                    <label class="control-label" for="inputCalobozo">Calabozo Asignado:</label>
+                            <form class="form-horizontal" id="datosBajaReo">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputNombre">NOMBRE:</label>
+                                    <label class="control-label" for="inputNombre" id="nombreBajaReo">Nombre..</label>
                                 </div>
-                            </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputApellido">APELLIDO:</label>
+                                    <label class="control-label" for="inputNombre" id="apellidoBajaReo">Apellido..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDirrecion">DIRECCIÓN:</label>
+                                    <label class="control-label" for="inputNombre" id="direccionBajaReo">Dirreción..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEdad">EDAD:</label>
+                                    <label class="control-label" for="inputNombre" id="edadBajaReo">Edad..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDni">DNI:</label>
+                                    <label class="control-label" for="inputNombre" id="dniBajaReo">DNI..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputTiempoCondena">TIEMPO DE CONDENA:</label>
+                                    <label class="control-label" for="inputNombre" id="tiempoCondenaBajaReo">Tiempo de condena...</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputFechaIngreso">FECHA DE INGRESO:</label>
+                                    <label class="control-label" for="inputNombre" id="fechaIngresoBajaReo">Fecha de Ingreso....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputIdHuella">ID HUELLA:</label>
+                                    <label class="control-label" for="inputNombre" id="idHuellaBajaReo">Id Huella....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">CALABOZO ASIGNADO:</label>
+                                    <label class="control-label" for="inputNombre" id="calabozoBajaReo">Calabozo....</label>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button id="buttonEliminarReoBaja" type="submit" class="btn">Confirmar</button>
+                                      <button id="buttonCancelarReoBaja" type="submit" class="btn">Cancelar</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
             </div>
