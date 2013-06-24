@@ -335,6 +335,8 @@ class SimpleWindow(QWebView):
 def start_app(window_class, *args, **kwargs):
 	app = QApplication(sys.argv)
 	window = window_class(*args, **kwargs)
+	a=main.Huella2.Controlador()
+	a.inicio()
 	return app.exec_()
 
 
