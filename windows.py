@@ -70,12 +70,82 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def altaReoInterf(self, nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, id_calabozo):
 		try:
-			c = altaReo(nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, Calabozo.objects.get(id_calabozo)) 
-			return str("Datos Reo almacenado exitosamente")
+			main.altaReo(nombre=nombre, apellido=apellido, direccion=direccion, edad=edad, dni=dni, tiempo_condena=tiempo_condena, fecha_ingreso=fecha_ingreso, id_huella=id_huella, calabozo=main.Calabozo.objects.get(id_calabozo)) 
+			return ("Datos Reo almacenado exitosamente")
 		except Exception:
-			return str("Error, verifique campos")
+			return ("Error, verifique campos")
 
-	# Fin Altas
+	@listen_js
+	def altaAntecedenteInterf(self, antecedente, condena, id_reo):
+		try:
+			main.altaAntecedente(antedente=antecedente,condena=condena,reo=main.Reo.objects.get(pk=id_reo))
+			return ("Antecedente almacenado exitosamente")
+		except Exception:
+			return ("Error, verifique campos")
+
+	@listen_js
+	def altaEfectivoInterf(self,nombre,apellido,direccion,edad,dni,num_placa,fecha_ingreso,cargo,sueldo,id_es_jefe,tarea,horario_patrull):
+		try:
+			main.altaEfectivo(nombre=nombre,apellido=apellido,direccion=direccion,edad=edad,dni=dni,nom_placa=num_placa,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=main.Policia.objects.get(pk=id_es_jefe),tarea=tarea,horario_patrull=horario_patrull)
+			return ("Datos Efectivo almacenado exitosamente")
+		except Exception:
+			return ("Error, verifique campos")
+
+	@listen_js
+	def altaArticuloInterf(self, nombre, estado, tipo):
+		try:
+			main.altaArticulo(nombre=nombre,estado=estado,tipo=tipo)
+			return ("Articulo almacenado exitosamente")
+		except Exception:
+			return ("Error, verifique campos")
+
+	@listen_js
+	def altaAdministrativoInterf(self,nombre,apellido,direccion,edad,dni,num_placa,fecha_ingreso,cargo,sueldo,id_es_jefe,tarea,cant_horas):
+		try:
+			main.altaAdministrativo(nombre=nombre,apellido=apellido,direccion=direccion,edad=edad,dni=dni,nom_placa=num_placa,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=main.Policia.objects.get(pk=id_es_jefe),tarea=tarea,cant_horas=cant_horas)
+			return ("Articulo almacenado exitosamente")
+		except Exception:
+			return ("Error, verifique campos")
+
+	@listen_js
+	def altaArmamentoInterf(self,nombre,estado,tipo_municion,codigo):
+		try:
+			main.altaArmamento(nombre=nombre,estado=estado,tipo_municion=tipo_municion,codigo=codigo)
+			return ("Articulo almacenado exitosamente")
+		except Exception:
+			return ("Error, verifique campos")
+
+	@listen_js
+	def altaMunicionInterf(self,nombre,estado,tipo,cantidad):
+		try:
+			main.altaMunicion(nombre=nombre,estado=estado,tipo=tipo,cantidad=cantidad)
+			return ("Articulo almacenado exitosamente")
+		except Exception:
+			return ("Error, verifique campos")
+
+	@listen_js
+	def altaVehiculoInterf(self,nombre,estado,marca,modelo,capacidad):
+		try:
+			main.altaVehiculo(nombre=nombre,estado=estado,marca=marca,modelo=modelo,capacidad=capacidad)
+			return ("Articulo almacenado exitosamente")
+		except Exception:
+			return ("Error, verifique campos")
+	
+	@listen_js
+	def function(self):
+
+	# Busquedas
+	@listen_js
+	def buscarAntecedentesInterf(self, valor, op=1):
+		if isinstance(valor,int):
+			if op :
+				reo = busquedaReoHuella(valor)
+			else:
+				reo = busquedaReoDNI(valor) # Cuando es 0
+		else:
+			return str("Error, verifique los valor de la busqueda")
+		return (buscarAntecedentes(reo))
+		
 
 def start_app(window_class, *args, **kwargs):
 	app = QApplication(sys.argv)
@@ -86,22 +156,7 @@ def start_app(window_class, *args, **kwargs):
 if __name__ == "__main__":
 	start_app(SimpleWindow)
 
-# def altaAntecedenteInterf(self, antecedente, condena, id_reo):
-# 	try:
-# 		a = altaAntecedente(antecedente,condena,Reo.objects.get(pk=id_reo))
-# 		return str("Antecedente almacenado exitosamente")
-# 	except Exception:
-# 		return str("Error, verifique campos")
 
-# def buscarAntecedentesInterf(self, valor, op):
-# 	if isinstance(valor,int):
-# 		if(op=0):
-# 			reo = busquedaReoHuella(valor)
-# 		else:
-# 			reo = busquedaReoDNI(valor)
-# 	else:
-# 		return str("Error, verifique los valor de la busqueda")
-# 	return (buscarAntecedentes(reo))
 	
 # def realizarTrasladoInterf(self, descripcion, responsable, fecha, id_reo):
 # 	try:
@@ -120,12 +175,6 @@ if __name__ == "__main__":
 # 		return str("Error, verifique los valor de la busqueda")
 # 	return (buscarTraslado(reo))
 
-# def altaEfectivoInterf(self, nombre, apellido, direccion, edad, dni, num_placa, fecha_ingreso, cargo, sueldo, id_es_jefe, tarea, horario_patrull):
-# 	try:
-# 		c = altaEfectivo(nombre, apellido, direccion, edad, dni, num_placa, fecha_ingreso, cargo, sueldo, Policia.objects.get(pk=id_es_jefe), tarea, horario_patrull)
-# 		return str("Datos Efectivo almacenado exitosamente")
-# 	except Exception:
-# 		return str("Error, verifique campos")
 
 # def modificarEfectivoInterf(self, **kw):
 # 	try:
@@ -170,10 +219,3 @@ if __name__ == "__main__":
 # 	#FALTA DEFINIR LA FUNCION TOSTRING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # 	returned = toString(Reo.objects.get(reo))
 # 	return(returned)
-
-# def altaArticuloInterf(self, nombre, estado, tipo):
-# 	try:
-# 		a = altaArticulo(nombre,estado,tipo)
-# 		return str("Articulo almacenado exitosamente")
-# 	except Exception:
-# 		return str("Error, verifique campos")	

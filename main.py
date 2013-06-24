@@ -32,7 +32,7 @@ def modificar(r,**kw):
 
 def altaAntecedente(**kw):
 	error = False
-	if (("antecedente" in kw)and("condena" in kw)and("reo" in kw)):
+	if ((kw["antecedente"]!='')and(kw["condena"] !='')and(kw["reo"] !='')):
 		if (not(isinstance(kw['antecedente'],str))):
 			error=True
 		elif (not(isinstance(kw['condena'],str))):
@@ -54,46 +54,58 @@ def altaAntecedente(**kw):
 
 def altaEfectivo(**kw):
 	a = Efectivo()
-	if(('nombre' in kw)and('apellido' in kw)and('direccion' in kw)and('edad' in kw)and('dni' in kw)and("num_placa" in kw)and("fecha_ingreso" in kw)and("cargo" in kw)and("sueldo" in kw)and("es_jefe" in kw)and("tarea" in kw)and("horario_patrull" in kw)):
-		if((isinstance(kw['nombre'],str))and(isinstance(kw['apellido'],str))and(isinstance(kw['direccion'],str))and(isinstance(kw['edad'],int))and(isinstance(kw['dni'],int))and(isinstance(kw["num_placa"],int))and(isinstance(kw["fecha_ingreso"],datetime.date))and(isinstance(kw["cargo"],str))and(isinstance(kw["saldo"],float))and(isinstance(kw["es_jefe"],Policia))and(isinstance(kw["tarea"],str))and(isinstance(kw["horario_patrull"],str))):
+	if((kw['nombre'] !='')and(kw['apellido'] !='')and(kw['direccion'] !='')and(kw['edad'] !='')and(kw['dni'] !='')and(kw["num_placa"] !='')and(kw["fecha_ingreso"] !='')and(kw["cargo"] !='')and(kw["sueldo"] !='')and(kw["es_jefe"] !='')and(kw["tarea"] !='')and(kw["horario_patrull"] !='')):
+		if((isinstance(kw['nombre'],str))and(isinstance(kw['apellido'],str))and(isinstance(kw['direccion'],str))and(isinstance(kw['edad'],int))and(isinstance(kw['dni'],int))and(isinstance(kw["num_placa"],int))and(isinstance(kw["fecha_ingreso"],datetime.date))and(isinstance(kw["cargo"],str))and(isinstance(kw["sueldo"],float))and(isinstance(kw["es_jefe"],Policia))and(isinstance(kw["tarea"],str))and(isinstance(kw["horario_patrull"],str))):
 			try:
 				alta(a,**kw)
 				return(a)
 			except Exception, e:
 				raise e
-	raise Exception
+		else:
+			raise Exception
+	else:
+		raise Exception
 
 def altaReo(**kw):
 	r=Reo()
-	if ('nombre' in kw) and ('apellido' in kw) and ('direccion' in kw) and ('edad' in kw) and ('dni' in kw) and ('tiempo_condena' in kw) and ('fecha_ingreso' in kw) and ('id_huella' in kw) and ('calabozo' in kw):
+	if (kw['nombre'] !='') and (kw['apellido'] !='') and (kw['direccion'] !='') and (kw['edad'] !='') and (kw['dni'] !='') and (kw['tiempo_condena'] !='') and (kw['fecha_ingreso'] !='') and (kw['id_huella'] !='') and (kw['calabozo'] !=''):
 		if (isinstance(kw['nombre'],str)) and (isinstance(kw['apellido'],str)) and (isinstance(kw['direccion'],str)) and (isinstance(kw['edad'],int)) and (isinstance(kw['dni'],int)) and (isinstance(kw['tiempo_condena'],str)) and (isinstance(kw['fecha_ingreso'],datetime.date)) and (isinstance(kw['id_huella'],int)) and (isinstance(kw['calabozo'],Calabozo)):
 			try:
 				alta(r,**kw)
 				return (r)
 			except Exception, e:
 				raise e
-	raise e
+		else:
+			raise Exception
+	else:
+		raise Exception
 
 def altaArticulo(**kw):
 	a = Articulos
-	if(("nombre" in kw)and("estado" in kw)and("tipo" in kw)):
+	if((kw["nombre"] !='')and(kw["estado"] !='')and(kw["tipo"] !='')):
 		if((isinstance(kw("nombre"),str))and(isinstance(kw("estado"),str))and(isinstance(kw("tipo"),str))):
 			try:
 				alta(a,**kw)
 			except Exception, e:
 				raise e
-	raise Exception
+		else:
+			raise Exception
+	else:
+		raise Exception
 
 def altaAdministrativo(**kw):
 	a=Administrativo()
-	if ('nombre' in kw) and ('apellido' in kw) and ('direccion' in kw) and ('edad' in kw) and ('dni' in kw) and ('num_placa' in kw) and ('fecha_ingreso' in kw) and ('cargo' in kw) and ('sueldo' in kw) and ('es_jefe' in kw) and ('tarea' in kw) and ('cant_horas' in kw):
+	if (kw['nombre'] !='') and (kw['apellido'] !='') and (kw['direccion'] !='') and (kw['edad'] !='') and (kw['dni'] !='') and (kw['num_placa'] !='') and (kw['fecha_ingreso'] !='') and (kw['cargo'] !='') and (kw['sueldo'] !='') and (kw['es_jefe'] !='') and (kw['tarea'] !='') and (kw['cant_horas'] !=''):
 		if ((isinstance(kw['nombre'],str)) and (isinstance(kw['apellido'],str)) and (isinstance(kw['direccion'],str)) and (isinstance(kw['edad'],int)) and (isinstance(kw['dni'],int)) and (isinstance(kw['num_placa'],int)) and (isinstance(kw['fecha_ingreso'],datetime.date)) and (isinstance(kw['cargo'],str)) and (isinstance(kw['sueldo'],float)) and (isinstance(kw['es_jefe'],Policia)) and (isinstance(kw['tarea'],str)) and (isinstance(kw['cant_horas'],int))):
 			try:
 				alta(a,**kw)
 			except Exception,e:
 				raise e
-	raise Exception
-	
+		else:
+			raise Exception
+	else:
+		raise Exception
+
 def altaCalabozo(**kw):
 	c=Calabozo()
 	if ('tipo' !='') and ('estado' != ''):
@@ -109,27 +121,33 @@ def altaCalabozo(**kw):
 	
 def altaArmamento(**kw):
 	a=Armamento()
-	if ('nombre' in kw) and ('estado' in kw) and ('tipo_municion' in kw) and ('codigo' in kw):
+	if (kw['nombre'] !='') and (kw['estado'] !='') and (kw['tipo_municion'] !='') and (kw['codigo'] !=''):
 		if (isinstance(kw['nombre'],str)) and (isinstance(kw['estado'],str)) and (isinstance(kw['tipo_municion'],str)) and (isinstance(kw['codigo'],str)):
 			try:
 				alta(a,**kw)
 			except Exception,e:
 				raise e
-	raise Exception
+		else:
+			raise Exception
+	else:
+		raise Exception
 
 def altaMunicion(**kw):
 	m=municion()
-	if ('nombre' in kw) and ('estado' in kw) and ('tipo' in kw) and ('cantidad' in kw):
+	if (kw['nombre'] !='') and (kw['estado'] !='') and (kw['tipo'] !='') and (kw['cantidad'] !=''):
 		if (isinstance(kw['nombre'],str)) and (isinstance(kw['estado'],str)) and (isinstance(kw['tipo'],str)) and (isinstance(kw['cantidad'],int)):
 			try:
 				alta(m,**kw)
 			except Exception,e:
 				raise e
-	raise Exception
+		else:
+			raise Exception
+	else:
+		raise Exception
 
 def altaVehiculo(**kw):
 	a = Vehiculo
-	if(("nombre" in kw)and("estado" in kw)and("marca" in kw)and("modelo" in kw)and("capacidad") in kw):
+	if((kw["nombre"] !='')and(kw["estado"] !='')and(kw["marca"] !='')and(kw["modelo"] !='')and(kw["capacidad"]) !=''):
 		if((isinstance(kw("nombre"),str))and(isinstance(kw("estado"),str))and(isinstance(kw("marca"),str))and(isinstance(kw("modelo"),str))and(isinstance(kw("capacidad"),int))):
 			try:
 				alta(a,**kw)		
@@ -137,7 +155,8 @@ def altaVehiculo(**kw):
 				raise e
 		else:
 			raise Exception
-	raise Exception
+	else:
+		raise Exception
 
 # Busquedas
 
