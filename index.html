@@ -17,10 +17,10 @@
         <div class="container-fluid">
             <header class="row-fluid">
                 <div class="span3" id="imgLogo">
-                    <img src="img/logo.png">
+                    <a href="#" style="color:white; text-transform: none;"><img src="img/logo.png"></a>
                 </div>
                 <div class="span9" id="textoLogo">
-                        ARR
+                        SARR
                 </div>
             </header>
         </div>
@@ -29,39 +29,39 @@
                 <div class="span3">
                     <ul class="nav nav-list affix-top bs-docs-sidenav">
                         <li id="reos">
-                            <a href="/reoPrincipal.com">
+                            <a href="/reoPrincipal.html">
                                 <i class='icon-chevron-right'></i>
                                 Reos
                             </a>
                         </li>
                         <li id"policias">
-                            <a href="#">
+                            <a href="/policiasPrincipal.html">
                                 <i class='icon-chevron-right'></i>
                                 Policías
                             </a>
                         </li>
                         <li id="asignacionActiviades">
-                            <a href="#">
+                            <a href="asignacionActividadesPrincipal.html">
                                 <i class='icon-chevron-right'></i>
                                 Asignación de Actividades
                             </a>
                         </li>
                         <li id="traslado">
-                            <a href="#">
+                            <a href="trasladoPrincipal.html">
                                 <i class='icon-chevron-right'></i>
                                 Realizar Traslado
                             </a>
                         </li>
                         <li id="equipamiento">
-                            <a href="#">
+                            <a href="equipamientoPrincipal.html">
                                 <i class='icon-chevron-right'></i>
                                 Equipamiento
                             </a>
                         </li>
                         <li id="asignacionEquipamiento">
-                            <a href="#">
+                            <a href="asignacionEquipamientoPrincipal.html">
                                 <i class='icon-chevron-right'></i>
-                                Asiganción de Equipamiento
+                                Asignación de Equipamiento
                             </a>
                         </li>
                     </ul>
@@ -69,7 +69,10 @@
                 <div id="contendorPrincipal" class='span9'>
                     <div class="row-fluid" id="infoInicio">
                         <div class="span12">
-                            A definir................
+                            <h1 id="tituloInfoInicial">¿Qué es SARR?</h1>
+                            <p class="textInfoInicio">El Sistema de Automatización de Registro de Reos(SARR) provee una administración sencilla de los recursos de cualquier institución carcelaria.</p>
+                            <p class="textInfoInicio">Ideado por el grupo de desarrollo <i>Loading...</i>, este sistema esta diseñado para integrar facilidades de software y hardware, implementado la lectura inteligente de huellas dactilares. <a href="#" style="font-size:15px">Leer más</a></br></p>
+                            <p class="textInfoInicio">Navegue a través de la página y sus funcionalidades con los botones que se encuentran a su izquierda.</p>
                         </div>
                     </div>
                     <div class="row-fluid" id="reoInicio">
@@ -90,7 +93,7 @@
                         </div>
                         <div class="row-fluid" id="buttonReo2">
                             <div class="span6">
-                                <a href="#" id="buttonModificarReo">
+                                <a href="modificacionReo.html" id="buttonModificarReo">
                                     Modificar Datos
                                 </a>
                             </div>
@@ -133,63 +136,187 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Nombre:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputNombreReo" placeholder="Nombre...">
+                                      <input type="text" id="inputNombreReoAlta" placeholder="Nombre...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Apellido:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputApellidoReo" placeholder="Apellido...">
+                                      <input type="text" id="inputApellidoReoAlta" placeholder="Apellido...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Dirección:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputDirreccionReo" placeholder="Dirección...">
+                                      <input type="text" id="inputDirreccionReoAlta" placeholder="Dirección...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Edad:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputEdadReo" placeholder="Edad...">
+                                      <input type="text" id="inputEdadReoAlta" placeholder="Edad...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">DNI:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputDniReo" placeholder="DNI...">
+                                      <input type="text" id="inputDniReoAlta" placeholder="DNI...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Tiempo de Condena:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputTiempoCondenaReo" placeholder="Tiempo de condena...">
+                                      <input type="text" id="inputTiempoCondenaReoAlta" placeholder="Tiempo de condena...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Fecha de Ingreso:</label>
                                     <div class="controls">
-                                      <input type="date" id="inputFechaIngresoReo">
+                                      <input type="date" id="inputFechaIngresoReoAlta">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Id Huella:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputHuellaReo" placeholder="Id Huella...">
+                                      <input type="text" title="Clicke en Capturar para obtener ID" id="inputHuellaReoAlta" placeholder="Id Huella..." disabled>
+                                      <a href="#capturarHuella" role="button" class="btn" data-toggle="modal">Capturar</a>
+                                    </div>
+                                </div>
+                                <div class="modal hide fade" id="capturarHuella">
+                                    <div class="modal-header" style="background-color:#0F402A; color:white;">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h3>Capturar Huella</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Capturando Huella…</p>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEmail">Calabozo Asignado:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputCalabozoReo" placeholder="Id Calabozo...">
+                                      <input type="text" id="inputCalabozoReoAlta" placeholder="Id Calabozo...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <div class="controls">
-                                      <button type="submit" class="btn">Guardar</button>
+                                      <button type="submit" class="btn" id="buttonGuardarReoAlta">Guardar</button>
                                     </div>
                                 </div>
                             </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="reoModificacion" style="">
+                        <div class="span12">
+                            <h1>MODIFICACIÓN REO</h1>
+                            <form class="form-horizontal" id="formularioModificacionReo">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputNombre">Nombre:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNombreReoModif" placeholder="Nombre...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputApellido">Apellido:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoReoModif" placeholder="Apellido...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDirrecion">Dirección:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDirreccionReoModif" placeholder="Dirección...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEdad">Edad:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputEdadReoModif" placeholder="Edad...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDni">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniReoModif" placeholder="DNI...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputTiempoCondena">Tiempo de Condena:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputTiempoCondenaReoModif" placeholder="Tiempo de condena...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputFechaIngreso">Fecha de Ingreso:</label>
+                                    <div class="controls">
+                                      <input type="date" id="inputFechaIngresoReoModif">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputIdHuella">Id Huella:</label>
+                                    <div class="controls">
+                                      <input title="Clicke en Capturar para obtener ID" type="text" id="inputHuellaReoModif" placeholder="Id Huella..." disabled>
+                                      <a href="#capturarHuella" role="button" class="btn" data-toggle="modal">Capturar</a>
+                                    </div>
+                                </div>
+                                <div class="modal hide fade" id="capturarHuella">
+                                    <div class="modal-header" style="background-color:#0F402A; color:white;">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h3>Capturar Huella</h3>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Capturando Huella…</p>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">Calabozo Asignado:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputCalabozoReoModif" placeholder="Id Calabozo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button id="buttonGuardarReoModificacion" type="submit" class="btn">Guardar Cambios</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="reoBaja">
+                        <div class="span12">
+                            <h1>BAJA DE REO <span style="font-size:20px;">(baja lógica)</span></h1>
+                            <form>
+                                <fieldset id="buscadorReo">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div class="row-fluid">
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                              Huella Digital
+                                            </label>
+                                        </div>
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                              DNI
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                            <div class="row-fluid" >
+                                <div calss="span6" id="EtiquetasBajaReo">
+                                    <label class="control-label" for="inputNombre">Nombre:</label>
+                                    <label class="control-label" for="inputApellido">Apellido:</label>
+                                    <label class="control-label" for="inputDirrecion">Dirreción:</label>
+                                    <label class="control-label" for="inputEdad">Edad:</label>
+                                    <label class="control-label" for="inputDNI">DNI:</label>
+                                    <label class="control-label" for="inputTiempoCondena">Tiempo de Condena:</label>
+                                    <label class="control-label" for="inputFechaIngreso">Fecha de Ingreso:</label>
+                                    <label class="control-label" for="inputIdHuella">Id Huella:</label>
+                                    <label class="control-label" for="inputCalobozo">Calabozo Asignado:</label>
+                                </div>
+                            </div>
                         </div>
                     </div>
             </div>

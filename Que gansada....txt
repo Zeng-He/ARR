@@ -1,0 +1,4 @@
+El Sistema de Automatizaci&oacute;n de Registro de Reos provee una administraci&oacute;n sencilla de los recursos de cualquier institución carcelaria.</br>
+Ideado por el grupo de desarrollo <i>Loading...</i>, este sistema esta dise&ntilde;ado para integrar facilidades de software y hardware, implementado la lectura inteligente de huellas dactilares. <a href="paginaConMasInfo.html" fontsize=-2>Leer m&aacute;s</a></br>
+
+Navegue a trav&eacute;s de la p&aacute;gina y sus funcionalidades con los botones que se encuentran a su izquierda.
