@@ -4,20 +4,209 @@
         <meta charset="utf-8">
         <title>ARR</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 60px;
-                padding-bottom: 40px;
-            }
-        </style>
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
+        <!--
         <input type='text' id='inputCalT' placeholder='Tipo'>
         <input type='text' id='inputCalE' placeholder='Estado'>
         <button id='cal' class='btn'>Crear Calabozo</button>
+        -->
+        <div class="container-fluid">
+            <header class="row-fluid">
+                <div class="span3" id="imgLogo">
+                    <img src="img/logo.png">
+                </div>
+                <div class="span9" id="textoLogo">
+                        ARR
+                </div>
+            </header>
+        </div>
+        <div class="container">
+            <div class='row'>
+                <div class="span3">
+                    <ul class="nav nav-list affix-top bs-docs-sidenav">
+                        <li id="reos">
+                            <a href="/reoPrincipal.com">
+                                <i class='icon-chevron-right'></i>
+                                Reos
+                            </a>
+                        </li>
+                        <li id"policias">
+                            <a href="#">
+                                <i class='icon-chevron-right'></i>
+                                Policías
+                            </a>
+                        </li>
+                        <li id="asignacionActiviades">
+                            <a href="#">
+                                <i class='icon-chevron-right'></i>
+                                Asignación de Actividades
+                            </a>
+                        </li>
+                        <li id="traslado">
+                            <a href="#">
+                                <i class='icon-chevron-right'></i>
+                                Realizar Traslado
+                            </a>
+                        </li>
+                        <li id="equipamiento">
+                            <a href="#">
+                                <i class='icon-chevron-right'></i>
+                                Equipamiento
+                            </a>
+                        </li>
+                        <li id="asignacionEquipamiento">
+                            <a href="#">
+                                <i class='icon-chevron-right'></i>
+                                Asiganción de Equipamiento
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="contendorPrincipal" class='span9'>
+                    <div class="row-fluid" id="infoInicio">
+                        <div class="span12">
+                            A definir................
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="reoInicio">
+                        <div class="span12">
+                            <h1 style="text-align:center;">OPCIONES REO</h1>
+                        </div>
+                        <div class="row-fluid" id="buttonReo1">
+                            <div class="span6" style="background-colo:red;">
+                                <a href="busquedaReo.html" id="buttonBuscarReo">
+                                    Buscar
+                                </a>
+                            </div>
+                            <div class="span6" style="background-colo:white;">
+                                <a href="altaReo.html" id="buttonAltaReo">
+                                    Alta
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row-fluid" id="buttonReo2">
+                            <div class="span6">
+                                <a href="#" id="buttonModificarReo">
+                                    Modificar Datos
+                                </a>
+                            </div>
+                            <div class="span6">
+                                <a href="#" id="buttonBajaReo">
+                                    Baja/Eliminar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="reoBusqueda">
+                        <div class="span12">
+                            <h1>BUSCAR REO</h1>
+                            <form>
+                                <fieldset id="buscadorReo">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div class="row-fluid">
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                              Huella Digital
+                                            </label>
+                                        </div>
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                              DNI
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="reoAlta">
+                        <div class="span12">
+                            <h1>ALTA REO</h1>
+                            <form class="form-horizontal" id="formularioAltaReo">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Nombre:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNombreReo" placeholder="Nombre...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Apellido:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoReo" placeholder="Apellido...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Dirección:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDirreccionReo" placeholder="Dirección...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Edad:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputEdadReo" placeholder="Edad...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniReo" placeholder="DNI...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Tiempo de Condena:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputTiempoCondenaReo" placeholder="Tiempo de condena...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Fecha de Ingreso:</label>
+                                    <div class="controls">
+                                      <input type="date" id="inputFechaIngresoReo">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Id Huella:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputHuellaReo" placeholder="Id Huella...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Calabozo Asignado:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputCalabozoReo" placeholder="Id Calabozo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button type="submit" class="btn">Guardar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span4">
+                  ladero
+                </div>
+                <div class="span8">
+                  ladero1
+                </div>
+            </div>
+        </div> -->              
+
+
         <!--
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
@@ -54,32 +243,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        <div class="container">
-            <form class="form-horizontal">
-                <div class="control-group">
-                    <label class="control-label" for="inputTipo">Tipo</label>
-                    <div class="controls">
-                        <input type="text" id="inputTipo" placeholder="Tipo">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="inputEstado">Estado</label>
-                    <div class="controls">
-                        <input type="text" id="inputEstado" placeholder="Estado">
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <button id='cCal' class="btn">Crear</button>
-                    </div>
-                </div>
-            </form>
-            <footer>
-                <p>&copy; Company 2012</p>
-            </footer>
-
         </div>-->
 
         <script src="js/vendor/jquery-1.9.1.min.js"></script>
