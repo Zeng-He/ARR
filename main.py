@@ -163,72 +163,54 @@ def altaVehiculo(**kw):
 def busquedaAdmin(dni):
 	a=Administrativo.objects.filter(dni=dni)
 	if a :
-		return (a)
+		return (a[0].pk)
 	else:
-		raise Exception
+		return(str('Administrativo no encontrado'))
 
 def buscarArticulo(idAr):
-	a=Antecedentes.objects.filter(pk=idAr)
+	a=Articulos.objects.filter(Articulos=idAr)
 	if a :
-		return(a)
+		return(a[0].pk)
 	else:
-		raise Exception
+		return(str('Articulo no encontrado.'))
 
 def busquedaReoDNI(dni):
 	r=Reo.objects.filter(dni=dni)
 	if r:
-		return (r)
+		return (r[0].pk)
 	else:
-		raise Exception
+		return (str('Reo no encontrado.'))
 
 def busquedaReoHuella(id_h):
 	r=Reo.objects.filter(id_huella=id_h)
 	if r:
-		return (r)
+		return (r[0].pk)
 	else:
-		raise Exception
+		return (str('Reo no encontrado.'))
 
-def buscarEfectivo(dni):
-	e=Efectivo.objects.filter(dni)
+def buscarEfectivo(idEfe):
+	e=Efectivo.objects.filter(Efectivo_id=idEfe)
 	if e:
-		return(e)
+		return(e[0].pk)
 	else:
-		raise Exception
+		return('Efectivo no encontrado.')
 
 def buscarTraslado(idReo):
 	r=Traslados.objects.filter(Reo_id=idReo)
 	if r :
-		return(r)
+		return(str(r[0].pk))
 	else:
-		raise Exception
+		return('Traslado no encontrado.')
 
 def buscarAntecedentes(idReo):
 	a=Antecedentes.objects.filter(Reo_id=idReo)
 	if a :
-		return(a)
+		returned=[]
+		for x in a:
+			returned.append(x.antecedente)
+		return(returned)
 	else:
-		raise Exception		
-
-def buscarArmamento(idAr):
-	arm=Armamento.objects.filter(pk=idAr)
-	if a :
-		return(a)
-	else:
-		raise Exception
-
-def buscarMunicion(idMu):
-	arm=Municion.objects.filter(pk=idMu)
-	if a :
-		return(a)
-	else:
-		raise Exception
-
-def buscarVehiculo(idVe):
-	arm=Vehiculo.objects.filter(pk=idVe)
-	if a :
-		return(a)
-	else:
-		raise Exception
+		return (str('Antecedente no encontrado.'))
 
 # Modificaciones
 
