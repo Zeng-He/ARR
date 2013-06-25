@@ -45,6 +45,7 @@ class Controlador():
 			time.sleep(25); #cada 25 segundos
 			if(not self.serialOcupado): #si el puerto en serie no esta ocupado
 				self.s.write('A'); #mantenemos con vida al aparato
+				print('Pin')
 
 	def finHilo(self):
 		self.s.close()
@@ -58,7 +59,7 @@ class Controlador():
 			self.s.timeout=5;
 		except serial.SerialException:
 			sys.stderr.write("Error al abrir puerto (%s)\n" % str(0))
-		# 	sys.exit(1)
-		# print "Puerto (%d): %s" % (0,self.s.portstr)
-		# self.hilo = threading.Thread(target=self.funcionHilo); #instanciamos un hilo y le decimos que funcion va a ser la concurrente
-		# self.hilo.start(); #le damos el ok para que empiece
+			raise serial.SerialException
+		print "Puerto (%d): %s" % (0,self.s.portstr)
+		self.hilo = threading.Thread(target=self.funcionHilo); #instanciamos un hilo y le decimos que funcion va a ser la concurrente
+		self.hilo.start(); #le damos el ok para que empiece

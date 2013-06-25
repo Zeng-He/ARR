@@ -434,8 +434,11 @@ def modificarEfectivo(r,**kw):
 		return(str('Modificacion exitosa'))
 
 def regHuella(obj):
-	id_h=Reo.objects.all().aggregate(models.Max('id_huella'))
-	id_h=id_h.values()[0]
+	if Reo.objects.all() :
+		id_h=Reo.objects.all().aggregate(models.Max('id_huella'))
+		id_h=id_h.values()[0]
+	else:
+		id_h=0
 	id_h+=1
 	id_h=str(id_h).zfill(4)
 	try:

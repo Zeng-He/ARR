@@ -56,7 +56,15 @@ class SimpleWindow(QWebView):
 	
 	def evaluateJavaScript(self, script):
 		return self.page().mainFrame().evaluateJavaScript(script)
-	
+
+	def toString(self,obj):
+		salida=[]
+		if isinstance(obj,main.Reo):
+			attr=['nombre','apellido','direccion','edad','dni','tiempo_condena','fecha_ingreso','id_huella','calabozo_id']
+			for x in attr:
+				salida.append(str(getattr(obj,x)))
+		return(salida)
+
 	# Altas
 	@listen_js
 	def altaCalabozoInterf(self,tipo,estado):
@@ -72,13 +80,12 @@ class SimpleWindow(QWebView):
 		try:
 			fecha_ingreso=datetime.date(int(fec[2]),int(fec[1]),int(fec[0]))
 		except Exception:
-			return('Fecha mal formada')
+			return False
 		try:
 			main.altaReo(nombre=nombre, apellido=apellido, direccion=direccion, edad=edad, dni=dni, tiempo_condena=tiempo_condena, fecha_ingreso=fecha_ingreso, id_huella=id_huella, calabozo=main.Calabozo.objects.get(pk=id_calabozo)) 
-			print(main.Reo.objects.all())
 			return ("Reo almacenado exitosamente")
 		except Exception,e:
-			return ("Error, verifique campos")
+			return False
 
 	@listen_js
 	def altaAntecedenteInterf(self, antecedente, condena, id_reo):
@@ -166,15 +173,16 @@ class SimpleWindow(QWebView):
 	def buscarReoInterf(self, valor, op):
 		if isinstance(valor,int):
 			if(op==0):
-				reo = main.busquedaReoHuella(valor)
+				# obtener ID
+				reo = main.busquedaReoHuella(id_h)
 			else:
 				reo = main.busquedaReoDNI(valor)
 		else:
-			return str("Error, verifique los valores de la busqueda")
+			return False
 		try:
-			returned = toString(reo)
-		except Exception:
-			return (str('Reo no encontrado.'))
+			returned = self.toString(reo[0])
+		except Exception,e:
+			return False
 		return(returned)
 
 	@listen_js

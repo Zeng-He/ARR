@@ -138,39 +138,39 @@
                             <form class="form-horizontal" id="datosBusquedaReo">
                                 <div class="control-group">
                                     <label class="control-label" for="inputNombre">NOMBRE:</label>
-                                    <label class="control-label" for="inputNombre" id="nombreBusquedaReo">Nombre..</label>
+                                    <label class="control-label" id="nombreBusquedaReo">Nombre..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputApellido">APELLIDO:</label>
-                                    <label class="control-label" for="inputNombre" id="apellidoBusquedaReo">Apellido..</label>
+                                    <label class="control-label" id="apellidoBusquedaReo">Apellido..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputDirrecion">DIRECCIÓN:</label>
-                                    <label class="control-label" for="inputNombre" id="direccionBusquedaReo">Dirreción..</label>
+                                    <label class="control-label" id="direccionBusquedaReo">Dirreción..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEdad">EDAD:</label>
-                                    <label class="control-label" for="inputNombre" id="edadBusquedaReo">Edad..</label>
+                                    <label class="control-label" id="edadBusquedaReo">Edad..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputDni">DNI:</label>
-                                    <label class="control-label" for="inputNombre" id="dnBusquedaReo">DNI..</label>
+                                    <label class="control-label" id="dniBusquedaReo">DNI..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputTiempoCondena">TIEMPO DE CONDENA:</label>
-                                    <label class="control-label" for="inputNombre" id="tiempoCondenaBusquedaReo">Tiempo de condena...</label>
+                                    <label class="control-label" id="tiempoCondenaBusquedaReo">Tiempo de condena...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputFechaIngreso">FECHA DE INGRESO:</label>
-                                    <label class="control-label" for="inputNombre" id="fechaIngresoBusquedaReo">Fecha de Ingreso....</label>
-                                </div>
+                                    <label class="control-label" id="fechaIngresoBusquedaReo">Fecha de Ingreso....</label>
+                                </div>  
                                 <div class="control-group">
                                     <label class="control-label" for="inputIdHuella">ID HUELLA:</label>
-                                    <label class="control-label" for="inputNombre" id="idHuellaBusquedaReo">Id Huella....</label>
+                                    <label class="control-label" id="idHuellaBusquedaReo">Id Huella....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">CALABOZO ASIGNADO:</label>
-                                    <label class="control-label" for="inputNombre" id="calabozoBusquedaReo">Calabozo....</label>
+                                    <label class="control-label" id="calabozoBusquedaReo">Calabozo....</label>
                                 </div>
                             </form>
                         </div>
@@ -225,7 +225,7 @@
                                     <label class="control-label" for="inputEmail">Id Huella:</label>
                                     <div class="controls">
                                       <input type="text" title="Click en Capturar para obtener ID" id="inputHuellaReoAlta" placeholder="Id Huella..." disabled>
-                                      <a href="#capturarHuella" id='huella_button' role="button" class="btn" data-toggle="modal">Capturar</a>
+                                      <button id='huella_button'class="btn">Capturar</button>
                                       <span class="help-inline"></span>
                                     </div>
                                 </div>
@@ -244,10 +244,11 @@
                                       <input type="text" id="inputCalabozoReoAlta" placeholder="Id Calabozo...">
                                     </div>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarAlta'>
                                     <div class="controls">
                                       <button type="submit" class="btn" id="buttonAtrasReoAlta">Atras</button>
                                       <button type="submit" class="btn" id="buttonGuardarReoAlta">Guardar</button>
+                                      <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>
@@ -377,39 +378,39 @@
                             <form class="form-horizontal" id="datosBajaReo">
                                 <div class="control-group">
                                     <label class="control-label" for="inputNombre">NOMBRE:</label>
-                                    <label class="control-label" for="inputNombre" id="nombreBajaReo">Nombre..</label>
+                                    <label class="control-label" id="nombreBajaReo">Nombre..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputApellido">APELLIDO:</label>
-                                    <label class="control-label" for="inputNombre" id="apellidoBajaReo">Apellido..</label>
+                                    <label class="control-label" id="apellidoBajaReo">Apellido..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputDirrecion">DIRECCIÓN:</label>
-                                    <label class="control-label" for="inputNombre" id="direccionBajaReo">Dirreción..</label>
+                                    <label class="control-label" id="direccionBajaReo">Dirreción..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEdad">EDAD:</label>
-                                    <label class="control-label" for="inputNombre" id="edadBajaReo">Edad..</label>
+                                    <label class="control-label" id="edadBajaReo">Edad..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputDni">DNI:</label>
-                                    <label class="control-label" for="inputNombre" id="dniBajaReo">DNI..</label>
+                                    <label class="control-label" id="dniBajaReo">DNI..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputTiempoCondena">TIEMPO DE CONDENA:</label>
-                                    <label class="control-label" for="inputNombre" id="tiempoCondenaBajaReo">Tiempo de condena...</label>
+                                    <label class="control-label" id="tiempoCondenaBajaReo">Tiempo de condena...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputFechaIngreso">FECHA DE INGRESO:</label>
-                                    <label class="control-label" for="inputNombre" id="fechaIngresoBajaReo">Fecha de Ingreso....</label>
+                                    <label class="control-label" id="fechaIngresoBajaReo">Fecha de Ingreso....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputIdHuella">ID HUELLA:</label>
-                                    <label class="control-label" for="inputNombre" id="idHuellaBajaReo">Id Huella....</label>
+                                    <label class="control-label" id="idHuellaBajaReo">Id Huella....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">CALABOZO ASIGNADO:</label>
-                                    <label class="control-label" for="inputNombre" id="calabozoBajaReo">Calabozo....</label>
+                                    <label class="control-label" id="calabozoBajaReo">Calabozo....</label>
                                 </div>
                                 <div class="control-group">
                                     <div class="controls">
@@ -486,51 +487,51 @@
                             <form class="form-horizontal" id="datosBusquedaEfectivoPolicia">
                                 <div class="control-group">
                                     <label class="control-label" for="inputNombre">NOMBRE:</label>
-                                    <label class="control-label" for="inputNombre" id="nombreBusquedaEfectivoPolicia">Nombre..</label>
+                                    <label class="control-label" id="nombreBusquedaEfectivoPolicia">Nombre..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputApellido">APELLIDO:</label>
-                                    <label class="control-label" for="inputNombre" id="apellidoBusquedaEfectivoPolicia">Apellido..</label>
+                                    <label class="control-label" id="apellidoBusquedaEfectivoPolicia">Apellido..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputDirrecion">DIRECCIÓN:</label>
-                                    <label class="control-label" for="inputNombre" id="direccionBusquedaEfectivoPolicia">Dirreción..</label>
+                                    <label class="control-label" id="direccionBusquedaEfectivoPolicia">Dirreción..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEdad">EDAD:</label>
-                                    <label class="control-label" for="inputNombre" id="edadBusquedaEfectivoPolicia">Edad..</label>
+                                    <label class="control-label" id="edadBusquedaEfectivoPolicia">Edad..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputDni">DNI:</label>
-                                    <label class="control-label" for="inputNombre" id="dnBusquedaEfectivoPolicia">DNI..</label>
+                                    <label class="control-label" id="dnBusquedaEfectivoPolicia">DNI..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputTiempoCondena">NÚMERO DE PLACA:</label>
-                                    <label class="control-label" for="inputNombre" id="numeroPlacaBusquedaEfectivoPolicia">Número de Placa...</label>
+                                    <label class="control-label" id="numeroPlacaBusquedaEfectivoPolicia">Número de Placa...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputFechaIngreso">FECHA DE INGRESO:</label>
-                                    <label class="control-label" for="inputNombre" id="fechaIngresoBusquedaEfectivoPolicia">Fecha de Ingreso....</label>
+                                    <label class="control-label" id="fechaIngresoBusquedaEfectivoPolicia">Fecha de Ingreso....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputIdHuella">CARGO:</label>
-                                    <label class="control-label" for="inputNombre" id="cargoBusquedaEfectivoPolicia">Cargo....</label>
+                                    <label class="control-label" id="cargoBusquedaEfectivoPolicia">Cargo....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">SUELDO:</label>
-                                    <label class="control-label" for="inputNombre" id="sueldoBusquedaEfectivoPolicia">Sueldo....</label>
+                                    <label class="control-label" id="sueldoBusquedaEfectivoPolicia">Sueldo....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">JEFE:</label>
-                                    <label class="control-label" for="inputNombre" id="jefeBusquedaEfectivoPolicia">Jefe....</label>
+                                    <label class="control-label" id="jefeBusquedaEfectivoPolicia">Jefe....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">TAREA:</label>
-                                    <label class="control-label" for="inputNombre" id="tareaBusquedaEfectivoPolicia">Tarea....</label>
+                                    <label class="control-label" id="tareaBusquedaEfectivoPolicia">Tarea....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">HORA DE PATRULLA:</label>
-                                    <label class="control-label" for="inputNombre" id="horaPatrullaBusquedaEfectivoPolicia">Horario de Patrulla....</label>
+                                    <label class="control-label" id="horaPatrullaBusquedaEfectivoPolicia">Horario de Patrulla....</label>
                                 </div>
                             </form>
                         </div>
@@ -867,51 +868,51 @@
                             <form class="form-horizontal" id="datosBusquedaAdministrativoPolicia">
                                 <div class="control-group">
                                     <label class="control-label" for="inputNombre">NOMBRE:</label>
-                                    <label class="control-label" for="inputNombre" id="nombreBusquedaAdministrativoPolicia">Nombre..</label>
+                                    <label class="control-label" id="nombreBusquedaAdministrativoPolicia">Nombre..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputApellido">APELLIDO:</label>
-                                    <label class="control-label" for="inputNombre" id="apellidoBusquedaAdministrativoPolicia">Apellido..</label>
+                                    <label class="control-label" id="apellidoBusquedaAdministrativoPolicia">Apellido..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputDirrecion">DIRECCIÓN:</label>
-                                    <label class="control-label" for="inputNombre" id="direccionBusquedaAdministrativoPolicia">Dirreción..</label>
+                                    <label class="control-label" id="direccionBusquedaAdministrativoPolicia">Dirreción..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputEdad">EDAD:</label>
-                                    <label class="control-label" for="inputNombre" id="edadBusquedaAdministrativoPolicia">Edad..</label>
+                                    <label class="control-label" id="edadBusquedaAdministrativoPolicia">Edad..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputDni">DNI:</label>
-                                    <label class="control-label" for="inputNombre" id="dnBusquedaAdministrativoPolicia">DNI..</label>
+                                    <label class="control-label" id="dnBusquedaAdministrativoPolicia">DNI..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputTiempoCondena">NÚMERO DE PLACA:</label>
-                                    <label class="control-label" for="inputNombre" id="numeroPlacaBusquedaAdministrativoPolicia">Número de Placa...</label>
+                                    <label class="control-label" id="numeroPlacaBusquedaAdministrativoPolicia">Número de Placa...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputFechaIngreso">FECHA DE INGRESO:</label>
-                                    <label class="control-label" for="inputNombre" id="fechaIngresoBusquedaAdministrativoPolicia">Fecha de Ingreso....</label>
+                                    <label class="control-label" id="fechaIngresoBusquedaAdministrativoPolicia">Fecha de Ingreso....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputIdHuella">CARGO:</label>
-                                    <label class="control-label" for="inputNombre" id="cargoBusquedaAdministrativoPolicia">Cargo....</label>
+                                    <label class="control-label" id="cargoBusquedaAdministrativoPolicia">Cargo....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">SUELDO:</label>
-                                    <label class="control-label" for="inputNombre" id="sueldoBusquedaAdministrativoPolicia">Sueldo....</label>
+                                    <label class="control-label" id="sueldoBusquedaAdministrativoPolicia">Sueldo....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">JEFE:</label>
-                                    <label class="control-label" for="inputNombre" id="jefeBusquedaAdministrativoPolicia">Jefe....</label>
+                                    <label class="control-label" id="jefeBusquedaAdministrativoPolicia">Jefe....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">TAREA:</label>
-                                    <label class="control-label" for="inputNombre" id="tareaBusquedaAdministrativoPolicia">Tarea....</label>
+                                    <label class="control-label" id="tareaBusquedaAdministrativoPolicia">Tarea....</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputCalabozo">HORAS DE TRABAJO:</label>
-                                    <label class="control-label" for="inputNombre" id="horaPatrullaBusquedaAdministrativoPolicia">Horas de Trabajo:....</label>
+                                    <label class="control-label" id="horaPatrullaBusquedaAdministrativoPolicia">Horas de Trabajo:....</label>
                                 </div>
                             </form>
                         </div>
