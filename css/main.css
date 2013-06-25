@@ -29,12 +29,17 @@ header{
 #tituloInfoInicial{
   font-size: 30px;
   color: black;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .textInfoInicio{
   font-size: 20px;
   text-align: justify;
   color: black;
+  line-height: 25px;
+  text-indent: 50px;
+  word-spacing: 3px;
 }
 
 #infoInicio{
@@ -178,6 +183,347 @@ header{
 
 #datosBajaReo{
   display: none;
+}
+
+/*----------INICIO DE PESTAÑA POLICIAS-------------*/
+#policiaInicio{
+  color: black; 
+  display: none;
+}
+
+#buttonPolicia1{
+  padding-top: 150px;
+}
+
+#buttonEfectivosPolicia{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px;
+}
+
+#buttonEfectivosPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonAdministrativoPolicia{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px;
+}
+
+#buttonAdministrativoPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+/*---------POLICIAS EFECTIVOS--------------*/
+#policiaEfectivoInicio{
+  color: black; 
+  display: none;
+}
+
+#buttonEfectivoPolicia1{
+  padding-top: 150px;
+}
+
+#buttonEfectivoPolicia2{
+  padding-top: 20px;
+}
+
+#buttonBuscarEfectivoPolicia{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px;
+}
+
+#buttonBuscarEfectivoPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonModificarEfectivoPolicia{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonModificarEfectivoPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonAltaEfectivoPolicia{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px;
+}
+
+#buttonAltaEfectivoPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonBajaEfectivoPolicia{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonBajaEfectivoPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+/*------------BUSQUEDA DE EFECTIVOS---------*/
+#policiaEfectivoBusqueda{
+  color: black;
+  display: none;
+}
+
+#buscadorEfectivoPolicia{
+  padding-top: 30px;
+}
+
+#datosBusquedaEfectivoPolicia{
+  display: none;
+}
+
+/*---------------ALTA EFECTIVO------------*/
+#policiaEfectivoAlta{
+  color: black;
+  display: none;
+}
+
+#formularioAltaPoliciaEfectivo{
+  padding-top: 30px;
+  padding-left: 50px;
+}
+
+/*-------------MODIFICAR EFECTIVO------------*/
+#policiaEfectivoModificacion{
+  color: black;
+  display:none;
+}
+
+#formularioModificacionEfectivoPolicia{
+  display: none;
+}
+
+/*---------------BAJA EFECTIVO---------------*/
+#policiaEfectivoBaja{
+  color: black;
+  display: none;
+}
+
+#datosBajaPoliciaEfectivo{
+  display: none;
+}
+
+/*---------POLICIAS ADMINISTRATIVO--------------*/
+#policiaAdministrativoInicio{
+  color: black; 
+  display: none;
+}
+
+#buttonAdministrativoPolicia1{
+  padding-top: 150px;
+}
+
+#buttonAdministrativoPolicia2{
+  padding-top: 20px;
+}
+
+#buttonBuscarAdministrativoPolicia{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px;
+}
+
+#buttonBuscarAdministrativoPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonModificarAdministrativoPolicia{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonModificarAdministrativoPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonAltaAdministrativoPolicia{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px;
+}
+
+#buttonAltaAdministrativoPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonBajaAdministrativoPolicia{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonBajaAdministrativoPolicia:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+/*------------BUSQUEDA DE ADMINISTRATIVO---------*/
+#policiaAdministrativoBusqueda{
+  color: black;
+  display: none;
+}
+
+#buscadorAdministrativoPolicia{
+  padding-top: 30px;
+}
+
+#datosBusquedaAdministrativoPolicia{
+  display: none;
+}
+
+/*---------------ALTA ADMINISTRATIVO------------*/
+#policiaAdministrativoAlta{
+  color: black;
+  display: none;
+}
+
+#formularioAltaPoliciaAdministrativo{
+  padding-top: 30px;
+  padding-left: 50px;
+}
+
+/*-------------MODIFICAR ADMINISTRATIVO------------*/
+#policiaAdministrativoModificacion{
+  color: black;
+  display:none;
+}
+
+#formularioModificacionAdministrativoPolicia{
+  display: none;
+}
+
+/*---------------BAJA ADMINISTRATIVO---------------*/
+#policiaAdministrativoBaja{
+  color: black;
+  display: none;
+}
+
+#datosBajaPoliciaAdministrativo{
+  display: none;
+}
+
+/*------------TRASLADO---------------*/
+#trasladoInicio{
+  color: black; 
+  display: none;
+}
+
+#formularioTraslado{
+  display: none;
+  color: black;
+  padding-top:10px;
+  padding-left: 10px;
 }
 
 /* ==========================================================================

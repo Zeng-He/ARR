@@ -34,18 +34,22 @@
                                 Reos
                             </a>
                         </li>
-                        <li id"policias">
+                        <li id="policias">
                             <a href="/policiasPrincipal.html">
                                 <i class='icon-chevron-right'></i>
                                 Policías
                             </a>
                         </li>
+                        <!-- 
+                        ESTO PARA MI NO VA PORQUE NO TENEMOS EN NINGUN LADO UNA TABLA DONDE
+                        SE GUARDE LAS ACTIVIDADES LADERO DIARIAS Y NO TIENE SENTIDO MODIFICAR EL CAMPO DE TARES DEPOLICIAS A CADA RATO. CREO YO. NO SE. FIJENSE USTEDES. LADEROOOO. PARA MI YA SE LE ASIGNA UNA TARE CUANDO SE CREA EL POLICIA. PERO LADERO NO SE. CAPAS SI SE CREA UNA TABLA DONDE SE GUARDE LAS ACTIVIDADES POR DIA. PERO BUENO.
+
                         <li id="asignacionActiviades">
                             <a href="asignacionActividadesPrincipal.html">
                                 <i class='icon-chevron-right'></i>
                                 Asignación de Actividades
                             </a>
-                        </li>
+                        </li> -->
                         <li id="traslado">
                             <a href="trasladoPrincipal.html">
                                 <i class='icon-chevron-right'></i>
@@ -124,6 +128,7 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <button id="buttonAtrasBusquedaReo" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosBusquedaReo" type="submit" class="btn">Buscar</button>
                                 </fieldset>
                             </form>
@@ -237,6 +242,7 @@
                                 </div>
                                 <div class="control-group">
                                     <div class="controls">
+                                      <button type="submit" class="btn" id="buttonAtrasReoAlta">Atras</button>
                                       <button type="submit" class="btn" id="buttonGuardarReoAlta">Guardar</button>
                                     </div>
                                 </div>
@@ -263,6 +269,7 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <button id="buttonAtrasBusquedaModificacionReo" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosBusquedaModificacionReo" type="submit" class="btn">Buscar</button>
                                 </fieldset>
                             </form>
@@ -359,6 +366,7 @@
                                             </label>
                                         </div>
                                     </div>
+                                    <button id="buttonAtrasBajaReo" type="submit" class="btn">Atras</button>
                                     <button id="buttonBusquedaBajaReo" type="submit" class="btn">Buscar</button>
                                 </fieldset>
                             </form>
@@ -403,6 +411,862 @@
                                     <div class="controls">
                                       <button id="buttonEliminarReoBaja" type="submit" class="btn">Confirmar</button>
                                       <button id="buttonCancelarReoBaja" type="submit" class="btn">Cancelar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="row-fluid" id="policiaInicio">
+                        <div class="span12">
+                            <h1 style="text-align:center;">OPCIONES POLICIA</h1>
+                        </div>
+                        <div class="row-fluid" id="buttonPolicia1">
+                            <div class="span6" style="background-colo:red;">
+                                <a href="efectivoPolicia.html" id="buttonEfectivosPolicia">
+                                    Efectivos
+                                </a>
+                            </div>
+                            <div class="span6" style="background-colo:white;">
+                                <a href="administrativoPolicia.html" id="buttonAdministrativoPolicia">
+                                    Administrativos
+                                </a>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="row-fluid" id="policiaEfectivoInicio">
+                        <div class="span12">
+                            <h1 style="text-align:center;">OPCIONES EFECTIVO</h1>
+                        </div>
+                        <div class="row-fluid" id="buttonEfectivoPolicia1">
+                            <div class="span6" style="background-colo:red;">
+                                <a href="busquedaEfectivoPolicia.html" id="buttonBuscarEfectivoPolicia">
+                                    Buscar
+                                </a>
+                            </div>
+                            <div class="span6" style="background-colo:white;">
+                                <a href="altaEfectivoPolicia.html" id="buttonAltaEfectivoPolicia">
+                                    Alta
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row-fluid" id="buttonEfectivoPolicia2">
+                            <div class="span6">
+                                <a href="modificacionEfectivoPolicia.html" id="buttonModificarEfectivoPolicia">
+                                    Modificar Datos
+                                </a>
+                            </div>
+                            <div class="span6">
+                                <a href="#" id="buttonBajaEfectivoPolicia">
+                                    Baja/Eliminar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="policiaEfectivoBusqueda">
+                        <div class="span12">
+                            <h1>BUSCAR EFECTIVO</h1>
+                            <form>
+                                <fieldset id="buscadorEfectivoPolicia">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div>
+                                        <label class="radio">
+                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                          DNI
+                                        </label>
+                                    </div>
+                                    <button id="buttonAtrasBusquedaEfectivoPolicia" type="submit" class="btn">Atras</button>
+                                    <button id="buttonDatosBusquedaEfectivoPolicia" type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                            <form class="form-horizontal" id="datosBusquedaEfectivoPolicia">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputNombre">NOMBRE:</label>
+                                    <label class="control-label" for="inputNombre" id="nombreBusquedaEfectivoPolicia">Nombre..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputApellido">APELLIDO:</label>
+                                    <label class="control-label" for="inputNombre" id="apellidoBusquedaEfectivoPolicia">Apellido..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDirrecion">DIRECCIÓN:</label>
+                                    <label class="control-label" for="inputNombre" id="direccionBusquedaEfectivoPolicia">Dirreción..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEdad">EDAD:</label>
+                                    <label class="control-label" for="inputNombre" id="edadBusquedaEfectivoPolicia">Edad..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDni">DNI:</label>
+                                    <label class="control-label" for="inputNombre" id="dnBusquedaEfectivoPolicia">DNI..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputTiempoCondena">NÚMERO DE PLACA:</label>
+                                    <label class="control-label" for="inputNombre" id="numeroPlacaBusquedaEfectivoPolicia">Número de Placa...</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputFechaIngreso">FECHA DE INGRESO:</label>
+                                    <label class="control-label" for="inputNombre" id="fechaIngresoBusquedaEfectivoPolicia">Fecha de Ingreso....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputIdHuella">CARGO:</label>
+                                    <label class="control-label" for="inputNombre" id="cargoBusquedaEfectivoPolicia">Cargo....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">SUELDO:</label>
+                                    <label class="control-label" for="inputNombre" id="sueldoBusquedaEfectivoPolicia">Sueldo....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">JEFE:</label>
+                                    <label class="control-label" for="inputNombre" id="jefeBusquedaEfectivoPolicia">Jefe....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">TAREA:</label>
+                                    <label class="control-label" for="inputNombre" id="tareaBusquedaEfectivoPolicia">Tarea....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">HORA DE PATRULLA:</label>
+                                    <label class="control-label" for="inputNombre" id="horaPatrullaBusquedaEfectivoPolicia">Horario de Patrulla....</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="policiaEfectivoAlta">
+                        <div class="span12">
+                            <h1>ALTA EFECTIVO</h1>
+                            <form class="form-horizontal" id="formularioAltaPoliciaEfectivo">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Nombre:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNombreAltaPoliciaEfectivo" placeholder="Nombre...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Apellido:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoAltaPoliciaEfectivo" placeholder="Apellido...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Dirección:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDirreccionAltaPoliciaEfectivo" placeholder="Dirección...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Edad:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputEdadAltaPoliciaEfectivo" placeholder="Edad...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniAltaPoliciaEfectivo" placeholder="DNI...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Número de Placa:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNumeroPlacaAltaPoliciaEfectivo" placeholder="Número de Placa...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Fecha de Ingreso:</label>
+                                    <div class="controls">
+                                      <input type="date" id="inputFechaIngresoAltaPoliciaEfectivo">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Cargo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputCargoAltaPoliciaEfectivo" placeholder="Cargo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Sueldo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputSueldoAltaPoliciaEfectivo" placeholder="Sueldo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Jefe:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputJefeAltaPoliciaEfectivo" placeholder="Jefe...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Tarea:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputTareaAltaPoliciaEfectivo" placeholder="Tarea...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Horario de Patrulla:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputHorarioPatrullaAltaPoliciaEfectivo" placeholder="Horarios de la Patrulla...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button type="submit" class="btn" id="buttonAtrasAltaPoliciaEfectivo">Atras</button>
+                                      <button type="submit" class="btn" id="buttonGuardarAltaPoliciaEfectivo">Guardar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="policiaEfectivoModificacion">
+                        <div class="span12">
+                            <h1>MODIFICACIÓN EFECTIVO</h1>
+                            <form>
+                                <fieldset id="buscadorModificacionEfectivoPolicia">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div class="row-fluid">
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                              DNI
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button id="buttonAtrasBusquedaModificacionEfectivoPolicia" type="submit" class="btn">Atras</button>
+                                    <button id="buttonDatosBusquedaModificacionEfectivoPolicia" type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                            <form class="form-horizontal" id="formularioModificacionEfectivoPolicia">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Nombre:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNombreModificacionPoliciaEfectivo" placeholder="Nombre...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Apellido:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoModificacionPoliciaEfectivo" placeholder="Apellido...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Dirección:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDirreccionModificacionPoliciaEfectivo" placeholder="Dirección...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Edad:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputEdadModificacionPoliciaEfectivo" placeholder="Edad...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniModificacionPoliciaEfectivo" placeholder="DNI...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Número de Placa:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNumeroPlacaModificacionPoliciaEfectivo" placeholder="Número de Placa...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Fecha de Ingreso:</label>
+                                    <div class="controls">
+                                      <input type="date" id="inputFechaIngresoModificacionPoliciaEfectivo">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Cargo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputCargoModificacionPoliciaEfectivo" placeholder="Cargo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Sueldo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputSueldoModificacionPoliciaEfectivo" placeholder="Sueldo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Jefe:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputJefeModificacionPoliciaEfectivo" placeholder="Jefe...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Tarea:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputTareaModificacionPoliciaEfectivo" placeholder="Tarea...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Horario de Patrulla:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputHorarioPatrullaModificacionPoliciaEfectivo" placeholder="Horarios de la Patrulla...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button id="buttonGuardarModificacionPoliciaEfectivo" type="submit" class="btn">Guardar Cambios</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="policiaEfectivoBaja">
+                        <div class="span12">
+                            <h1>BAJA DE EFECTIVO<span style="font-size:20px;">(baja lógica)</span></h1>
+                            <form>
+                                <fieldset id="buscadorBajaPoliciaEfectivo">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div class="row-fluid">
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                              DNI
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button id="buttonAtrasBajaPoliciaEfectivo" type="submit" class="btn">Atras</button>
+                                    <button id="buttonBusquedaBajaPoliciaEfectivo" type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                            <form class="form-horizontal" id="datosBajaPoliciaEfectivo">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Nombre:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNombreBajaPoliciaEfectivo" placeholder="Nombre...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Apellido:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoBajaPoliciaEfectivo" placeholder="Apellido...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Dirección:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDirreccionBajaPoliciaEfectivo" placeholder="Dirección...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Edad:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputEdadBajaPoliciaEfectivo" placeholder="Edad...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniBajaPoliciaEfectivo" placeholder="DNI...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Número de Placa:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNumeroPlacaBajaPoliciaEfectivo" placeholder="Número de Placa...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Fecha de Ingreso:</label>
+                                    <div class="controls">
+                                      <input type="date" id="inputFechaIngresoBajaPoliciaEfectivo">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Cargo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputCargoBajaPoliciaEfectivo" placeholder="Cargo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Sueldo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputSueldoBajaPoliciaEfectivo" placeholder="Sueldo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Jefe:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputJefeBajaPoliciaEfectivo" placeholder="Jefe...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Tarea:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputTareaBajaPoliciaEfectivo" placeholder="Tarea...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Horario de Patrulla:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputHorarioPatrullaBajaPoliciaEfectivo" placeholder="Horarios de la Patrulla...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button id="buttonEliminarBajaPoliciaEfectivo" type="submit" class="btn">Confirmar</button>
+                                      <button id="buttonCancelarBajaPoliciaEfectivo" type="submit" class="btn">Cancelar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="policiaAdministrativoInicio">
+                        <div class="span12">
+                            <h1 style="text-align:center;">OPCIONES ADMINISTRATIVO</h1>
+                        </div>
+                        <div class="row-fluid" id="buttonAdministrativoPolicia1">
+                            <div class="span6" style="background-colo:red;">
+                                <a href="busquedaAdministrativoPolicia.html" id="buttonBuscarAdministrativoPolicia">
+                                    Buscar
+                                </a>
+                            </div>
+                            <div class="span6" style="background-colo:white;">
+                                <a href="altaAdministrativoPolicia.html" id="buttonAltaAdministrativoPolicia">
+                                    Alta
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row-fluid" id="buttonAdministrativoPolicia2">
+                            <div class="span6">
+                                <a href="modificacionAdministrativoPolicia.html" id="buttonModificarAdministrativoPolicia">
+                                    Modificar Datos
+                                </a>
+                            </div>
+                            <div class="span6">
+                                <a href="#" id="buttonBajaAdministrativoPolicia">
+                                    Baja/Eliminar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="policiaAdministrativoBusqueda">
+                        <div class="span12">
+                            <h1>BUSCAR ADMINISTRATIVO</h1>
+                            <form>
+                                <fieldset id="buscadorAdministrativoPolicia">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div>
+                                        <label class="radio">
+                                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                          DNI
+                                        </label>
+                                    </div>
+                                    <button id="buttonAtrasBusquedaAdministrativoPolicia" type="submit" class="btn">Atras</button>
+                                    <button id="buttonDatosBusquedaAdministrativoPolicia" type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                            <form class="form-horizontal" id="datosBusquedaAdministrativoPolicia">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputNombre">NOMBRE:</label>
+                                    <label class="control-label" for="inputNombre" id="nombreBusquedaAdministrativoPolicia">Nombre..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputApellido">APELLIDO:</label>
+                                    <label class="control-label" for="inputNombre" id="apellidoBusquedaAdministrativoPolicia">Apellido..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDirrecion">DIRECCIÓN:</label>
+                                    <label class="control-label" for="inputNombre" id="direccionBusquedaAdministrativoPolicia">Dirreción..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEdad">EDAD:</label>
+                                    <label class="control-label" for="inputNombre" id="edadBusquedaAdministrativoPolicia">Edad..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputDni">DNI:</label>
+                                    <label class="control-label" for="inputNombre" id="dnBusquedaAdministrativoPolicia">DNI..</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputTiempoCondena">NÚMERO DE PLACA:</label>
+                                    <label class="control-label" for="inputNombre" id="numeroPlacaBusquedaAdministrativoPolicia">Número de Placa...</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputFechaIngreso">FECHA DE INGRESO:</label>
+                                    <label class="control-label" for="inputNombre" id="fechaIngresoBusquedaAdministrativoPolicia">Fecha de Ingreso....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputIdHuella">CARGO:</label>
+                                    <label class="control-label" for="inputNombre" id="cargoBusquedaAdministrativoPolicia">Cargo....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">SUELDO:</label>
+                                    <label class="control-label" for="inputNombre" id="sueldoBusquedaAdministrativoPolicia">Sueldo....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">JEFE:</label>
+                                    <label class="control-label" for="inputNombre" id="jefeBusquedaAdministrativoPolicia">Jefe....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">TAREA:</label>
+                                    <label class="control-label" for="inputNombre" id="tareaBusquedaAdministrativoPolicia">Tarea....</label>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputCalabozo">HORAS DE TRABAJO:</label>
+                                    <label class="control-label" for="inputNombre" id="horaPatrullaBusquedaAdministrativoPolicia">Horas de Trabajo:....</label>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="policiaAdministrativoAlta">
+                        <div class="span12">
+                            <h1>ALTA ADMINISTRATIVO</h1>
+                            <form class="form-horizontal" id="formularioAltaPoliciaAdministrativo">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Nombre:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNombreAltaPoliciaAdministrativo" placeholder="Nombre...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Apellido:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoAltaPoliciaAdministrativo" placeholder="Apellido...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Dirección:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDirreccionAltaPoliciaAdministrativo" placeholder="Dirección...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Edad:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputEdadAltaPoliciaAdministrativo" placeholder="Edad...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniAltaPoliciaAdministrativo" placeholder="DNI...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Número de Placa:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNumeroPlacaAltaPoliciaAdministrativo" placeholder="Número de Placa...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Fecha de Ingreso:</label>
+                                    <div class="controls">
+                                      <input type="date" id="inputFechaIngresoAltaPoliciaAdministrativo">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Cargo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputCargoAltaPoliciaAdministrativo" placeholder="Cargo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Sueldo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputSueldoAltaPoliciaAdministrativo" placeholder="Sueldo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Jefe:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputJefeAltaPoliciaAdministrativo" placeholder="Jefe...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Tarea:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputTareaAltaPoliciaAdministrativo" placeholder="Tarea...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Horas de Trabajo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputHorarioPatrullaAltaPoliciaAdministrativo" placeholder="Horas de Trabajo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button type="submit" class="btn" id="buttonAtrasAltaPoliciaAdministrativo">Atras</button>
+                                      <button type="submit" class="btn" id="buttonGuardarAltaPoliciaAdministrativo">Guardar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="policiaAdministrativoModificacion">
+                        <div class="span12">
+                            <h1>MODIFICACIÓN ADMINISTRATIVO</h1>
+                            <form>
+                                <fieldset id="buscadorModificacionAdministrativoPolicia">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div class="row-fluid">
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                              DNI
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button id="buttonAtrasBusquedaModificacionAdministrativoPolicia" type="submit" class="btn">Atras</button>
+                                    <button id="buttonDatosBusquedaModificacionAdministrativoPolicia" type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                            <form class="form-horizontal" id="formularioModificacionAdministrativoPolicia">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Nombre:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNombreModificacionPoliciaAdministrativo" placeholder="Nombre...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Apellido:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoModificacionPoliciaAdministrativo" placeholder="Apellido...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Dirección:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDirreccionModificacionPoliciaAdministrativo" placeholder="Dirección...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Edad:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputEdadModificacionPoliciaAdministrativo" placeholder="Edad...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniModificacionPoliciaAdministrativo" placeholder="DNI...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Número de Placa:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNumeroPlacaModificacionPoliciaAdministrativo" placeholder="Número de Placa...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Fecha de Ingreso:</label>
+                                    <div class="controls">
+                                      <input type="date" id="inputFechaIngresoModificacionPoliciaAdministrativo">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Cargo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputCargoModificacionPoliciaAdministrativo" placeholder="Cargo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Sueldo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputSueldoModificacionPoliciaAdministrativo" placeholder="Sueldo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Jefe:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputJefeModificacionPoliciaAdministrativo" placeholder="Jefe...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Tarea:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputTareaModificacionPoliciaAdministrativo" placeholder="Tarea...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Horas de Trabajo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputHorarioPatrullaModificacionPoliciaAdministrativo" placeholder="Horario de Trabajos...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button id="buttonGuardarModificacionPoliciaAdministrativo" type="submit" class="btn">Guardar Cambios</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row-fluid" id="policiaAdministrativoBaja">
+                        <div class="span12">
+                            <h1>BAJA DE ADMINISTRATIVO<span style="font-size:20px;">(baja lógica)</span></h1>
+                            <form>
+                                <fieldset id="buscadorBajaPoliciaAdministrativo">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div class="row-fluid">
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                              DNI
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button id="buttonAtrasBajaPoliciaAdministrativo" type="submit" class="btn">Atras</button>
+                                    <button id="buttonBusquedaBajaPoliciaAdministrativo" type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                            <form class="form-horizontal" id="datosBajaPoliciaAdministrativo">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Nombre:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNombreBajaPoliciaAdministrativo" placeholder="Nombre...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Apellido:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoBajaPoliciaAdministrativo" placeholder="Apellido...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Dirección:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDirreccionBajaPoliciaAdministrativo" placeholder="Dirección...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Edad:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputEdadBajaPoliciaAdministrativo" placeholder="Edad...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniBajaPoliciaAdministrativo" placeholder="DNI...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Número de Placa:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNumeroPlacaBajaPoliciaAdministrativo" placeholder="Número de Placa...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Fecha de Ingreso:</label>
+                                    <div class="controls">
+                                      <input type="date" id="inputFechaIngresoBajaPoliciaAdministrativo">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Cargo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputCargoBajaPoliciaAdministrativo" placeholder="Cargo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Sueldo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputSueldoBajaPoliciaAdministrativo" placeholder="Sueldo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Jefe:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputJefeBajaPoliciaAdministrativo" placeholder="Jefe...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Tarea:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputTareaBajaPoliciaAdministrativo" placeholder="Tarea...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Horas de Trabajo:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputHorarioPatrullaBajaPoliciaAdministrativo" placeholder="Horas de Trabajo...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button id="buttonEliminarBajaPoliciaAdministrativo" type="submit" class="btn">Confirmar</button>
+                                      <button id="buttonCancelarBajaPoliciaAdministrativo" type="submit" class="btn">Cancelar</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row-fluid" id="trasladoInicio">
+                        <div class="span12">
+                            <h1>TRASLADO DE REO</h1>
+                            <form>
+                                <fieldset id="buscadorTraslado">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div class="row-fluid">
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                              Huella Digital
+                                            </label>
+                                        </div>
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                              DNI
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button id="buttonDatosBusquedaReoTraslado" type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                            <!--SE QUE LA ONDA ES QUE TRASLADO RECIBE EL ID NOMAS DEL REO PERO A PONGO AS CAMPOS PARA QUE SEA MAS AMIGABLE CON EL USUARIO A LA HORA DE VER EL REO BUSCADO, SI?? DESPUES LE DEVOLVES EL ID NOMAS A LA TABLA TRASLADO-->
+                            <form class="form-horizontal" id="formularioTraslado">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Id Huella:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputHuellaReoTraslado" placeholder="Id Huella..." disabled>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniReoTraslado" placeholder="DNI...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Nombre:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputNombreReoTraslado" placeholder="Nombre...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Apellido:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoReoTraslado" placeholder="Apellido...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Fecha Traslado:</label>
+                                    <div class="controls">
+                                      <input type="date" id="inputFechaTrasladoReoTraslado">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Responsable del Traslado:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputResponsableTraslado" placeholder="Responsable...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail">Descripción:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDescripcionTraslado" placeholder="Una Descripcion...">
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                      <button type="submit" class="btn" id="buttonGuardarTraslado">Guardar Traslado</button>
                                     </div>
                                 </div>
                             </form>
