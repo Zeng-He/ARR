@@ -5,8 +5,7 @@ from PyQt4.QtWebKit import QWebPage, QWebView, QWebSettings
 import sys
 import json
 import main
-
-from datetime import datetime
+import datetime
 
 class JSListener(object):
 	py_calls = {}
@@ -69,10 +68,16 @@ class SimpleWindow(QWebView):
 
 	@listen_js
 	def altaReoInterf(self, nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, id_calabozo):
+		fec=fecha_ingreso.split('/')
 		try:
-			main.altaReo(nombre=nombre, apellido=apellido, direccion=direccion, edad=edad, dni=dni, tiempo_condena=tiempo_condena, fecha_ingreso=fecha_ingreso, id_huella=id_huella, calabozo=main.Calabozo.objects.get(id_calabozo)) 
-			return ("Reo almacenado exitosamente")
+			fecha_ingreso=datetime.date(int(fec[2]),int(fec[1]),int(fec[0]))
 		except Exception:
+			return('Fecha mal formada')
+		try:
+			main.altaReo(nombre=nombre, apellido=apellido, direccion=direccion, edad=edad, dni=dni, tiempo_condena=tiempo_condena, fecha_ingreso=fecha_ingreso, id_huella=id_huella, calabozo=main.Calabozo.objects.get(pk=id_calabozo)) 
+			print(main.Reo.objects.all())
+			return ("Reo almacenado exitosamente")
+		except Exception,e:
 			return ("Error, verifique campos")
 
 	@listen_js
@@ -165,7 +170,7 @@ class SimpleWindow(QWebView):
 			else:
 				reo = main.busquedaReoDNI(valor)
 		else:
-			return str("Error, verifique los valor de la busqueda")
+			return str("Error, verifique los valores de la busqueda")
 		try:
 			returned = toString(reo)
 		except Exception:
@@ -328,14 +333,17 @@ class SimpleWindow(QWebView):
 
 	@listen_js
 	def regHuella(self):
-		returned=main.registrarHuella()
-		return(returned)
+		try:
+			returned=main.regHuella(a)
+			return(returned)
+		except Exception, e:
+			return(False)
 		
 
+a=main.Huella2.Controlador()
 def start_app(window_class, *args, **kwargs):
 	app = QApplication(sys.argv)
 	window = window_class(*args, **kwargs)
-	a=main.Huella2.Controlador()
 	a.inicio()
 	return app.exec_()
 

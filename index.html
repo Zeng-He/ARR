@@ -113,7 +113,7 @@
                             <h1>BUSCAR REO</h1>
                             <form>
                                 <fieldset id="buscadorReo">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div class="row-fluid">
                                         <div class="span2">
                                             <label class="radio">
@@ -130,6 +130,7 @@
                                     </div>
                                     <button id="buttonAtrasBusquedaReo" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosBusquedaReo" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="datosBusquedaReo">
@@ -218,11 +219,12 @@
                                       <input type="date" id="inputFechaIngresoReoAlta">
                                     </div>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='huella_alta'>
                                     <label class="control-label" for="inputEmail">Id Huella:</label>
                                     <div class="controls">
-                                      <input type="text" title="Clicke en Capturar para obtener ID" id="inputHuellaReoAlta" placeholder="Id Huella..." disabled>
-                                      <a href="#capturarHuella" role="button" class="btn" data-toggle="modal">Capturar</a>
+                                      <input type="text" title="Click en Capturar para obtener ID" id="inputHuellaReoAlta" placeholder="Id Huella..." disabled>
+                                      <a href="#capturarHuella" id='huella_button' role="button" class="btn" data-toggle="modal">Capturar</a>
+                                      <span class="help-inline"></span>
                                     </div>
                                 </div>
                                 <div class="modal hide fade" id="capturarHuella">

@@ -51,25 +51,27 @@ $(document).ready(function() {
 		e.preventDefault();
 		$("#reoInicio").css({'display':'none'});
 		$("#reoAlta").css({'display':'inline'});
-		$('#buttonGuardarReoAlta').click(function(e) {
-			e.preventDefault();
-			nom=$('inputNombreReoAlta').val()
-			ap=$('inputApellidoReoAlta').val()
-			direc=$('inputDirreccionReoAlta').val()
-			edad=$('inputEdadReoAlta').val()
-			dni=$('inputDniReoAlta').val()
-			tiem=$('inputTiempoCondenaReoAlta').val()
-			fec=$('inputFechaIngresoReoAlta').val()
-			hue=$('inputHuellaReoAlta').val()
-			cal=$('inputCalabozoReoAlta').val()
-			PyAsync('altaReoInterf',{
-				args:[nom,ap,direc,edad,dni,tiem,fec,hue,cal],
-				callback: function(data) {
-					alert(data)
-				}
-			})
-		})
 	})	
+
+	$('#buttonGuardarReoAlta').click(function(e) {
+		e.preventDefault();
+		nom=$('#inputNombreReoAlta').val()
+		ap=$('#inputApellidoReoAlta').val()
+		direc=$('#inputDirreccionReoAlta').val()
+		edad=Number($('#inputEdadReoAlta').val())
+		dni=Number($('#inputDniReoAlta').val())
+		tiem=$('#inputTiempoCondenaReoAlta').val()
+		fec=$('#inputFechaIngresoReoAlta').val()
+		hue=Number($('#inputHuellaReoAlta').val())
+		cal=Number($('#inputCalabozoReoAlta').val())
+		console.log(nom,ap,direc,edad,dni,tiem,fec,hue,cal)
+		PyAsync('altaReoInterf',{
+			args:[nom,ap,direc,edad,dni,tiem,fec,hue,cal],
+			callback: function(data) {
+				alert(data)
+			}
+		})
+	})
 
 	$("#buttonModificarReo").click(function(e){
 		e.preventDefault();
@@ -97,7 +99,33 @@ $(document).ready(function() {
 
 	$("#buttonDatosBusquedaReo").click(function(e){
 		e.preventDefault();
-		$("#datosBusquedaReo").css({'display':'inline'})
+		huella=$('#reoBusqueda #optionsRadios1').is(':checked')
+		dni=$('#reoBusqueda #optionsRadios2').is(':checked')
+		if (huella==true) {
+			valor='huella'
+			op=0
+		}else{
+			valor=$('#paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorReo').attr('class','control-group error')
+				$('#buscadorReo span').text('Campo vacio')
+				return
+			};
+			op=1
+		};
+		PyAsync('buscarReoInterf',{
+			args:[valor,op],
+			callback:function(data) {
+				if (data != "Error, verifique los valores de la busqueda"){
+					$('#buscadorReo').attr('class','')
+					$('#buscadorReo span').text('')
+					$("#datosBusquedaReo").css({'display':'inline'})
+				}else{
+					$('#buscadorReo').attr('class','control-group error')
+					$('#buscadorReo span').text(data)
+				}
+			}
+		})
 	})	
 
 	$("#buttonDatosBusquedaModificacionReo").click(function(e){
@@ -131,6 +159,24 @@ $(document).ready(function() {
 		$("#datosBajaReo").css({'display':'none'})
 		$("#reoInicio").css({'display':'inline'})
 	})	
+
+	$('#huella_button').click(function() {
+		PyAsync('regHuella',{
+			args:[],
+			callback:function(data) {
+				if (data==false) {
+					$('#huella_alta').attr('class','control-group error')
+					$('#formularioAltaReo span').text('Error')
+					$('#inputHuellaReoAlta').val(1) //COMENTAR
+				} else{
+					$('#formularioAltaReo span').text('')
+					$('#huella_alta').attr('class','')
+					$('inputHuellaReoAlta').text(data)
+				};
+				$('#capturarHuella').modal('hide')
+			}
+		})
+	})
 
 	//-----------------POLICIAS-------------------
 	$("#policias").click(function(e){

@@ -70,15 +70,12 @@ def altaEfectivo(**kw):
 
 def altaReo(**kw):
 	r=Reo()
-	if (kw['nombre'] !='') and (kw['apellido'] !='') and (kw['direccion'] !='') and (kw['edad'] !='') and (kw['dni'] !='') and (kw['tiempo_condena'] !='') and (kw['fecha_ingreso'] !='') and (kw['id_huella'] !='') and (kw['calabozo'] !=''):
-		if (isinstance(kw['nombre'],str)) and (isinstance(kw['apellido'],str)) and (isinstance(kw['direccion'],str)) and (isinstance(kw['edad'],int)) and (isinstance(kw['dni'],int)) and (isinstance(kw['tiempo_condena'],str)) and (isinstance(kw['fecha_ingreso'],datetime.date)) and (isinstance(kw['id_huella'],int)) and (isinstance(kw['calabozo'],Calabozo)):
-			try:
-				alta(r,**kw)
-				return (r)
-			except Exception, e:
-				raise e
-		else:
-			raise Exception
+	if (kw['nombre'] !='') and (kw['apellido'] !='') and (kw['direccion'] !='') and (kw['edad'] !=0) and (kw['dni'] !=0) and (kw['tiempo_condena'] !='') and (kw['fecha_ingreso'] !='') and (kw['id_huella'] !=0) and (kw['calabozo'] !=0):
+		try:
+			alta(r,**kw)
+			return (r)
+		except Exception, e:
+			raise e
 	else:
 		raise Exception
 
@@ -435,3 +432,14 @@ def modificarEfectivo(r,**kw):
 	else:
 		modificar(r,**kw)
 		return(str('Modificacion exitosa'))
+
+def regHuella(obj):
+	id_h=Reo.objects.all().aggregate(models.Max('id_huella'))
+	id_h=id_h.values()[0]
+	id_h+=1
+	id_h=str(id_h).zfill(4)
+	try:
+		returned=obj.registrarhuella(id_h)
+	except Exception, e:
+		raise e
+	return(id_h)

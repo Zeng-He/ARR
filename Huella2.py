@@ -6,7 +6,6 @@ class Controlador():
 	serialOcupado = False; #indica el estado del puerto para que el hilo no haga cagadas
 	corriendo = True; #se lo pone en falso para hacer terminar el hilo
 	hilo = 0; #declaramos el puntero a la hebra de ejecucion
-	s = 0;
 
 	def registrarhuella(self,idh):
 		self.serialOcupado = True;
@@ -16,7 +15,7 @@ class Controlador():
 			print "RECIBIDO: " + self.recibido
 		else:
 			print "TIMEOUT Sin conexion";
-			return False
+			raise Exception
 		self.s.write("E");
 		self.recibido2 = self.s.read(40);
 		if len(self.recibido2)!=0:
@@ -25,7 +24,7 @@ class Controlador():
 			return True
 		else:
 			print "NO Registro huella";
-			return False
+			raise Exception
 		self.serialOcupado = False;
 
 	def obtenerid(self):
@@ -46,7 +45,6 @@ class Controlador():
 			time.sleep(25); #cada 25 segundos
 			if(not self.serialOcupado): #si el puerto en serie no esta ocupado
 				self.s.write('A'); #mantenemos con vida al aparato
-			print('Pin enviado')
 
 	def finHilo(self):
 		self.s.close()
@@ -60,7 +58,7 @@ class Controlador():
 			self.s.timeout=5;
 		except serial.SerialException:
 			sys.stderr.write("Error al abrir puerto (%s)\n" % str(0))
-			sys.exit(1)
-		print "Puerto (%d): %s" % (0,self.s.portstr)
-		self.hilo = threading.Thread(target=self.funcionHilo); #instanciamos un hilo y le decimos que funcion va a ser la concurrente
-		self.hilo.start(); #le damos el ok para que empiece
+		# 	sys.exit(1)
+		# print "Puerto (%d): %s" % (0,self.s.portstr)
+		# self.hilo = threading.Thread(target=self.funcionHilo); #instanciamos un hilo y le decimos que funcion va a ser la concurrente
+		# self.hilo.start(); #le damos el ok para que empiece
