@@ -5,7 +5,8 @@ $(document).ready(function() {
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
 		$("#policias").attr('class','');
-		$("#asignacionActiviades").attr('class','');
+		$("#antecedentes").attr('class','');
+		$("#calabozo").attr('class','');
 		$("#traslado").attr('class','');
 		$("#equipamiento").attr('class','');
 		$("#asignacionEquipamiento").attr('class','');
@@ -183,7 +184,8 @@ $(document).ready(function() {
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
 		$("#policias").attr('class','active');
-		$("#asignacionActiviades").attr('class','');
+		$("#antecedentes").attr('class','');
+		$("#calabozo").attr('class','');
 		$("#traslado").attr('class','');
 		$("#equipamiento").attr('class','');
 		$("#asignacionEquipamiento").attr('class','');
@@ -383,7 +385,8 @@ $(document).ready(function() {
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
 		$("#policias").attr('class','');
-		$("#asignacionActiviades").attr('class','');
+		$("#antecedentes").attr('class','');
+		$("#calabozo").attr('class','');
 		$("#traslado").attr('class','active');
 		$("#equipamiento").attr('class','');
 		$("#asignacionEquipamiento").attr('class','');
@@ -426,11 +429,13 @@ $(document).ready(function() {
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
 		$("#policias").attr('class','');
-		$("#asignacionActiviades").attr('class','');
+		$("#antecedentes").attr('class','');
+		$("#calabozo").attr('class','');
 		$("#traslado").attr('class','');
 		$("#equipamiento").attr('class','active');
 		$("#asignacionEquipamiento").attr('class','');
 		$("#reos").attr('class','');
+		$("#equipamientoInicio").css({'display':'inline'});
 		//Buttons de Reos
 		$("#reoInicio").css({'display':'none'})
 		$("#reoBusqueda").css({'display':'none'});
@@ -459,12 +464,19 @@ $(document).ready(function() {
 		$("#formularioTraslado").css({'display':'none'})
 	})
 
+	$("#buttonArticulosEquipamiento").click(function(e){
+		e.preventDefault();
+		$("#equipamientoInicio").css({'display':'none'})
+		$("#articuloInicio").css({'display':'inline'})
+	})
+
 	//-----------------ASIGANACION-EQUIPAMIENTO-------------------
 	$("#asignacionEquipamiento").click(function(e){
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
 		$("#policias").attr('class','');
-		$("#asignacionActiviades").attr('class','');
+		$("#antecedentes").attr('class','');
+		$("#calabozo").attr('class','');
 		$("#traslado").attr('class','');
 		$("#equipamiento").attr('class','');
 		$("#asignacionEquipamiento").attr('class','active');
@@ -495,40 +507,90 @@ $(document).ready(function() {
 		//Buttons Traslado
 		$("#trasladoInicio").css({'display':'none'})
 		$("#formularioTraslado").css({'display':'none'})
+		//Button Equipamiento
+		$("#equipamientoInicio").css({'display':'none'});
+		$("#articuloInicio").css({'display':'none'})
 	})
 
-	//-----------------ASIGNACION-ACTIVIDADES-------------------
-	// $("#asignacionActiviades").click(function(e){
-	// 	e.preventDefault();
-	// 	$("#infoInicio").css({'display':'none'});
-	// 	$("#policias").attr('class','');
-	// 	$("#asignacionActiviades").attr('class','active');
-	// 	$("#traslado").attr('class','');
-	// 	$("#equipamiento").attr('class','');
-	// 	$("#asignacionEquipamiento").attr('class','');
-	// 	$("#reos").attr('class','');
-	// 	//Buttons de Reos
-	// 	$("#reoInicio").css({'display':'none'})
-	// 	$("#reoBusqueda").css({'display':'none'});
-	// 	$("#reoAlta").css({'display':'none'});
-	// 	$("#reoModificacion").css({'display':'none'});
-	// 	$("#reoBaja").css({'display':'none'});
-	// 	//Buttons de Policias
-	// 	$("#policiaInicio").css({'display':'none'})
-	// 	$("#policiaEfectivoInicio").css({'display':'none'})
-	// 	$("#policiaEfectivoBusqueda").css({'display':'none'})
-	// 	$("#policiaEfectivoAlta").css({'display':'none'})
-	// 	$("#policiaEfectivoModificacion").css({'display':'none'})
-	// 	$("#formularioModificacionEfectivoPolicia").css({'display':'none'})
-	// 	$("#policiaEfectivoBaja").css({'display':'none'})
-	// 	$("#datosBajaPoliciaEfectivo").css({'display':'none'})
-	// 	$("#policiaAdministrativoInicio").css({'display':'none'})	
-	// 	$("#policiaAdministrativoBusqueda").css({'display':'none'})
-	// 	$("#datosBusquedaAdministrativoPolicia").css({'display':'none'})
-	// 	$("#policiaAdministrativoAlta").css({'display':'none'})
-	// 	$("#policiaAdministrativoModificacion").css({'display':'none'})
-	// 	$("#formularioModificacionAdministrativoPolicia").css({'display':'none'})
-	// 	$("#policiaAdministrativoBaja").css({'display':'none'})
-	// 	$("#datosBajaPoliciaAdministrativo").css({'display':'none'})
-	// })
+	//-----------------ANTECEDENTES-------------------
+	 $("#antecedentes").click(function(e){
+	 	e.preventDefault();
+	 	$("#infoInicio").css({'display':'none'});
+	 	$("#policias").attr('class','');
+	 	$("#antecedentes").attr('class','active');
+	 	$("#calabozo").attr('class','');
+		$("#traslado").attr('class','');
+	 	$("#equipamiento").attr('class','');
+	 	$("#asignacionEquipamiento").attr('class','');
+	 	$("#reos").attr('class','');
+	 	//Buttons de Reos
+	 	$("#reoInicio").css({'display':'none'})
+	 	$("#reoBusqueda").css({'display':'none'});
+	 	$("#reoAlta").css({'display':'none'});
+ 		$("#reoModificacion").css({'display':'none'});
+	 	$("#reoBaja").css({'display':'none'});
+	 	//Buttons de Policias
+	 	$("#policiaInicio").css({'display':'none'})
+	 	$("#policiaEfectivoInicio").css({'display':'none'})
+	 	$("#policiaEfectivoBusqueda").css({'display':'none'})
+	 	$("#policiaEfectivoAlta").css({'display':'none'})
+	 	$("#policiaEfectivoModificacion").css({'display':'none'})
+	 	$("#formularioModificacionEfectivoPolicia").css({'display':'none'})
+	 	$("#policiaEfectivoBaja").css({'display':'none'})
+	 	$("#datosBajaPoliciaEfectivo").css({'display':'none'})
+	 	$("#policiaAdministrativoInicio").css({'display':'none'})	
+	 	$("#policiaAdministrativoBusqueda").css({'display':'none'})
+	 	$("#datosBusquedaAdministrativoPolicia").css({'display':'none'})
+	 	$("#policiaAdministrativoAlta").css({'display':'none'})
+	 	$("#policiaAdministrativoModificacion").css({'display':'none'})
+	 	$("#formularioModificacionAdministrativoPolicia").css({'display':'none'})
+	 	$("#policiaAdministrativoBaja").css({'display':'none'})
+	 	$("#datosBajaPoliciaAdministrativo").css({'display':'none'})
+	 	//Buttons Traslado
+		$("#trasladoInicio").css({'display':'none'})
+		$("#formularioTraslado").css({'display':'none'})
+		//Button Equipamiento
+		$("#equipamientoInicio").css({'display':'none'});
+	 })
+
+		//-----------------CALABOZO-------------------
+	 $("#calabozo").click(function(e){
+	 	e.preventDefault();
+	 	$("#infoInicio").css({'display':'none'});
+	 	$("#policias").attr('class','');
+	 	$("#antecedentes").attr('class','');
+	 	$("#calabozo").attr('class','active');
+		$("#traslado").attr('class','');
+	 	$("#equipamiento").attr('class','');
+	 	$("#asignacionEquipamiento").attr('class','');
+	 	$("#reos").attr('class','');
+	 	//Buttons de Reos
+	 	$("#reoInicio").css({'display':'none'})
+	 	$("#reoBusqueda").css({'display':'none'});
+	 	$("#reoAlta").css({'display':'none'});
+ 		$("#reoModificacion").css({'display':'none'});
+	 	$("#reoBaja").css({'display':'none'});
+	 	//Buttons de Policias
+	 	$("#policiaInicio").css({'display':'none'})
+	 	$("#policiaEfectivoInicio").css({'display':'none'})
+	 	$("#policiaEfectivoBusqueda").css({'display':'none'})
+	 	$("#policiaEfectivoAlta").css({'display':'none'})
+	 	$("#policiaEfectivoModificacion").css({'display':'none'})
+	 	$("#formularioModificacionEfectivoPolicia").css({'display':'none'})
+	 	$("#policiaEfectivoBaja").css({'display':'none'})
+	 	$("#datosBajaPoliciaEfectivo").css({'display':'none'})
+	 	$("#policiaAdministrativoInicio").css({'display':'none'})	
+	 	$("#policiaAdministrativoBusqueda").css({'display':'none'})
+	 	$("#datosBusquedaAdministrativoPolicia").css({'display':'none'})
+	 	$("#policiaAdministrativoAlta").css({'display':'none'})
+	 	$("#policiaAdministrativoModificacion").css({'display':'none'})
+	 	$("#formularioModificacionAdministrativoPolicia").css({'display':'none'})
+	 	$("#policiaAdministrativoBaja").css({'display':'none'})
+	 	$("#datosBajaPoliciaAdministrativo").css({'display':'none'})
+	 	//Buttons Traslado
+		$("#trasladoInicio").css({'display':'none'})
+		$("#formularioTraslado").css({'display':'none'})
+		//Button Equipamiento
+		$("#equipamientoInicio").css({'display':'none'});
+	 })
 })

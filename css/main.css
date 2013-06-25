@@ -526,6 +526,155 @@ header{
   padding-left: 10px;
 }
 
+/*-----------EQUIPAMIENTO-------------*/
+#equipamientoInicio{
+  color: black; 
+  display: none;
+}
+
+#buttonEquipamiento1{
+  padding-top: 150px;
+}
+
+#buttonEquipamiento2{
+  padding-top: 20px;
+}
+
+#buttonArticulosEquipamiento{
+  text-align: center;
+  width: 50%;
+  float: left;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonArticulosEquipamiento:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonArmamentosEquipamiento{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonArmamentosEquipamiento:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonMunicionesEquipamiento{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonMunicionesEquipamiento:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+/*-----------ARTICULOS-------------*/
+#articuloInicio{
+  color: black; 
+  display: none;
+}
+
+#buttonArticulo1{
+  padding-top: 150px;
+}
+
+#buttonArticulo2{
+  padding-top: 20px;
+}
+
+#buttonBusquedaArticulos{
+  text-align: center;
+  width: 50%;
+  float: left;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonBusquedaArticulos:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonAltaArticulo{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonAltaArticulo:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonBajaArticulo{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonBajaArticulo:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
