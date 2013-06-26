@@ -71,6 +71,13 @@ $(document).ready(function() {
 		$("#datosBajaArmamento").css({'display':'none'})
 		$("#armamentoModificacion").css({'display':'none'})
 		$("#formularioModificacionArmamento").css({'display':'none'})
+		//Buttons Antecedentes
+		$("#antecedentesInicio").css({'display':'none'})
+		$("#busquedaAntecedente").css({'display':'none'})
+		$("#datosBusquedaAntecedente").css({'display':'none'})
+		$("#altaAntecedente").css({'display':'none'})
+		$("#modificacionAntecedente").css({'display':'none'})
+		$("#formularioModificacionAntecedente").css({'display':'none'})
 		borrar()
 	})
 
@@ -425,6 +432,13 @@ $(document).ready(function() {
 		$("#datosBajaArmamento").css({'display':'none'})
 		$("#armamentoModificacion").css({'display':'none'})
 		$("#formularioModificacionArmamento").css({'display':'none'})
+		//Buttons Antecedentes
+		$("#antecedentesInicio").css({'display':'none'})
+		$("#busquedaAntecedente").css({'display':'none'})
+		$("#datosBusquedaAntecedente").css({'display':'none'})
+		$("#altaAntecedente").css({'display':'none'})
+		$("#modificacionAntecedente").css({'display':'none'})
+		$("#formularioModificacionAntecedente").css({'display':'none'})
 		borrar()
 	})
 
@@ -678,6 +692,13 @@ $(document).ready(function() {
 		$("#datosBajaArmamento").css({'display':'none'})
 		$("#armamentoModificacion").css({'display':'none'})
 		$("#formularioModificacionArmamento").css({'display':'none'})
+		//Buttons Antecedentes
+		$("#antecedentesInicio").css({'display':'none'})
+		$("#busquedaAntecedente").css({'display':'none'})
+		$("#datosBusquedaAntecedente").css({'display':'none'})
+		$("#altaAntecedente").css({'display':'none'})
+		$("#modificacionAntecedente").css({'display':'none'})
+		$("#formularioModificacionAntecedente").css({'display':'none'})
 		borrar()
 	})
 
@@ -750,6 +771,13 @@ $(document).ready(function() {
 		$("#datosBajaArmamento").css({'display':'none'})
 		$("#armamentoModificacion").css({'display':'none'})
 		$("#formularioModificacionArmamento").css({'display':'none'})
+		//Buttons Antecedentes
+		$("#antecedentesInicio").css({'display':'none'})
+		$("#busquedaAntecedente").css({'display':'none'})
+		$("#datosBusquedaAntecedente").css({'display':'none'})
+		$("#altaAntecedente").css({'display':'none'})
+		$("#modificacionAntecedente").css({'display':'none'})
+		$("#formularioModificacionAntecedente").css({'display':'none'})
 		borrar()
 	})
 
@@ -1087,6 +1115,13 @@ $(document).ready(function() {
 		$("#datosBajaArmamento").css({'display':'none'})
 		$("#armamentoModificacion").css({'display':'none'})
 		$("#formularioModificacionArmamento").css({'display':'none'})
+		//Buttons Antecedentes
+		$("#antecedentesInicio").css({'display':'none'})
+		$("#busquedaAntecedente").css({'display':'none'})
+		$("#datosBusquedaAntecedente").css({'display':'none'})
+		$("#altaAntecedente").css({'display':'none'})
+		$("#modificacionAntecedente").css({'display':'none'})
+		$("#formularioModificacionAntecedente").css({'display':'none'})
 		borrar()
 	})
 
@@ -1101,6 +1136,7 @@ $(document).ready(function() {
 	 	$("#equipamiento").attr('class','');
 	 	$("#asignacionEquipamiento").attr('class','');
 	 	$("#reos").attr('class','');
+	 	$("#antecedentesInicio").css({'display':'inline'})
 	 	//Buttons de Reos
 	 	$("#reoInicio").css({'display':'none'})
 	 	$("#reoBusqueda").css({'display':'none'});
@@ -1153,8 +1189,68 @@ $(document).ready(function() {
 		$("#datosBajaArmamento").css({'display':'none'})
 		$("#armamentoModificacion").css({'display':'none'})
 		$("#formularioModificacionArmamento").css({'display':'none'})
+		//Buttons Antecedentes
+		$("#busquedaAntecedente").css({'display':'none'})
+		$("#datosBusquedaAntecedente").css({'display':'none'})
+		$("#altaAntecedente").css({'display':'none'})
+		$("#modificacionAntecedente").css({'display':'none'})
+		$("#formularioModificacionAntecedente").css({'display':'none'})
 		borrar()
 	 })
+
+	$("#buttonBusquedaAntecedente").click(function(e){
+		e.preventDefault();
+		$("#antecedentesInicio").css({'display':'none'})
+		$("#busquedaAntecedente").css({'display':'inline'})		
+		borrar()
+	})
+
+	$("#buttonDatosBusquedaReoAntecedente").click(function(e){
+		e.preventDefault();
+		$("#datosBusquedaAntecedente").css({'display':'inline'})
+	})
+
+	$("#buttonAtrasBusquedaAntecedente").click(function(e){
+		e.preventDefault();
+		$("#busquedaAntecedente").css({'display':'none'})		
+		$("#datosBusquedaAntecedente").css({'display':'none'})
+		$("#antecedentesInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonAltaAntecedente").click(function(e){
+		e.preventDefault();
+		$("#antecedentesInicio").css({'display':'none'})
+		$("#altaAntecedente").css({'display':'inline'})		
+		borrar()
+	})
+
+	$("#buttonAtrasAltaAntecedente").click(function(e){
+		e.preventDefault();
+		$("#antecedentesInicio").css({'display':'inline'})
+		$("#altaAntecedente").css({'display':'none'})		
+		borrar()
+	})
+
+	$("#buttonModificacionAntecedente").click(function(e){
+		e.preventDefault();
+		$("#antecedentesInicio").css({'display':'none'})
+		$("#modificacionAntecedente").css({'display':'inline'})		
+		borrar()
+	})
+
+	$("#buttonDatosModificacionReoAntecedente").click(function(e){
+		e.preventDefault();
+		$("#formularioModificacionAntecedente").css({'display':'inline'})
+	})
+
+	$("#buttonAtrasModificacionAntecedente").click(function(e){
+		e.preventDefault();
+		$("#formularioModificacionAntecedente").css({'display':'none'})		
+		$("#modificacionAntecedente").css({'display':'none'})
+		$("#antecedenteInicio").css({'display':'inline'})
+		borrar()
+	})
 
 		//-----------------CALABOZO-------------------
 	 $("#calabozo").click(function(e){
@@ -1219,6 +1315,13 @@ $(document).ready(function() {
 		$("#datosBajaArmamento").css({'display':'none'})
 		$("#armamentoModificacion").css({'display':'none'})
 		$("#formularioModificacionArmamento").css({'display':'none'})
+		//Buttons Antecedentes
+		$("#antecedentesInicio").css({'display':'none'})
+		$("#busquedaAntecedente").css({'display':'none'})
+		$("#datosBusquedaAntecedente").css({'display':'none'})
+		$("#altaAntecedente").css({'display':'none'})
+		$("#modificacionAntecedente").css({'display':'none'})
+		$("#formularioModificacionAntecedente").css({'display':'none'})
 		borrar()
 	 })
 })
