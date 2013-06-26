@@ -31,6 +31,12 @@ header{
   font-weight: bold;
 }
 
+#tituloInfoVerMasInicial{
+  font-size: 30px;
+  color: black;
+  font-weight: bold;
+}
+
 .textInfoInicio{
   font-size: 20px;
   text-align: justify;
@@ -42,6 +48,10 @@ header{
 
 #infoInicio{
   display: inline;
+}
+
+#leerMas{
+  display: none;
 }
 
 /*----------INICIO DE PESTAÑA REOS-------------*/
@@ -1260,6 +1270,17 @@ header{
   display: none;
   margin-top: 20px;
   margin-left: 20px; 
+}
+
+/*-------------ASIGNACION EQUIPAMIENTO----------------*/
+#asignacionEquipamientoInicio{
+  display: none;
+  color: black;
+}
+
+#formularioAsignacionEquipamiento{
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 /* ==========================================================================

@@ -4,11 +4,20 @@ $(document).ready(function() {
 	borrar=function() {
 		$('input').val('')
 	}
+
+	//----------LEER MAS------------
+	$("#buttonLeerMas").click(function(e){
+		e.preventDefault();
+		$("#infoInicio").css({'display':'none'});
+		$("#leerMas").css({'display':'inline'});
+		borrar()
+	})
 	
 	//-----------REOS---------------
 	$("#reos").click(function(e){
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
+		$("#leerMas").css({'display':'none'});
 		$("#policias").attr('class','');
 		$("#antecedentes").attr('class','');
 		$("#calabozo").attr('class','');
@@ -86,6 +95,8 @@ $(document).ready(function() {
 		$("#datosBajaCalabozo").css({'display':'none'})
 		$("#modificacionCalabozo").css({'display':'none'})
 		$("#formularioModificacionCalabozo").css({'display':'none'})
+		//Buttons Asignacion Equipamiento
+		$("#asignacionEquipamientoInicio").css({'display':'none'});
 		borrar()
 	})
 
@@ -379,6 +390,7 @@ $(document).ready(function() {
 	$("#policias").click(function(e){
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
+		$("#leerMas").css({'display':'none'});
 		$("#policias").attr('class','active');
 		$("#antecedentes").attr('class','');
 		$("#calabozo").attr('class','');
@@ -454,6 +466,8 @@ $(document).ready(function() {
 		$("#datosBajaCalabozo").css({'display':'none'})
 		$("#modificacionCalabozo").css({'display':'none'})
 		$("#formularioModificacionCalabozo").css({'display':'none'})
+		//Buttons Asignacion Equipamiento
+		$("#asignacionEquipamientoInicio").css({'display':'none'});
 		borrar()
 	})
 
@@ -935,6 +949,7 @@ $(document).ready(function() {
 	$("#traslado").click(function(e){
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
+		$("#leerMas").css({'display':'none'});
 		$("#policias").attr('class','');
 		$("#antecedentes").attr('class','');
 		$("#calabozo").attr('class','');
@@ -1009,6 +1024,8 @@ $(document).ready(function() {
 		$("#datosBajaCalabozo").css({'display':'none'})
 		$("#modificacionCalabozo").css({'display':'none'})
 		$("#formularioModificacionCalabozo").css({'display':'none'})
+		//Buttons Asignacion Equipamiento
+		$("#asignacionEquipamientoInicio").css({'display':'none'});
 		borrar()
 	})
 
@@ -1022,6 +1039,7 @@ $(document).ready(function() {
 	$("#equipamiento").click(function(e){
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
+		$("#leerMas").css({'display':'none'});
 		$("#policias").attr('class','');
 		$("#antecedentes").attr('class','');
 		$("#calabozo").attr('class','');
@@ -1096,6 +1114,8 @@ $(document).ready(function() {
 		$("#datosBajaCalabozo").css({'display':'none'})
 		$("#modificacionCalabozo").css({'display':'none'})
 		$("#formularioModificacionCalabozo").css({'display':'none'})
+		//Buttons Asignacion Equipamiento
+		$("#asignacionEquipamientoInicio").css({'display':'none'});
 		borrar()
 	})
 
@@ -1374,6 +1394,7 @@ $(document).ready(function() {
 	$("#asignacionEquipamiento").click(function(e){
 		e.preventDefault();
 		$("#infoInicio").css({'display':'none'});
+		$("#leerMas").css({'display':'none'});
 		$("#policias").attr('class','');
 		$("#antecedentes").attr('class','');
 		$("#calabozo").attr('class','');
@@ -1381,6 +1402,7 @@ $(document).ready(function() {
 		$("#equipamiento").attr('class','');
 		$("#asignacionEquipamiento").attr('class','active');
 		$("#reos").attr('class','');
+		$("#asignacionEquipamientoInicio").css({'display':'inline'});
 		//Buttons de Reos
 		$("#reoInicio").css({'display':'none'})
 		$("#reoBusqueda").css({'display':'none'});
@@ -1455,6 +1477,7 @@ $(document).ready(function() {
 	 $("#antecedentes").click(function(e){
 	 	e.preventDefault();
 	 	$("#infoInicio").css({'display':'none'});
+	 	$("#leerMas").css({'display':'none'});
 	 	$("#policias").attr('class','');
 	 	$("#antecedentes").attr('class','active');
 	 	$("#calabozo").attr('class','');
@@ -1529,6 +1552,8 @@ $(document).ready(function() {
 		$("#datosBajaCalabozo").css({'display':'none'})
 		$("#modificacionCalabozo").css({'display':'none'})
 		$("#formularioModificacionCalabozo").css({'display':'none'})
+		//Buttons Asignacion Equipamiento
+		$("#asignacionEquipamientoInicio").css({'display':'none'});
 		borrar()
 	 })
 
@@ -1590,6 +1615,7 @@ $(document).ready(function() {
 	 $("#calabozo").click(function(e){
 	 	e.preventDefault();
 	 	$("#infoInicio").css({'display':'none'});
+	 	$("#leerMas").css({'display':'none'});
 	 	$("#policias").attr('class','');
 	 	$("#antecedentes").attr('class','');
 	 	$("#calabozo").attr('class','active');
@@ -1664,6 +1690,8 @@ $(document).ready(function() {
 		$("#datosBajaCalabozo").css({'display':'none'})
 		$("#modificacionCalabozo").css({'display':'none'})
 		$("#formularioModificacionCalabozo").css({'display':'none'})
+		//Buttons Asignacion Equipamiento
+		$("#asignacionEquipamientoInicio").css({'display':'none'});
 		borrar()
 	})
 
