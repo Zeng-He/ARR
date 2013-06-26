@@ -9,11 +9,6 @@
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-        <!--
-        <input type='text' id='inputCalT' placeholder='Tipo'>
-        <input type='text' id='inputCalE' placeholder='Estado'>
-        <button id='cal' class='btn'>Crear Calabozo</button>
-        -->
         <div class="container-fluid">
             <header class="row-fluid">
                 <div class="span3" id="imgLogo">
@@ -218,13 +213,13 @@
                                 <div class="control-group">
                                     <label class="control-label">Fecha de Ingreso:</label>
                                     <div class="controls">
-                                      <input type="date" id="inputFechaIngresoReoAlta">
+                                      <input type='text' id="inputFechaIngresoReoAlta" placeholder='aaaa-mm-dd'>
                                     </div>
                                 </div>
                                 <div class="control-group" id='huella_alta'>
                                     <label class="control-label">Id Huella:</label>
                                     <div class="controls">
-                                      <input type="text" title="Click en Capturar para obtener ID" id="inputHuellaReoAlta" placeholder="Id Huella..." disabled>
+                                      <input type="text" title="Click en Capturar para obtener ID" id="inputHuellaReoAlta" placeholder="Id Huella...">
                                       <button id='huella_button'class="btn">Capturar</button>
                                       <span class="help-inline"></span>
                                     </div>
@@ -259,7 +254,7 @@
                             <h1>MODIFICACIÓN REO</h1>
                             <form>
                                 <fieldset id="buscadorReoM">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div class="row-fluid">
                                         <div class="span2">
                                             <label class="radio">
@@ -276,59 +271,61 @@
                                     </div>
                                     <button id="buttonAtrasBusquedaModificacionReo" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosBusquedaModificacionReo" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="formularioModificacionReo">
                                 <div class="control-group">
-                                    <label class="control-label" for="inputNombre">Nombre:</label>
+                                    <label class="control-label">Nombre:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputNombreReoModif" placeholder="Nombre...">
+                                      <input type="text" id="nombreReoModif" placeholder="Nombre...">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputApellido">Apellido:</label>
+                                    <label class="control-label">Apellido:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputApellidoReoModif" placeholder="Apellido...">
+                                      <input type="text" id="apellidoReoModif" placeholder="Apellido...">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputDirrecion">Dirección:</label>
+                                    <label class="control-label">Dirección:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputDirreccionReoModif" placeholder="Dirección...">
+                                      <input type="text" id="direccionReoModif" placeholder="Dirección...">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputEdad">Edad:</label>
+                                    <label class="control-label">Edad:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputEdadReoModif" placeholder="Edad...">
+                                      <input type="text" id="edadReoModif" placeholder="Edad...">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputDni">DNI:</label>
+                                    <label class="control-label">DNI:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputDniReoModif" placeholder="DNI...">
+                                      <input type="text" id="dniReoModif" placeholder="DNI..." disabled>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputTiempoCondena">Tiempo de Condena:</label>
+                                    <label class="control-label">Tiempo de Condena:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputTiempoCondenaReoModif" placeholder="Tiempo de condena...">
+                                      <input type="text" id="tiempoCondenaReoModif" placeholder="Tiempo de condena...">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputFechaIngreso">Fecha de Ingreso:</label>
+                                    <label class="control-label">Fecha de Ingreso:</label>
                                     <div class="controls">
-                                      <input type="date" id="inputFechaIngresoReoModif">
+                                      <input type='text' id="fechaIngresoReoModif" placeholder='aaaa-mm-dd'>
                                     </div>
                                 </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="inputIdHuella">Id Huella:</label>
+                                <div class="control-group" id='huella_modif'>
+                                    <label class="control-label">Id Huella:</label>
                                     <div class="controls">
-                                      <input title="Clicke en Capturar para obtener ID" type="text" id="inputHuellaReoModif" placeholder="Id Huella..." disabled>
-                                      <a href="#capturarHuella" role="button" class="btn" data-toggle="modal">Capturar</a>
+                                      <input type="text" title="Click en Capturar para obtener ID" id="idHuellaReoModif" placeholder="Id Huella..." disabled>
+                                      <button id='huella_buttonM'class="btn">Capturar</button>
+                                      <span class="help-inline"></span>
                                     </div>
                                 </div>
-                                <div class="modal hide fade" id="capturarHuella">
+                                <div class="modal hide fade" id="capturarHuellaM">
                                     <div class="modal-header" style="background-color:#0F402A; color:white;">
                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                                         <h3>Capturar Huella</h3>
@@ -338,14 +335,15 @@
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputCalabozo">Calabozo Asignado:</label>
+                                    <label class="control-label">Calabozo Asignado:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputCalabozoReoModif" placeholder="Id Calabozo...">
+                                      <input type="text" id="calabozoReoModif" placeholder="Id Calabozo...">
                                     </div>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarModif'>
                                     <div class="controls">
                                       <button id="buttonGuardarReoModificacion" type="submit" class="btn">Guardar Cambios</button>
+                                      <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>
@@ -356,7 +354,7 @@
                             <h1>BAJA DE REO <span style="font-size:20px;">(baja lógica)</span></h1>
                             <form>
                                 <fieldset id="buscadorReoB">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div class="row-fluid">
                                         <div class="span2">
                                             <label class="radio">
@@ -373,49 +371,51 @@
                                     </div>
                                     <button id="buttonAtrasBajaReo" type="submit" class="btn">Atras</button>
                                     <button id="buttonBusquedaBajaReo" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="datosBajaReo">
                                 <div class="control-group">
-                                    <label class="control-label" for="inputNombre">NOMBRE:</label>
+                                    <label class="control-label">NOMBRE:</label>
                                     <label class="control-label" id="nombreBajaReo">Nombre..</label>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputApellido">APELLIDO:</label>
+                                    <label class="control-label">APELLIDO:</label>
                                     <label class="control-label" id="apellidoBajaReo">Apellido..</label>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputDirrecion">DIRECCIÓN:</label>
+                                    <label class="control-label">DIRECCIÓN:</label>
                                     <label class="control-label" id="direccionBajaReo">Dirreción..</label>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputEdad">EDAD:</label>
+                                    <label class="control-label">EDAD:</label>
                                     <label class="control-label" id="edadBajaReo">Edad..</label>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputDni">DNI:</label>
+                                    <label class="control-label">DNI:</label>
                                     <label class="control-label" id="dniBajaReo">DNI..</label>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputTiempoCondena">TIEMPO DE CONDENA:</label>
+                                    <label class="control-label">TIEMPO DE CONDENA:</label>
                                     <label class="control-label" id="tiempoCondenaBajaReo">Tiempo de condena...</label>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputFechaIngreso">FECHA DE INGRESO:</label>
+                                    <label class="control-label">FECHA DE INGRESO:</label>
                                     <label class="control-label" id="fechaIngresoBajaReo">Fecha de Ingreso....</label>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputIdHuella">ID HUELLA:</label>
+                                    <label class="control-label">ID HUELLA:</label>
                                     <label class="control-label" id="idHuellaBajaReo">Id Huella....</label>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputCalabozo">CALABOZO ASIGNADO:</label>
+                                    <label class="control-label">CALABOZO ASIGNADO:</label>
                                     <label class="control-label" id="calabozoBajaReo">Calabozo....</label>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarBaja'>
                                     <div class="controls">
-                                      <button id="buttonEliminarReoBaja" type="submit" class="btn">Confirmar</button>
-                                      <button id="buttonCancelarReoBaja" type="submit" class="btn">Cancelar</button>
+                                        <button id="buttonCancelarReoBaja" type="submit" class="btn">Cancelar</button>
+                                        <button id="buttonEliminarReoBaja" type="submit" class="btn">Confirmar</button>
+                                        <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>
@@ -579,7 +579,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Fecha de Ingreso:</label>
                                     <div class="controls">
-                                      <input type="date" id="inputFechaIngresoAltaPoliciaEfectivo">
+                                      <input type='text' id="inputFechaIngresoAltaPoliciaEfectivo" placeholder='aaaa-mm-dd'>
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -679,7 +679,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Fecha de Ingreso:</label>
                                     <div class="controls">
-                                      <input type="date" id="inputFechaIngresoModificacionPoliciaEfectivo">
+                                      <input type='text' id="inputFechaIngresoModificacionPoliciaEfectivo" placeholder='aaaa-mm-dd'>
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -936,7 +936,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Fecha de Ingreso:</label>
                                     <div class="controls">
-                                      <input type="date" id="inputFechaIngresoAltaPoliciaAdministrativo">
+                                      <input type='text' id="inputFechaIngresoAltaPoliciaAdministrativo" placeholder='aaaa-mm-dd'>
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -1036,7 +1036,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Fecha de Ingreso:</label>
                                     <div class="controls">
-                                      <input type="date" id="inputFechaIngresoModificacionPoliciaAdministrativo">
+                                      <input type='text' id="inputFechaIngresoModificacionPoliciaAdministrativo" placeholder='aaaa-mm-dd'>
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -1205,7 +1205,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Fecha Traslado:</label>
                                     <div class="controls">
-                                      <input type="date" id="inputFechaTrasladoReoTraslado">
+                                      <input type='text' id="inputFechaTrasladoReoTraslado" placeholder='aaaa-mm-dd'>
                                     </div>
                                 </div>
                                 <div class="control-group">
