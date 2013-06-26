@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	//----------Borrar--------------
 	borrar=function() {
-		$('input').each(function(i,l){l.value=''})
+		$('input').val('')
 	}
 	
 	//-----------REOS---------------
@@ -79,13 +79,13 @@ $(document).ready(function() {
 				if (data) {
 					$('#guardarAlta span').text('Reo agregado con exito')
 					$('#guardarAlta').attr('class','')
+					borrar()
 				}else{
 					$('#guardarAlta span').text('Verifique los campos')
 					$('#guardarAlta').attr('class','error')
 				}
 			}
 		})
-		borrar()
 	})
 
 	$("#buttonModificarReo").click(function(e){
