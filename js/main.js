@@ -78,6 +78,14 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		//Buttons Calabozo
+		$("#calabozoInicio").css({'display':'none'})
+		$("#busquedaCalabozo").css({'display':'none'})
+		$("#altaCalabozo").css({'display':'none'})
+		$("#bajaCalabozo").css({'display':'none'})
+		$("#datosBajaCalabozo").css({'display':'none'})
+		$("#modificacionCalabozo").css({'display':'none'})
+		$("#formularioModificacionCalabozo").css({'display':'none'})
 		borrar()
 	})
 
@@ -438,6 +446,14 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		//Buttons Calabozo
+		$("#calabozoInicio").css({'display':'none'})
+		$("#busquedaCalabozo").css({'display':'none'})
+		$("#altaCalabozo").css({'display':'none'})
+		$("#bajaCalabozo").css({'display':'none'})
+		$("#datosBajaCalabozo").css({'display':'none'})
+		$("#modificacionCalabozo").css({'display':'none'})
+		$("#formularioModificacionCalabozo").css({'display':'none'})
 		borrar()
 	})
 
@@ -985,6 +1001,14 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		//Buttons Calabozo
+		$("#calabozoInicio").css({'display':'none'})
+		$("#busquedaCalabozo").css({'display':'none'})
+		$("#altaCalabozo").css({'display':'none'})
+		$("#bajaCalabozo").css({'display':'none'})
+		$("#datosBajaCalabozo").css({'display':'none'})
+		$("#modificacionCalabozo").css({'display':'none'})
+		$("#formularioModificacionCalabozo").css({'display':'none'})
 		borrar()
 	})
 
@@ -1064,6 +1088,14 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		//Buttons Calabozo
+		$("#calabozoInicio").css({'display':'none'})
+		$("#busquedaCalabozo").css({'display':'none'})
+		$("#altaCalabozo").css({'display':'none'})
+		$("#bajaCalabozo").css({'display':'none'})
+		$("#datosBajaCalabozo").css({'display':'none'})
+		$("#modificacionCalabozo").css({'display':'none'})
+		$("#formularioModificacionCalabozo").css({'display':'none'})
 		borrar()
 	})
 
@@ -1408,6 +1440,14 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		//Buttons Calabozo
+		$("#calabozoInicio").css({'display':'none'})
+		$("#busquedaCalabozo").css({'display':'none'})
+		$("#altaCalabozo").css({'display':'none'})
+		$("#bajaCalabozo").css({'display':'none'})
+		$("#datosBajaCalabozo").css({'display':'none'})
+		$("#modificacionCalabozo").css({'display':'none'})
+		$("#formularioModificacionCalabozo").css({'display':'none'})
 		borrar()
 	})
 
@@ -1483,6 +1523,12 @@ $(document).ready(function() {
 		$("#formularioModificacionAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
+		$("#busquedaCalabozo").css({'display':'none'})
+		$("#altaCalabozo").css({'display':'none'})
+		$("#bajaCalabozo").css({'display':'none'})
+		$("#datosBajaCalabozo").css({'display':'none'})
+		$("#modificacionCalabozo").css({'display':'none'})
+		$("#formularioModificacionCalabozo").css({'display':'none'})
 		borrar()
 	 })
 
@@ -1616,6 +1662,8 @@ $(document).ready(function() {
 		$("#altaCalabozo").css({'display':'none'})
 		$("#bajaCalabozo").css({'display':'none'})
 		$("#datosBajaCalabozo").css({'display':'none'})
+		$("#modificacionCalabozo").css({'display':'none'})
+		$("#formularioModificacionCalabozo").css({'display':'none'})
 		borrar()
 	})
 
@@ -1673,6 +1721,27 @@ $(document).ready(function() {
 		$("#bajaCalabozo").css({'display':'none'})
 		$("#calabozoInicio").css({'display':'inline'})
 		$("#datosBajaCalabozo").css({'display':'none'})		
+		borrar()
+	})
+
+	$("#buttonModificarCalabozo").click(function(e){
+		e.preventDefault();
+		$("#calabozoInicio").css({'display':'none'})
+		$("#modificacionCalabozo").css({'display':'inline'})		
+		borrar()
+	})
+
+	$("#buttonAtrasModificacionCalabozo").click(function(e){
+		e.preventDefault();
+		$("#modificacionCalabozo").css({'display':'none'})
+		$("#calabozoInicio").css({'display':'inline'})
+		$("#formularioModificacionCalabozo").css({'display':'none'})		
+		borrar()
+	})
+
+	$("#buttonDatosModificacionCalabozo").click(function(e){
+		e.preventDefault();
+		$("#formularioModificacionCalabozo").css({'display':'inline'})		
 		borrar()
 	})
 })

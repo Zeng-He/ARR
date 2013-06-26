@@ -1227,7 +1227,7 @@ header{
   margin-top: 30px;
 }
 
-/*---------------ALTA ANTECEDENTE-------------*/
+/*---------------ALTA CALABOZO-------------*/
 #altaCalabozo{
   display: none;
   color: black;
@@ -1238,7 +1238,7 @@ header{
   margin-top: 50px;
 }
 
-/*---------------ALTA ANTECEDENTE-------------*/
+/*---------------ALTA CALABOZO-------------*/
 #bajaCalabozo{
   display: none;
   color: black;
@@ -1248,6 +1248,18 @@ header{
   display: none;
   margin-top: 20px;
   margin-left: 20px;
+}
+
+/*---------------ALTA CALABOZO-------------*/
+#modificacionCalabozo{
+  display: none;
+  color: black;
+}
+
+#formularioModificacionCalabozo{
+  display: none;
+  margin-top: 20px;
+  margin-left: 20px; 
 }
 
 /* ==========================================================================
