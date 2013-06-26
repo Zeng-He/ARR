@@ -248,23 +248,27 @@ $(document).ready(function() {
 		//Buttons Traslado
 		$("#trasladoInicio").css({'display':'none'})
 		$("#formularioTraslado").css({'display':'none'})
+		borrar()
 	})
 
 	$("#buttonEfectivosPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaInicio").css({'display':'none'})
 		$("#policiaEfectivoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonBuscarEfectivoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaEfectivoInicio").css({'display':'none'})
 		$("#policiaEfectivoBusqueda").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonDatosBusquedaEfectivoPolicia").click(function(e){
 		e.preventDefault();
 		$("#datosBusquedaEfectivoPolicia").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAtrasBusquedaEfectivoPolicia").click(function(e){
@@ -272,30 +276,35 @@ $(document).ready(function() {
 		$("#datosBusquedaEfectivoPolicia").css({'display':'none'})
 		$("#policiaEfectivoBusqueda").css({'display':'none'})
 		$("#policiaEfectivoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAltaEfectivoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaEfectivoInicio").css({'display':'none'})
 		$("#policiaEfectivoAlta").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAtrasAltaPoliciaEfectivo").click(function(e){
 		e.preventDefault();
 		$("#policiaEfectivoAlta").css({'display':'none'})
 		$("#policiaEfectivoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonModificarEfectivoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaEfectivoInicio").css({'display':'none'})
 		$("#policiaEfectivoModificacion").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonDatosBusquedaModificacionEfectivoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaEfectivoInicio").css({'display':'none'})
 		$("#formularioModificacionEfectivoPolicia").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAtrasBusquedaModificacionEfectivoPolicia").click(function(e){
@@ -303,12 +312,14 @@ $(document).ready(function() {
 		$("#formularioModificacionEfectivoPolicia").css({'display':'none'})
 		$("#policiaEfectivoModificacion").css({'display':'none'})
 		$("#policiaEfectivoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonBajaEfectivoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaEfectivoInicio").css({'display':'none'})
 		$("#policiaEfectivoBaja").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAtrasBajaPoliciaEfectivo").click(function(e){
@@ -316,11 +327,13 @@ $(document).ready(function() {
 		$("#datosBajaPoliciaEfectivo").css({'display':'none'})
 		$("#policiaEfectivoBaja").css({'display':'none'})
 		$("#policiaEfectivoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonBusquedaBajaPoliciaEfectivo").click(function(e){
 		e.preventDefault();
 		$("#datosBajaPoliciaEfectivo").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonCancelarBajaPoliciaEfectivo").click(function(e){
@@ -328,23 +341,27 @@ $(document).ready(function() {
 		$("#datosBajaPoliciaEfectivo").css({'display':'none'})
 		$("#policiaEfectivoBaja").css({'display':'none'})
 		$("#policiaEfectivoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAdministrativoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaInicio").css({'display':'none'})
 		$("#policiaAdministrativoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonBuscarAdministrativoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaAdministrativoInicio").css({'display':'none'})
 		$("#policiaAdministrativoBusqueda").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonDatosBusquedaAdministrativoPolicia").click(function(e){
 		e.preventDefault();
 		$("#datosBusquedaAdministrativoPolicia").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAtrasBusquedaAdministrativoPolicia").click(function(e){
@@ -352,30 +369,35 @@ $(document).ready(function() {
 		$("#datosBusquedaAdministrativoPolicia").css({'display':'none'})
 		$("#policiaAdministrativoBusqueda").css({'display':'none'})
 		$("#policiaAdministrativoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAltaAdministrativoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaAdministrativoInicio").css({'display':'none'})
 		$("#policiaAdministrativoAlta").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAtrasAltaPoliciaAdministrativo").click(function(e){
 		e.preventDefault();
 		$("#policiaAdministrativoAlta").css({'display':'none'})
 		$("#policiaAdministrativoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonModificarAdministrativoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaAdministrativoInicio").css({'display':'none'})
 		$("#policiaAdministrativoModificacion").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonDatosBusquedaModificacionAdministrativoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaAdministrativoInicio").css({'display':'none'})
 		$("#formularioModificacionAdministrativoPolicia").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAtrasBusquedaModificacionAdministrativoPolicia").click(function(e){
@@ -383,12 +405,14 @@ $(document).ready(function() {
 		$("#formularioModificacionAdministrativoPolicia").css({'display':'none'})
 		$("#policiaAdministrativoModificacion").css({'display':'none'})
 		$("#policiaAdministrativoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonBajaAdministrativoPolicia").click(function(e){
 		e.preventDefault();
 		$("#policiaAdministrativoInicio").css({'display':'none'})
 		$("#policiaAdministrativoBaja").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonAtrasBajaPoliciaAdministrativo").click(function(e){
@@ -396,11 +420,13 @@ $(document).ready(function() {
 		$("#datosBajaPoliciaAdministrativo").css({'display':'none'})
 		$("#policiaAdministrativoBaja").css({'display':'none'})
 		$("#policiaAdministrativoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonBusquedaBajaPoliciaAdministrativo").click(function(e){
 		e.preventDefault();
 		$("#datosBajaPoliciaAdministrativo").css({'display':'inline'})
+		borrar()
 	})
 
 	$("#buttonCancelarBajaPoliciaAdministrativo").click(function(e){
@@ -408,6 +434,7 @@ $(document).ready(function() {
 		$("#datosBajaPoliciaAdministrativo").css({'display':'none'})
 		$("#policiaAdministrativoBaja").css({'display':'none'})
 		$("#policiaAdministrativoInicio").css({'display':'inline'})
+		borrar()
 	})
 
 
@@ -448,11 +475,13 @@ $(document).ready(function() {
 		$("#datosBajaPoliciaAdministrativo").css({'display':'none'})
 		//Buttons Traslado 
 		$("#formularioTraslado").css({'display':'none'})
+		borrar()
 	})
 
 	$("#buttonDatosBusquedaReoTraslado").click(function(e){
 		e.preventDefault();
 		$("#formularioTraslado").css({'display':'inline'})
+		borrar()
 	})
 
 	//-----------------EQUIPAMIENTO-------------------
@@ -493,12 +522,83 @@ $(document).ready(function() {
 		//Buttons Traslado
 		$("#trasladoInicio").css({'display':'none'})
 		$("#formularioTraslado").css({'display':'none'})
+		$("#articuloBusqueda").css({'display':'none'})
+		$("#datosBusquedaArticulo").css({'display':'none'})
+		$("#articuloAlta").css({'display':'none'})
+		$("#articuloBaja").css({'display':'none'})
+		$("#datosBajaArticulo").css({'display':'none'})
+		borrar()
 	})
 
 	$("#buttonArticulosEquipamiento").click(function(e){
 		e.preventDefault();
 		$("#equipamientoInicio").css({'display':'none'})
 		$("#articuloInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonBusquedaArticulos").click(function(e){
+		e.preventDefault();
+		$("#articuloInicio").css({'display':'none'})
+		$("#articuloBusqueda").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonDatosBusquedaArticulo").click(function(e){
+		e.preventDefault();
+		$("#datosBusquedaArticulo").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonAtrasBusquedaArticulo").click(function(e){
+		e.preventDefault();
+		$("#datosBusquedaArticulo").css({'display':'none'})
+		$("#articuloBusqueda").css({'display':'none'})
+		$("#articuloInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonAltaArticulo").click(function(e){
+		e.preventDefault();
+		$("#articuloInicio").css({'display':'none'})
+		$("#articuloAlta").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonAtrasAltaArticulo").click(function(e){
+		e.preventDefault();
+		$("#articuloAlta").css({'display':'none'})
+		$("#articuloInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonBajaArticulo").click(function(e){
+		e.preventDefault();
+		$("#articuloInicio").css({'display':'none'})
+		$("#articuloBaja").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonDatosBajaArticulo").click(function(e){
+		e.preventDefault();
+		$("#datosBajaArticulo").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonAtrasBajaArticulo").click(function(e){
+		e.preventDefault();
+		$("#articuloBaja").css({'display':'none'})
+		$("#articuloInicio").css({'display':'inline'})
+		$("#datosBajaArticulo").css({'display':'none'})
+		borrar()
+	})
+
+	$("#buttonCancelarBajaArticulo").click(function(e){
+		e.preventDefault();
+		$("#articuloBaja").css({'display':'none'})
+		$("#articuloInicio").css({'display':'inline'})
+		$("#datosBajaArticulo").css({'display':'none'})
+		borrar()
 	})
 
 	//-----------------ASIGANACION-EQUIPAMIENTO-------------------
@@ -541,6 +641,12 @@ $(document).ready(function() {
 		//Button Equipamiento
 		$("#equipamientoInicio").css({'display':'none'});
 		$("#articuloInicio").css({'display':'none'})
+		$("#articuloBusqueda").css({'display':'none'})
+		$("#datosBusquedaArticulo").css({'display':'none'})
+		$("#articuloAlta").css({'display':'none'})
+		$("#articuloBaja").css({'display':'none'})
+		$("#datosBajaArticulo").css({'display':'none'})
+		borrar()
 	})
 
 	//-----------------ANTECEDENTES-------------------
@@ -582,6 +688,7 @@ $(document).ready(function() {
 		$("#formularioTraslado").css({'display':'none'})
 		//Button Equipamiento
 		$("#equipamientoInicio").css({'display':'none'});
+		borrar()
 	 })
 
 		//-----------------CALABOZO-------------------
@@ -623,5 +730,6 @@ $(document).ready(function() {
 		$("#formularioTraslado").css({'display':'none'})
 		//Button Equipamiento
 		$("#equipamientoInicio").css({'display':'none'});
+		borrar()
 	 })
 })

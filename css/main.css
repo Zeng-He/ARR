@@ -542,7 +542,7 @@ header{
 
 #buttonArticulosEquipamiento{
   text-align: center;
-  width: 50%;
+  width: 66%;
   float: left;
   height: 30px;
   font-size: 20px;
@@ -616,7 +616,7 @@ header{
 
 #buttonBusquedaArticulos{
   text-align: center;
-  width: 50%;
+  width: 66%;
   float: left;
   height: 30px;
   font-size: 20px;
@@ -674,6 +674,40 @@ header{
   border: outset black 3px;
 }
 
+/*------------BUSQUEDA ARTICULOS-----------*/
+#articuloBusqueda{
+  color: black;
+  display: none;
+}
+
+#buscadorArticulo{
+  padding-top: 30px;
+}
+
+#datosBusquedaArticulo{
+  display: none;
+}
+
+/*---------------ALTA ARTICULO------------*/
+#articuloAlta{
+  color: black;
+  display: none;
+}
+
+#formularioAltaArticulo{
+  padding-top: 30px;
+  padding-left: 50px;
+}
+
+/*---------------BAJA ARTICULO---------------*/
+#articuloBaja{
+  color: black;
+  display: none;
+}
+
+#datosBajaArticulo{
+  display: none;
+}
 
 /* ==========================================================================
    Author's custom styles
