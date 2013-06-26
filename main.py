@@ -232,35 +232,14 @@ def buscarVehiculo(idVe):
 # Modificaciones
 
 def modifReo(r,**kw):
-	if 'nombre' in kw:
-		if not(isinstance(kw['nombre'],str)):
-			raise Exception
-	if 'apellido' in kw:
-		if not(isinstance(kw['apellido'],str)):
-			raise Exception
-	if 'direccion' in kw:
-		if not(isinstance(kw['direccion'],str)):
-			raise Exception
-	if 'edad' in kw:
-		if not(isinstance(kw['edad'],int)):
-			raise Exception
-	if 'dni' in kw:
-		if not(isinstance(kw['dni'],int)):
-			raise Exception
-	if 'tiempo_condena' in kw:
-		if not(isinstance(kw['tiempo_condena'],str)):
-			raise Exception
-	if 'fecha_ingreso' in kw:
-		if not(isinstance(kw['fecha_ingreso'],datetime.date)):
-			raise Exception
-	if 'id_huella' in kw:
-		if not(isinstance(kw['id_huella'],int)):
-			raise Exception
-	if 'calabozo' in kw:
-		if not(isinstance(kw['calabozo'],Calabozo)):
-			raise Exception
-	modificar(r,**kw)
-	return(str('Modificacion exitosa'))
+	if (kw['nombre'] !='') and (kw['apellido'] !='') and (kw['direccion'] !='') and (kw['edad'] !=0) and (kw['dni'] !=0) and (kw['tiempo_condena'] !='') and (kw['fecha_ingreso'] !='') and (kw['id_huella'] !=0) and (kw['calabozo'] !=0):
+		try:
+			modificar(r,**kw)
+			return(r)
+		except Exception, e:
+			raise e
+	else:
+		raise Exception
 
 def modifAdmin(r,**kw):
 	if 'nombre' in kw:

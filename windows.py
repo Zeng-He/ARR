@@ -76,15 +76,16 @@ class SimpleWindow(QWebView):
 
 	@listen_js
 	def altaReoInterf(self, nombre, apellido, direccion, edad, dni, tiempo_condena, fecha_ingreso, id_huella, id_calabozo):
-		fec=fecha_ingreso.split('/')
+		fec=fecha_ingreso.split('-')
 		try:
-			fecha_ingreso=datetime.date(int(fec[2]),int(fec[1]),int(fec[0]))
-		except Exception:
+			fecha_ingreso=datetime.date(int(fec[0]),int(fec[1]),int(fec[2]))
+		except Exception,e:
 			return False
 		try:
 			main.altaReo(nombre=nombre, apellido=apellido, direccion=direccion, edad=edad, dni=dni, tiempo_condena=tiempo_condena, fecha_ingreso=fecha_ingreso, id_huella=id_huella, calabozo=main.Calabozo.objects.get(pk=id_calabozo)) 
 			return ("Reo almacenado exitosamente")
 		except Exception,e:
+			raise e
 			return False
 
 	@listen_js
@@ -174,9 +175,15 @@ class SimpleWindow(QWebView):
 		if isinstance(valor,int):
 			if(op==0):
 				# obtener ID
-				reo = main.busquedaReoHuella(id_h)
+				try:
+					reo = main.busquedaReoHuella(id_h)
+				except Exception:
+					return False
 			else:
-				reo = main.busquedaReoDNI(valor)
+				try:
+					reo = main.busquedaReoDNI(valor)
+				except Exception:
+					return False
 		else:
 			return False
 		try:
@@ -270,7 +277,7 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def bajaAntecedenteInterf(self,idO):
 		try:
-			baja(main.Antecedentes.objects.get(id0))
+			main.baja(main.Antecedentes.objects.get(id0))
 			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
@@ -278,23 +285,25 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def bajaEfectivoInterf(self,idO):
 		try:
-			baja(main.Efectivo.objects.get(id0))
+			main.baja(main.Efectivo.objects.get(id0))
 			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
 
 	@listen_js
-	def bajaReoInterf(self,idO):
+	def bajaReoInterf(self,dni):
 		try:
-			baja(main.Reo.objects.get(id0))
+			print(dni)
+			main.baja(main.Reo.objects.filter(dni=dni))
 			return('Eliminacion exitosa.')
-		except:
-			return('Error.')
+		except Exception,e:
+			raise e
+			return False
 
 	@listen_js
 	def bajaArticuloInterf(self,idO):
 		try:
-			baja(main.Articulos.objects.get(id0))
+			main.baja(main.Articulos.objects.get(id0))
 			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
@@ -302,7 +311,7 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def bajaAdministrativoInterf(self,idO):
 		try:
-			baja(main.Administrativo.objects.get(id0))
+			main.baja(main.Administrativo.objects.get(id0))
 			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
@@ -310,7 +319,7 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def bajaCalabozoInterf(self,idO):
 		try:
-			baja(main.Calabozo.objects.get(id0))
+			main.baja(main.Calabozo.objects.get(id0))
 			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
@@ -318,7 +327,7 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def bajaArmamentoInterf(self,idO):
 		try:
-			baja(main.Armamento.objects.get(id0))
+			main.baja(main.Armamento.objects.get(id0))
 			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
@@ -326,7 +335,7 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def bajaMunicionInterf(self,idO):
 		try:
-			baja(main.Municion.objects.get(id0))
+			main.baja(main.Municion.objects.get(id0))
 			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
@@ -334,10 +343,28 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def bajaVehiculoInterf(self,idO):
 		try:
-			baja(main.Vehiculo.objects.get(id0))
+			main.baja(main.Vehiculo.objects.get(id0))
 			return('Eliminacion exitosa.')
 		except:
 			return('Error.')
+
+	#Modificaciones
+
+	@listen_js
+	def modifReoInterf(self,nombre,apellido,direccion,edad,dni,tiempo_condena,fecha_ingreso,id_huella,id_calabozo):
+		fec=fecha_ingreso.split('-')
+		try:
+			fecha_ingreso=datetime.date(int(fec[0]),int(fec[1]),int(fec[2]))
+		except Exception,e:
+			return False
+		try:
+			r=main.Reo.objects.get(dni=dni)
+			main.modifReo(r,nombre=nombre, apellido=apellido, direccion=direccion, edad=edad, dni=dni, tiempo_condena=tiempo_condena, fecha_ingreso=fecha_ingreso, id_huella=id_huella, calabozo=main.Calabozo.objects.get(pk=id_calabozo)) 
+			return ("Datos del Reo modificados exitosamente")
+		except Exception,e:
+			raise e
+			return False
+
 
 	@listen_js
 	def regHuella(self):
@@ -386,9 +413,3 @@ if __name__ == "__main__":
 # 	except Exception:
 # 		return ("Error, verifique los valores de la busqueda")
 
-# def modificarReoInterf(self, **kw):
-# 	try:
-# 		d = modifReo(**kw)
-# 		return str("Datos del Reo modificados exitosamente")
-# 	except Exception:
-# 		return str("Error, verifique campos")

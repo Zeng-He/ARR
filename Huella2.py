@@ -59,7 +59,7 @@ class Controlador():
 			self.s.timeout=5;
 		except serial.SerialException:
 			sys.stderr.write("Error al abrir puerto (%s)\n" % str(0))
-			raise serial.SerialException
-		print "Puerto (%d): %s" % (0,self.s.portstr)
-		self.hilo = threading.Thread(target=self.funcionHilo); #instanciamos un hilo y le decimos que funcion va a ser la concurrente
-		self.hilo.start(); #le damos el ok para que empiece
+			# raise serial.SerialException
+		# print "Puerto (%d): %s" % (0,self.s.portstr)
+		# self.hilo = threading.Thread(target=self.funcionHilo); #instanciamos un hilo y le decimos que funcion va a ser la concurrente
+		# self.hilo.start(); #le damos el ok para que empiece

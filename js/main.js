@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	//----------Borrar--------------
 	borrar=function() {
-		$('input').each(function(i,l){l.value=''})
+		$('input').val('')
 	}
 	
 	//-----------REOS---------------
@@ -103,16 +103,60 @@ $(document).ready(function() {
 			args:[nom,ap,direc,edad,dni,tiem,fec,hue,cal],
 			callback: function(data) {
 				if (data) {
-					$('#guardarAlta span').text('Reo agregado con exito')
+					$('#guardarAlta span').text(data)
 					$('#guardarAlta').attr('class','')
+					borrar()
 				}else{
 					$('#guardarAlta span').text('Verifique los campos')
 					$('#guardarAlta').attr('class','error')
 				}
 			}
 		})
-		borrar()
 	})
+	$('#buttonEliminarReoBaja').click(function(e) {
+		e.preventDefault();
+		dni=Number($('#dniBajaReo').text())
+		PyAsync('bajaReoInterf',{
+			args:[dni],
+			callback: function(data) {
+				if (data) {
+					$('#guardarBaja span').text(data)
+					$('#guardarBaja').attr('class','')
+					borrar()
+				}else{
+					$('#guardarBaja span').text('Error')
+					$('#guardarBaja').attr('class','error')
+				}
+			}
+		})
+	})
+
+	$('#buttonGuardarReoModificacion').click(function(e) {
+		e.preventDefault();
+		nom=$('#nombreReoModif').val()
+		ap=$('#apellidoReoModif').val()
+		direc=$('#direccionReoModif').val()
+		edad=Number($('#edadReoModif').val())
+		dni=Number($('#dniReoModif').val())
+		tiem=$('#tiempoCondenaReoModif').val()
+		fec=$('#fechaIngresoReoModif').val()
+		hue=Number($('#idHuellaReoModif').val())
+		cal=Number($('#calabozoReoModif').val())
+		PyAsync('modifReoInterf',{
+			args:[nom,ap,direc,edad,dni,tiem,fec,hue,cal],
+			callback: function(data) {
+				if (data) {
+					$('#guardarModif span').text('Reo modificado con exito')
+					$('#guardarModif').attr('class','')
+					borrar()
+				}else{
+					$('#guardarModif span').text('Verifique los campos')
+					$('#guardarModif').attr('class','error')
+				}
+			}
+		})
+	})
+
 
 	$("#buttonModificarReo").click(function(e){
 		e.preventDefault();
@@ -128,12 +172,6 @@ $(document).ready(function() {
 		borrar()
 	})
 
-	$("#buttonBusquedaBajaReo").click(function(e){
-		e.preventDefault();
-		$("#datosBajaReo").css({'display':'inline'})
-		borrar()
-	})
-	
 	$("#buttonCancelarReoBaja").click(function(e){
 		e.preventDefault();
 		$("#datosBajaReo").css({'display':'none'})
@@ -170,20 +208,89 @@ $(document).ready(function() {
 					})
 					$("#datosBusquedaReo").css({'display':'inline'})
 				}else{
+					$("#datosBusquedaReo").css({'display':'none'})
 					$('#buscadorReo').attr('class','control-group error')
-					$('#buscadorReo span').text("Error, verifique los valor de la busqueda")
+					$('#buscadorReo span').text("Error, verifique los valores de la busqueda")
 					borrar()
 				}
 			}
 		})
-		borrar()
 	})	
 
 	$("#buttonDatosBusquedaModificacionReo").click(function(e){
 		e.preventDefault();
-		$("#formularioModificacionReo").css({'display':'inline'})
-		borrar()
+		huella=$('#reoModificacion #optionsRadios1').is(':checked')
+		dni=$('#reoModificacion #optionsRadios2').is(':checked')
+		if (huella==true) {
+			valor='huella'
+			op=0
+		}else{
+			valor=$('#reoModificacion #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorReoM').attr('class','control-group error')
+				$('#buscadorReoM span').text('Campo vacio')
+				return
+			};
+			op=1
+		};
+		attr=['nombre','apellido','direccion','edad','dni','tiempoCondena','fechaIngreso','idHuella','calabozo']
+		PyAsync('buscarReoInterf',{
+			args:[Number(valor),op],
+			callback:function(data) {
+				if (data){
+					$('#buscadorReoM').attr('class','')
+					$('#buscadorReoM span').text('')
+					$.each(attr,function(i,l) {
+						$('#'+l+'ReoModif').val(data[i])
+					})
+		 			$("#formularioModificacionReo").css({'display':'inline'})
+				}else{
+		 			$("#formularioModificacionReo").css({'display':'none'})
+					$('#buscadorReoM').attr('class','control-group error')
+					$('#buscadorReoM span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				}
+			}
+		})
 	})
+	$("#buttonBusquedaBajaReo").click(function(e){
+		e.preventDefault();
+		huella=$('#reoBaja #optionsRadios1').is(':checked')
+		dni=$('#reoBaja #optionsRadios2').is(':checked')
+		if (huella==true) {
+			valor='huella'
+			op=0
+		}else{
+			valor=$('#buscadorReoB #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorReoB').attr('class','control-group error')
+				$('#buscadorReoB span').text('Campo vacio')
+				return
+			};
+			op=1
+		};
+		attr=['nombre','apellido','direccion','edad','dni','tiempoCondena','fechaIngreso','idHuella','calabozo']
+		PyAsync('buscarReoInterf',{
+			args:[Number(valor),op],
+			callback:function(data) {
+				if (data){
+					$('#buscadorReoB').attr('class','')
+					$('#buscadorReoB span').text('')
+					$.each(attr,function(i,l) {
+						$('#'+l+'BajaReo').text(data[i])
+					})
+		 			$("#datosBajaReo").css({'display':'inline'})
+				}else{
+		 			$("#datosBajaReo").css({'display':'none'})
+					$('#buscadorReoB').attr('class','control-group error')
+					$('#buscadorReoB span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				}
+			}
+		})
+	})
+
+	
 
 	$("#buttonAtrasBusquedaReo").click(function(e){
 		e.preventDefault();
@@ -225,13 +332,31 @@ $(document).ready(function() {
 				if (data==false) {
 					$('#huella_alta').attr('class','control-group error')
 					$('#formularioAltaReo span').text('Error')
-					//$('#inputHuellaReoAlta').val(1) COMENTAR
 				} else{
 					$('#formularioAltaReo span').text('')
-					$('#huella_alta').attr('class','')
+					$('#huella_alta').attr('class','control-group')
 					$('inputHuellaReoAlta').text(data)
 				};
 				$('#capturarHuella').modal('hide')
+			}
+		})
+	})
+
+	$('#huella_buttonM').click(function(e) {
+		e.preventDefault()
+		$("#capturarHuellaM").modal('show')
+		PyAsync('regHuella',{
+			args:[],
+			callback:function(data) {
+				if (data==false) {
+					$('#huella_modif').attr('class','control-group error')
+					$('#formularioAltaReo span').text('Error')
+				} else{
+					$('#formularioModificacionReo span').text('')
+					$('#huella_modif').attr('class','control-group')
+					$('idHuellaReoModif').text(data)
+				};
+				$('#capturarHuellaM').modal('hide')
 			}
 		})
 	})
