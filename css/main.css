@@ -973,7 +973,7 @@ header{
 }
 
 /*------------BUSQUEDA ARMAMENTO-----------*/
-#aramentoBusqueda{
+#armamentoBusqueda{
   color: black;
   display: none;
 }
@@ -998,7 +998,7 @@ header{
 }
 
 /*---------------BAJA ARMAMENTO---------------*/
-#ArmamentoBaja{
+#armamentoBaja{
   color: black;
   display: none;
 }
