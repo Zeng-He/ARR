@@ -5,12 +5,12 @@ class Persona(models.Model):
 	apellido = models.CharField(max_length=30)
 	direccion = models.CharField(max_length=30)
 	edad = models.IntegerField()
-	dni = models.IntegerField(unique=True)
+	dni = models.IntegerField()
 
 class Reo(Persona):
 	tiempo_condena = models.CharField(max_length=30)
 	fecha_ingreso = models.DateField()
-	id_huella = models.IntegerField(unique=True)
+	id_huella = models.IntegerField()
 	calabozo = models.OneToOneField('Calabozo')
 
 class Traslados(models.Model):
@@ -33,7 +33,7 @@ class Policia(Persona):
 	fecha_ingreso = models.DateField()
 	cargo = models.CharField(max_length=50)
 	sueldo = models.FloatField()
-	es_jefe = models.ForeignKey('Policia',related_name='jefe')
+	es_jefe = models.ForeignKey('Policia',related_name='jefe',null=True)
 	tarea = models.TextField()
 
 class Administrativo(Policia):

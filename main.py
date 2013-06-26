@@ -56,15 +56,14 @@ def altaAntecedente(**kw):
 
 def altaEfectivo(**kw):
 	a = Efectivo()
-	if((kw['nombre'] !='')and(kw['apellido'] !='')and(kw['direccion'] !='')and(kw['edad'] !='')and(kw['dni'] !='')and(kw["num_placa"] !='')and(kw["fecha_ingreso"] !='')and(kw["cargo"] !='')and(kw["sueldo"] !='')and(kw["es_jefe"] !='')and(kw["tarea"] !='')and(kw["horario_patrull"] !='')):
-		if((isinstance(kw['nombre'],str))and(isinstance(kw['apellido'],str))and(isinstance(kw['direccion'],str))and(isinstance(kw['edad'],int))and(isinstance(kw['dni'],int))and(isinstance(kw["num_placa"],int))and(isinstance(kw["fecha_ingreso"],datetime.date))and(isinstance(kw["cargo"],str))and(isinstance(kw["sueldo"],float))and(isinstance(kw["es_jefe"],Policia))and(isinstance(kw["tarea"],str))and(isinstance(kw["horario_patrull"],str))):
-			try:
-				alta(a,**kw)
-				return(a)
-			except Exception, e:
-				raise e
-		else:
-			raise Exception
+	if((kw['nombre'] !='')and(kw['apellido'] !='')and(kw['direccion'] !='')and(kw['edad'] !=0)and(kw['dni'] !=0)and(kw["num_placa"] !=0)and(kw["fecha_ingreso"] !='')and(kw["cargo"] !='')and(kw["sueldo"] !=0)and(kw["tarea"] !='')and(kw["horario_patrull"] !='')):
+		if kw['es_jefe'] == 0:
+			del kw['es_jefe']
+		try:
+			alta(a,**kw)
+			return(a)
+		except Exception, e:
+			raise e
 	else:
 		raise Exception
 
@@ -94,14 +93,13 @@ def altaArticulo(**kw):
 
 def altaAdministrativo(**kw):
 	a=Administrativo()
-	if (kw['nombre'] !='') and (kw['apellido'] !='') and (kw['direccion'] !='') and (kw['edad'] !='') and (kw['dni'] !='') and (kw['num_placa'] !='') and (kw['fecha_ingreso'] !='') and (kw['cargo'] !='') and (kw['sueldo'] !='') and (kw['es_jefe'] !='') and (kw['tarea'] !='') and (kw['cant_horas'] !=''):
-		if ((isinstance(kw['nombre'],str)) and (isinstance(kw['apellido'],str)) and (isinstance(kw['direccion'],str)) and (isinstance(kw['edad'],int)) and (isinstance(kw['dni'],int)) and (isinstance(kw['num_placa'],int)) and (isinstance(kw['fecha_ingreso'],datetime.date)) and (isinstance(kw['cargo'],str)) and (isinstance(kw['sueldo'],float)) and (isinstance(kw['es_jefe'],Policia)) and (isinstance(kw['tarea'],str)) and (isinstance(kw['cant_horas'],int))):
-			try:
-				alta(a,**kw)
-			except Exception,e:
-				raise e
-		else:
-			raise Exception
+	if((kw['nombre'] !='')and(kw['apellido'] !='')and(kw['direccion'] !='')and(kw['edad'] !=0)and(kw['dni'] !=0)and(kw["num_placa"] !=0)and(kw["fecha_ingreso"] !='')and(kw["cargo"] !='')and(kw["sueldo"] !=0)and(kw["tarea"] !='')and(kw["cant_horas"] !=0)):
+		if kw['es_jefe']==0:
+			del kw['es_jefe']
+		try:
+			alta(a,**kw)
+		except Exception,e:
+			raise e
 	else:
 		raise Exception
 
@@ -241,45 +239,29 @@ def modifReo(r,**kw):
 	else:
 		raise Exception
 
+def modifEfectivo(r,**kw):
+	if(kw["nombre"] !='') and (kw["apellido"] !='') and (kw["direccion"] !='') and (kw["edad"] !=0) and (kw["dni"] !=0) and (kw["num_placa"] !=0) and (kw["fecha_ingreso"] !='') and (kw["cargo"] !='') and (kw["sueldo"] !=0) and (kw["tarea"] !='') and (kw["horario_patrull"]!=''):
+		if kw['es_jefe']==0:
+			del kw['es_jefe']
+		try:
+			modificar(r,**kw)
+			return r
+		except Exception, e:
+			raise e
+	else:
+		raise Exception
+
 def modifAdmin(r,**kw):
-	if 'nombre' in kw:
-		if not(isinstance(kw['nombre'],str)):
-			raise Exception
-	if 'apellido' in kw:
-		if not(isinstance(kw['apellido'],str)):
-			raise Exception
-	if 'direccion' in kw:
-		if not(isinstance(kw['direccion'],str)):
-			raise Exception
-	if 'edad' in kw:
-		if not(isinstance(kw['edad'],int)):
-			raise Exception
-	if 'dni' in kw:
-		if not(isinstance(kw['dni'],int)):
-			raise Exception
-	if 'num_placa' in kw:
-		if not(isinstance(kw['num_placa'],int)):
-			raise Exception
-	if 'fecha_ingreso' in kw:
-		if not(isinstance(kw['fecha_ingreso'],datetime.date)):
-			raise Exception
-	if 'cargo' in kw:
-		if not(isinstance(kw['cargo'],str)):
-			raise Exception
-	if 'sueldo' in kw:
-		if not(isinstance(kw['sueldo'],float)):
-			raise Exception
-	if 'es_jefe' in kw:
-		if not(isinstance(kw['es_jefe'],Policia)):
-			raise Exception
-	if 'tarea' in kw:
-		if not(isinstance(kw['tarea'],str)):
-			raise Exception
-	if 'cant_horas' in kw:
-		if not(isinstance(kw['cant_horas'],int)):
-			raise Exception
-	modificar(r,**kw)
-	return(str('Modificacion exitosa'))
+	if(kw["nombre"] !='') and (kw["apellido"] !='') and (kw["direccion"] !='') and (kw["edad"] !=0) and (kw["dni"] !=0) and (kw["num_placa"] !=0) and (kw["fecha_ingreso"] !='') and (kw["cargo"] !='') and (kw["sueldo"] !=0) and (kw["tarea"] !='') and (kw["cant_horas"]!=0):
+		if kw['es_jefe']==0:
+			del kw['es_jefe']
+		try:
+			modificar(r,**kw)
+			return r
+		except Exception, e:
+			raise e
+	else:
+		raise Exception
 
 def modifCalab(c,**kw):
 	if 'estado' in kw:
@@ -367,50 +349,6 @@ def realizarTraslado(**kw):
 			raise Exception
 	else:
 		raise Exception
-
-def modificarEfectivo(r,**kw):
-	error = False
-	if("nombre" in kw):
-		if not(isinstance(kw['nombre'],str)):
-			error=True
-	if("apellido" in kw):
-		if not(isinstance(kw['apellido'],str)):
-			error=True
-	if("direccion" in kw):
-		if not(isinstance(kw['direccion'],str)):
-			error=True
-	if("edad" in kw):
-		if not(isinstance(kw['edad'],int)):
-			error=True
-	if("dni" in kw):
-		if not(isinstance(kw['dni'],int)):
-			error=True
-	if("num_placa" in kw):
-		if not(isinstance(kw['num_placa'],int)):
-			error=True
-	if("fecha_ingreso" in kw):
-		if not(isinstance(kw['fecha_ingreso'],datetime.date)):
-			error=True
-	if("cargo" in kw):
-		if not(isinstance(kw['cargo'],str)):
-			error=True
-	if("sueldo" in kw):
-		if not(isinstance(kw['sueldo'],float)):
-			error=True
-	if("es_jefe" in kw):
-		if not(isinstance(kw['es_jefe'],Policia)):
-			error=True
-	if("tarea" in kw):
-		if not(isinstance(kw['tarea'],str)):
-			error=True
-	if("horario_patrull" in kw):
-		if not(isinstance(kw['horario_patrull'],str)):
-			error=True	
-	if(error):
-		raise Exception
-	else:
-		modificar(r,**kw)
-		return(str('Modificacion exitosa'))
 
 def regHuella(obj):
 	if Reo.objects.all() :

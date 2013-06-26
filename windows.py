@@ -63,6 +63,29 @@ class SimpleWindow(QWebView):
 			attr=['nombre','apellido','direccion','edad','dni','tiempo_condena','fecha_ingreso','id_huella','calabozo_id']
 			for x in attr:
 				salida.append(str(getattr(obj,x)))
+		if isinstance(obj,main.Efectivo):
+			attr=['nombre','apellido','direccion','edad','dni','num_placa','fecha_ingreso','cargo','sueldo','es_jefe','tarea','horario_patrull']
+			for x in attr:
+				if x=='es_jefe':
+					a=getattr(obj,x)
+					if isinstance(a,main.Persona):
+						salida.append(str(a.dni))
+					else:
+						salida.append('')
+				else:
+					salida.append(str(getattr(obj,x)))
+			return(salida)
+		if isinstance(obj,main.Administrativo):
+			attr=['nombre','apellido','direccion','edad','dni','num_placa','fecha_ingreso','cargo','sueldo','es_jefe','tarea','cant_horas']
+			for x in attr:
+				if x=='es_jefe':
+					a=getattr(obj,x)
+					if isinstance(a,main.Persona):
+						salida.append(str(a.dni))
+					else:
+						salida.append('')
+				else:
+					salida.append(str(getattr(obj,x)))
 		return(salida)
 
 	# Altas
@@ -85,7 +108,6 @@ class SimpleWindow(QWebView):
 			main.altaReo(nombre=nombre, apellido=apellido, direccion=direccion, edad=edad, dni=dni, tiempo_condena=tiempo_condena, fecha_ingreso=fecha_ingreso, id_huella=id_huella, calabozo=main.Calabozo.objects.get(pk=id_calabozo)) 
 			return ("Reo almacenado exitosamente")
 		except Exception,e:
-			raise e
 			return False
 
 	@listen_js
@@ -98,11 +120,23 @@ class SimpleWindow(QWebView):
 
 	@listen_js
 	def altaEfectivoInterf(self,nombre,apellido,direccion,edad,dni,num_placa,fecha_ingreso,cargo,sueldo,id_es_jefe,tarea,horario_patrull):
+		fec=fecha_ingreso.split('-')
 		try:
-			main.altaEfectivo(nombre=nombre,apellido=apellido,direccion=direccion,edad=edad,dni=dni,nom_placa=num_placa,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=main.Policia.objects.get(pk=id_es_jefe),tarea=tarea,horario_patrull=horario_patrull)
-			return ("Datos Efectivo almacenado exitosamente")
-		except Exception:
-			return ("Error, verifique campos")
+			fecha_ingreso=datetime.date(int(fec[0]),int(fec[1]),int(fec[2]))
+		except Exception,e:
+			return False
+		if id_es_jefe == 0:
+			try:
+				main.altaEfectivo(nombre=nombre,apellido=apellido,direccion=direccion,edad=edad,dni=dni,num_placa=num_placa,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=0,tarea=tarea,horario_patrull=horario_patrull)
+				return ("Datos efectivo almacenado exitosamente")
+			except Exception,e:
+				return False
+		else:
+			try:
+				main.altaEfectivo(nombre=nombre,apellido=apellido,direccion=direccion,edad=edad,dni=dni,num_placa=num_placa,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=main.Policia.objects.get(dni=id_es_jefe),tarea=tarea,horario_patrull=horario_patrull)
+				return ("Datos efectivo almacenado exitosamente")
+			except Exception,e:
+				return False
 
 	@listen_js
 	def altaArticuloInterf(self, nombre, estado, tipo):
@@ -114,11 +148,23 @@ class SimpleWindow(QWebView):
 
 	@listen_js
 	def altaAdministrativoInterf(self,nombre,apellido,direccion,edad,dni,num_placa,fecha_ingreso,cargo,sueldo,id_es_jefe,tarea,cant_horas):
+		fec=fecha_ingreso.split('-')
 		try:
-			main.altaAdministrativo(nombre=nombre,apellido=apellido,direccion=direccion,edad=edad,dni=dni,nom_placa=num_placa,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=main.Policia.objects.get(pk=id_es_jefe),tarea=tarea,cant_horas=cant_horas)
-			return ("Articulo almacenado exitosamente")
-		except Exception:
-			return ("Error, verifique campos")
+			fecha_ingreso=datetime.date(int(fec[0]),int(fec[1]),int(fec[2]))
+		except Exception,e:
+			return False
+		if id_es_jefe == 0:
+			try:
+				main.altaAdministrativo(nombre=nombre,apellido=apellido,direccion=direccion,edad=edad,dni=dni,num_placa=num_placa,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=0,tarea=tarea,cant_horas=cant_horas)
+				return ("Datos administrativo almacenado exitosamente")
+			except Exception,e:
+				return False
+		else:
+			try:
+				main.altaAdministrativo(nombre=nombre,apellido=apellido,direccion=direccion,edad=edad,dni=dni,num_placa=num_placa,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=main.Policia.objects.get(dni=id_es_jefe),tarea=tarea,cant_horas=cant_horas)
+				return ("Datos administrativo almacenado exitosamente")
+			except Exception,e:
+				return False
 
 	@listen_js
 	def altaArmamentoInterf(self,nombre,estado,tipo_municion,codigo):
@@ -132,7 +178,7 @@ class SimpleWindow(QWebView):
 	def altaMunicionInterf(self,nombre,estado,tipo,cantidad):
 		try:
 			main.altaMunicion(nombre=nombre,estado=estado,tipo=tipo,cantidad=cantidad)
-			return ("Munición almacenado exitosamente")
+			return ("Municion almacenado exitosamente")
 		except Exception:
 			return ("Error, verifique campos")
 
@@ -149,13 +195,17 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def buscarAdministrativoInterf(self, valor):
 		if isinstance(valor,int):
-			adm=main.busquedaAdmin(valor)
+			try:
+				adm=main.busquedaAdmin(valor)
+			except Exception:
+				return False
 		else:
-			return str("Error, verifique los valor de la busqueda")
+			return False
 		try:
-			returned=toString(adm)
-		except Exception:
-			return(str('Administrativo no encontrado'))
+			returned=self.toString(adm[0])
+		except Exception,e:
+			raise e
+			return False
 		return (returned)
 
 	@listen_js
@@ -195,13 +245,16 @@ class SimpleWindow(QWebView):
 	@listen_js
 	def buscarEfectivoInterf(self, valor):
 		if isinstance(valor,int):
-			efec=main.busquedaEfectivo(valor)
+			try:
+				efec=main.buscarEfectivo(valor)
+			except Exception,e:
+				return False
 		else:
-			return str("Error, verifique los valor de la busqueda")
+			return False
 		try:
-			returned=toString(efec)
-		except Exception:
-			return('Efectivo no encontrado.')
+			returned=self.toString(efec[0])
+		except Exception,e:
+			return False
 		return (returned)
 	
 	@listen_js
@@ -283,21 +336,19 @@ class SimpleWindow(QWebView):
 			return('Error.')
 
 	@listen_js
-	def bajaEfectivoInterf(self,idO):
+	def bajaEfectivoInterf(self,dni):
 		try:
-			main.baja(main.Efectivo.objects.get(id0))
+			main.baja(main.Efectivo.objects.filter(dni=dni))
 			return('Eliminacion exitosa.')
 		except:
-			return('Error.')
+			return False
 
 	@listen_js
 	def bajaReoInterf(self,dni):
 		try:
-			print(dni)
 			main.baja(main.Reo.objects.filter(dni=dni))
 			return('Eliminacion exitosa.')
 		except Exception,e:
-			raise e
 			return False
 
 	@listen_js
@@ -309,12 +360,12 @@ class SimpleWindow(QWebView):
 			return('Error.')
 
 	@listen_js
-	def bajaAdministrativoInterf(self,idO):
+	def bajaAdministrativoInterf(self,dni):
 		try:
-			main.baja(main.Administrativo.objects.get(id0))
+			main.baja(main.Administrativo.objects.filter(dni=dni))
 			return('Eliminacion exitosa.')
-		except:
-			return('Error.')
+		except Exception,e:
+			return False
 
 	@listen_js
 	def bajaCalabozoInterf(self,idO):
@@ -364,6 +415,56 @@ class SimpleWindow(QWebView):
 		except Exception,e:
 			raise e
 			return False
+
+	@listen_js
+	def modifEfectivoInterf(self,nom,ap,direc,edad,dni,plac,fecha_ingreso,cargo,sueldo,jefe,tarea,hor):
+		fec=fecha_ingreso.split('-')
+		try:
+			fecha_ingreso=datetime.date(int(fec[0]),int(fec[1]),int(fec[2]))
+		except Exception,e:
+			return False
+		if jefe == 0:
+			try:
+				r=main.Efectivo.objects.get(dni=dni)
+				main.modifEfectivo(r,nombre=nom,apellido=ap,direccion=direc,edad=edad,dni=dni,num_placa=plac,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=0,tarea=tarea,horario_patrull=hor) 
+				return ("Datos del Reo modificados exitosamente")
+			except Exception,e:
+				raise e
+				return False
+		else:
+			try:
+				r=main.Efectivo.objects.get(dni=dni)
+				main.modifEfectivo(r,nombre=nom,apellido=ap,direccion=direc,edad=edad,dni=dni,num_placa=plac,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=main.Policia.objects.get(dni=jefe),tarea=tarea,horario_patrull=hor) 
+				return ("Datos del Reo modificados exitosamente")
+			except Exception,e:
+				raise e
+				return False
+
+	@listen_js
+	def modifAdministrativoInterf(self,nom,ap,direc,edad,dni,plac,fecha_ingreso,cargo,sueldo,jefe,tarea,hor):
+		fec=fecha_ingreso.split('-')
+		try:
+			fecha_ingreso=datetime.date(int(fec[0]),int(fec[1]),int(fec[2]))
+		except Exception,e:
+			return False
+		if jefe == 0:
+			try:
+				r=main.Administrativo.objects.get(dni=dni)
+				main.modifAdmin(r,nombre=nom,apellido=ap,direccion=direc,edad=edad,dni=dni,num_placa=plac,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=0,tarea=tarea,vant_horas=hor) 
+				return ("Datos del Reo modificados exitosamente")
+			except Exception,e:
+				raise e
+				return False
+		else:
+			try:
+				r=main.Administrativo.objects.get(dni=dni)
+				main.modifAdmin(r,nombre=nom,apellido=ap,direccion=direc,edad=edad,dni=dni,num_placa=plac,fecha_ingreso=fecha_ingreso,cargo=cargo,sueldo=sueldo,es_jefe=main.Policia.objects.get(dni=jefe),tarea=tarea,cant_horas=hor) 
+				return ("Datos del Reo modificados exitosamente")
+			except Exception,e:
+				raise e
+				return False
+
+			
 
 
 	@listen_js

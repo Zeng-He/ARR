@@ -120,6 +120,7 @@ $(document).ready(function() {
 			}
 		})
 	})
+	
 	$('#buttonEliminarReoBaja').click(function(e) {
 		e.preventDefault();
 		dni=Number($('#dniBajaReo').text())
@@ -163,7 +164,6 @@ $(document).ready(function() {
 			}
 		})
 	})
-
 
 	$("#buttonModificarReo").click(function(e){
 		e.preventDefault();
@@ -260,6 +260,7 @@ $(document).ready(function() {
 			}
 		})
 	})
+
 	$("#buttonBusquedaBajaReo").click(function(e){
 		e.preventDefault();
 		huella=$('#reoBaja #optionsRadios1').is(':checked')
@@ -296,8 +297,6 @@ $(document).ready(function() {
 			}
 		})
 	})
-
-	
 
 	$("#buttonAtrasBusquedaReo").click(function(e){
 		e.preventDefault();
@@ -458,8 +457,176 @@ $(document).ready(function() {
 
 	$("#buttonDatosBusquedaEfectivoPolicia").click(function(e){
 		e.preventDefault();
-		$("#datosBusquedaEfectivoPolicia").css({'display':'inline'})
-		borrar()
+		valor=$('#buscadorEfectivoPolicia #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorEfectivoPolicia').attr('class','control-group error')
+				$('#buscadorEfectivoPolicia span').text('Campo vacio')
+				return
+			};
+		attr=['nombre','apellido','direccion','edad','dni','numeroPlaca','fechaIngreso','cargo','sueldo','jefe','tarea','horaPatrulla']
+		PyAsync('buscarEfectivoInterf',{
+			args:[Number(valor)],
+			callback:function(data) {
+				if (data) {
+					$('#buscadorEfectivoPolicia').attr('class','control-group')
+					$('#buscadorEfectivoPolicia span').text('')
+					$.each(attr,function(i,l) {
+						$('#'+l+'BusquedaEfectivoPolicia').text(data[i])
+					})
+					$("#datosBusquedaEfectivoPolicia").css({'display':'inline'})
+				} else{
+					$("#datosBusquedaEfectivoPolicia").css({'display':'none'})
+					$('#buscadorEfectivoPolicia').attr('class','control-group error')
+					$('#buscadorEfectivoPolicia span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				};
+			}
+		})
+	})
+
+	$("#buttonDatosBusquedaAdministrativoPolicia").click(function(e){
+		e.preventDefault();
+		valor=$('#buscadorAdministrativoPolicia #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorAdministrativoPolicia').attr('class','control-group error')
+				$('#buscadorAdministrativoPolicia span').text('Campo vacio')
+				return
+			};
+		attr=['nombre','apellido','direccion','edad','dni','numeroPlaca','fechaIngreso','cargo','sueldo','jefe','tarea','horaTrabajo']
+		PyAsync('buscarAdministrativoInterf',{
+			args:[Number(valor)],
+			callback:function(data) {
+				if (data) {
+					$('#buscadorAdministrativoPolicia').attr('class','control-group')
+					$('#buscadorAdministrativoPolicia span').text('')
+					$.each(attr,function(i,l) {
+						$('#'+l+'BusquedaAdministrativoPolicia').text(data[i])
+					})
+					$("#datosBusquedaAdministrativoPolicia").css({'display':'inline'})
+				} else{
+					$("#datosBusquedaAdministrativoPolicia").css({'display':'none'})
+					$('#buscadorAdministrativoPolicia').attr('class','control-group error')
+					$('#buscadorAdministrativoPolicia span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				};
+			}
+		})
+	})
+
+	$('#buttonGuardarAltaPoliciaEfectivo').click(function(e) {
+		e.preventDefault();
+		nom=$('#inputNombreAltaPoliciaEfectivo').val()
+		ap=$('#inputApellidoAltaPoliciaEfectivo').val()
+		direc=$('#inputDirreccionAltaPoliciaEfectivo').val()
+		edad=Number($('#inputEdadAltaPoliciaEfectivo').val())
+		dni=Number($('#inputDniAltaPoliciaEfectivo').val())
+		plac=Number($('#inputNumeroPlacaAltaPoliciaEfectivo').val())
+		fec=$('#inputFechaIngresoAltaPoliciaEfectivo').val()
+		cargo=$('#inputCargoAltaPoliciaEfectivo').val()
+		sueldo=Number($('#inputSueldoAltaPoliciaEfectivo').val())
+		jefe=Number($('#inputJefeAltaPoliciaEfectivo').val())
+		tarea=$('#inputTareaAltaPoliciaEfectivo').val()
+		hor=$('#inputHorarioPatrullaAltaPoliciaEfectivo').val()
+		PyAsync('altaEfectivoInterf',{
+			args:[nom,ap,direc,edad,dni,plac,fec,cargo,sueldo,jefe,tarea,hor],
+			callback: function(data) {
+				if (data) {
+					$('#guardarAltaE span').text(data)
+					$('#guardarAltaE').attr('class','')
+					borrar()
+				}else{
+					$('#guardarAltaE span').text('Verifique los campos')
+					$('#guardarAltaE').attr('class','error')
+				}
+			}
+		})
+	})
+
+	$('#buttonGuardarAltaPoliciaAdministrativo').click(function(e) {
+		e.preventDefault();
+		nom=$('#inputNombreAltaPoliciaAdministrativo').val()
+		ap=$('#inputApellidoAltaPoliciaAdministrativo').val()
+		direc=$('#inputDirreccionAltaPoliciaAdministrativo').val()
+		edad=Number($('#inputEdadAltaPoliciaAdministrativo').val())
+		dni=Number($('#inputDniAltaPoliciaAdministrativo').val())
+		plac=Number($('#inputNumeroPlacaAltaPoliciaAdministrativo').val())
+		fec=$('#inputFechaIngresoAltaPoliciaAdministrativo').val()
+		cargo=$('#inputCargoAltaPoliciaAdministrativo').val()
+		sueldo=Number($('#inputSueldoAltaPoliciaAdministrativo').val())
+		jefe=Number($('#inputJefeAltaPoliciaAdministrativo').val())
+		tarea=$('#inputTareaAltaPoliciaAdministrativo').val()
+		hor=Number($('#inputHorasTAltaPoliciaAdministrativo').val())
+		PyAsync('altaAdministrativoInterf',{
+			args:[nom,ap,direc,edad,dni,plac,fec,cargo,sueldo,jefe,tarea,hor],
+			callback: function(data) {
+				if (data) {
+					$('#guardarAltaA span').text(data)
+					$('#guardarAltaA').attr('class','')
+					borrar()
+				}else{
+					$('#guardarAltaA span').text('Verifique los campos')
+					$('#guardarAltaA').attr('class','error')
+				}
+			}
+		})
+	})
+
+	$('#buttonGuardarModificacionPoliciaEfectivo').click(function(e) {
+		e.preventDefault();
+		nom=$('#nombreModificacionPoliciaEfectivo').val()
+		ap=$('#apellidoModificacionPoliciaEfectivo').val()
+		direc=$('#direccionModificacionPoliciaEfectivo').val()
+		edad=Number($('#edadModificacionPoliciaEfectivo').val())
+		dni=Number($('#dniModificacionPoliciaEfectivo').val())
+		plac=Number($('#numeroPlacaModificacionPoliciaEfectivo').val())
+		fec=$('#fechaIngresoModificacionPoliciaEfectivo').val()
+		cargo=$('#cargoModificacionPoliciaEfectivo').val()
+		sueldo=Number($('#sueldoModificacionPoliciaEfectivo').val())
+		jefe=Number($('#jefeModificacionPoliciaEfectivo').val())
+		tarea=$('#tareaModificacionPoliciaEfectivo').val()
+		hor=$('#horarioPatrullaModificacionPoliciaEfectivo').val()
+		PyAsync('modifEfectivoInterf',{
+			args:[nom,ap,direc,edad,dni,plac,fec,cargo,sueldo,jefe,tarea,hor],
+			callback: function(data) {
+				if (data) {
+					$('#guardarModifE span').text('Efectivo modificado con exito')
+					$('#guardarModifE').attr('class','control-group')
+					borrar()
+				}else{
+					$('#guardarModifE span').text('Verifique los campos')
+					$('#guardarModifE').attr('class','control-group error')
+				}
+			}
+		})
+	})
+
+	$('#buttonGuardarModificacionPoliciaAdministrativo').click(function(e) {
+		e.preventDefault();
+		nom=$('#nombreModificacionPoliciaAdministrativo').val()
+		ap=$('#apellidoModificacionPoliciaAdministrativo').val()
+		direc=$('#direccionModificacionPoliciaAdministrativo').val()
+		edad=Number($('#edadModificacionPoliciaAdministrativo').val())
+		dni=Number($('#dniModificacionPoliciaAdministrativo').val())
+		plac=Number($('#numeroPlacaModificacionPoliciaAdministrativo').val())
+		fec=$('#fechaIngresoModificacionPoliciaAdministrativo').val()
+		cargo=$('#cargoModificacionPoliciaAdministrativo').val()
+		sueldo=Number($('#sueldoModificacionPoliciaAdministrativo').val())
+		jefe=Number($('#jefeModificacionPoliciaAdministrativo').val())
+		tarea=$('#tareaModificacionPoliciaAdministrativo').val()
+		hor=$('#horarioTModificacionPoliciaAdministrativo').val()
+		PyAsync('modifAdministrativoInterf',{
+			args:[nom,ap,direc,edad,dni,plac,fec,cargo,sueldo,jefe,tarea,hor],
+			callback: function(data) {
+				if (data) {
+					$('#guardarModifA span').text('Administrativo modificado con exito')
+					$('#guardarModifA').attr('class','control-group')
+					borrar()
+				}else{
+					$('#guardarModifA span').text('Verifique los campos')
+					$('#guardarModifA').attr('class','control-group error')
+				}
+			}
+		})
 	})
 
 	$("#buttonAtrasBusquedaEfectivoPolicia").click(function(e){
@@ -493,9 +660,31 @@ $(document).ready(function() {
 
 	$("#buttonDatosBusquedaModificacionEfectivoPolicia").click(function(e){
 		e.preventDefault();
-		$("#policiaEfectivoInicio").css({'display':'none'})
-		$("#formularioModificacionEfectivoPolicia").css({'display':'inline'})
-		borrar()
+		valor=$('#buscadorModificacionEfectivoPolicia #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorModificacionEfectivoPolicia').attr('class','control-group error')
+				$('#buscadorModificacionEfectivoPolicia span').text('Campo vacio')
+				return
+			};
+		attr=['nombre','apellido','direccion','edad','dni','numeroPlaca','fechaIngreso','cargo','sueldo','jefe','tarea','horarioPatrulla']
+		PyAsync('buscarEfectivoInterf',{
+			args:[Number(valor)],
+			callback:function(data) {
+				if (data){
+					$('#buscadorModificacionEfectivoPolicia').attr('class','')
+					$('#buscadorModificacionEfectivoPolicia span').text('')
+					$.each(attr,function(i,l) {
+						$('#'+l+'ModificacionPoliciaEfectivo').val(data[i])
+					})
+		 			$("#formularioModificacionEfectivoPolicia").css({'display':'inline'})
+				}else{
+		 			$("#formularioModificacionEfectivoPolicia").css({'display':'none'})
+					$('#buscadorModificacionEfectivoPolicia').attr('class','control-group error')
+					$('#buscadorModificacionEfectivoPolicia span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				}
+			}
+		})
 	})
 
 	$("#buttonAtrasBusquedaModificacionEfectivoPolicia").click(function(e){
@@ -523,8 +712,31 @@ $(document).ready(function() {
 
 	$("#buttonBusquedaBajaPoliciaEfectivo").click(function(e){
 		e.preventDefault();
-		$("#datosBajaPoliciaEfectivo").css({'display':'inline'})
-		borrar()
+		valor=$('#buscadorBajaPoliciaEfectivo #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorBajaPoliciaEfectivo').attr('class','control-group error')
+				$('#buscadorBajaPoliciaEfectivo span').text('Campo vacio')
+				return
+			};
+		attr=['nombre','apellido','direccion','edad','dni','numeroPlaca','fechaIngreso','cargo','sueldo','jefe','tarea','horarioPatrulla']
+		PyAsync('buscarEfectivoInterf',{
+			args:[Number(valor)],
+			callback:function(data) {
+				if (data) {
+					$('#buscadorBajaPoliciaEfectivo').attr('class','control-group')
+					$('#buscadorBajaPoliciaEfectivo span').text('')
+					$.each(attr,function(i,l) {
+						$('#'+l+'BajaPoliciaEfectivo').text(data[i])
+					})
+					$("#datosBajaPoliciaEfectivo").css({'display':'inline'})
+				} else{
+					$("#datosBajaPoliciaEfectivo").css({'display':'none'})
+					$('#buscadorBajaPoliciaEfectivo').attr('class','control-group error')
+					$('#buscadorBajaPoliciaEfectivo span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				};
+			}
+		})
 	})
 
 	$("#buttonCancelarBajaPoliciaEfectivo").click(function(e){
@@ -546,12 +758,6 @@ $(document).ready(function() {
 		e.preventDefault();
 		$("#policiaAdministrativoInicio").css({'display':'none'})
 		$("#policiaAdministrativoBusqueda").css({'display':'inline'})
-		borrar()
-	})
-
-	$("#buttonDatosBusquedaAdministrativoPolicia").click(function(e){
-		e.preventDefault();
-		$("#datosBusquedaAdministrativoPolicia").css({'display':'inline'})
 		borrar()
 	})
 
@@ -586,9 +792,31 @@ $(document).ready(function() {
 
 	$("#buttonDatosBusquedaModificacionAdministrativoPolicia").click(function(e){
 		e.preventDefault();
-		$("#policiaAdministrativoInicio").css({'display':'none'})
-		$("#formularioModificacionAdministrativoPolicia").css({'display':'inline'})
-		borrar()
+		valor=$('#buscadorModificacionAdministrativoPolicia #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorModificacionAdministrativoPolicia').attr('class','control-group error')
+				$('#buscadorModificacionAdministrativoPolicia span').text('Campo vacio')
+				return
+			};
+		attr=['nombre','apellido','direccion','edad','dni','numeroPlaca','fechaIngreso','cargo','sueldo','jefe','tarea','horarioT']
+		PyAsync('buscarAdministrativoInterf',{
+			args:[Number(valor)],
+			callback:function(data) {
+				if (data){
+					$('#buscadorModificacionAdministrativoPolicia').attr('class','')
+					$('#buscadorModificacionAdministrativoPolicia span').text('')
+					$.each(attr,function(i,l) {
+						$('#'+l+'ModificacionPoliciaAdministrativo').val(data[i])
+					})
+		 			$("#formularioModificacionAdministrativoPolicia").css({'display':'inline'})
+				}else{
+		 			$("#formularioModificacionAdministrativoPolicia").css({'display':'none'})
+					$('#buscadorModificacionAdministrativoPolicia').attr('class','control-group error')
+					$('#buscadorModificacionAdministrativoPolicia span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				}
+			}
+		})
 	})
 
 	$("#buttonAtrasBusquedaModificacionAdministrativoPolicia").click(function(e){
@@ -616,8 +844,31 @@ $(document).ready(function() {
 
 	$("#buttonBusquedaBajaPoliciaAdministrativo").click(function(e){
 		e.preventDefault();
-		$("#datosBajaPoliciaAdministrativo").css({'display':'inline'})
-		borrar()
+		valor=$('#buscadorBajaPoliciaAdministrativo #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorBajaPoliciaAdministrativo').attr('class','control-group error')
+				$('#buscadorBajaPoliciaAdministrativo span').text('Campo vacio')
+				return
+			};
+		attr=['nombre','apellido','direccion','edad','dni','numeroPlaca','fechaIngreso','cargo','sueldo','jefe','tarea','horarioT']
+		PyAsync('buscarAdministrativoInterf',{
+			args:[Number(valor)],
+			callback:function(data) {
+				if (data) {
+					$('#buscadorBajaPoliciaAdministrativo').attr('class','control-group')
+					$('#buscadorBajaPoliciaAdministrativo span').text('')
+					$.each(attr,function(i,l) {
+						$('#'+l+'BajaPoliciaAdministrativo').text(data[i])
+					})
+					$("#datosBajaPoliciaAdministrativo").css({'display':'inline'})
+				} else{
+					$("#datosBajaPoliciaAdministrativo").css({'display':'none'})
+					$('#buscadorBajaPoliciaAdministrativo').attr('class','control-group error')
+					$('#buscadorBajaPoliciaAdministrativo span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				};
+			}
+		})
 	})
 
 	$("#buttonCancelarBajaPoliciaAdministrativo").click(function(e){
@@ -628,6 +879,41 @@ $(document).ready(function() {
 		borrar()
 	})
 
+	$('#buttonEliminarBajaPoliciaEfectivo').click(function(e) {
+		e.preventDefault();
+		dni=Number($('#dniBajaPoliciaEfectivo').text())
+		PyAsync('bajaEfectivoInterf',{
+			args:[dni],
+			callback: function(data) {
+				if (data) {
+					$('#guardarBajaE span').text(data)
+					$('#guardarBajaE').attr('class','control-group')
+					borrar()
+				}else{
+					$('#guardarBajaE span').text('Error')
+					$('#guardarBajaE').attr('class','control-group error')
+				}
+			}
+		})
+	})
+	
+	$('#buttonEliminarBajaPoliciaAdministrativo').click(function(e) {
+		e.preventDefault();
+		dni=Number($('#dniBajaPoliciaAdministrativo').text())
+		PyAsync('bajaAdministrativoInterf',{
+			args:[dni],
+			callback: function(data) {
+				if (data) {
+					$('#guardarBajaA span').text(data)
+					$('#guardarBajaA').attr('class','control-group')
+					borrar()
+				}else{
+					$('#guardarBajaA span').text('Error')
+					$('#guardarBajaA').attr('class','control-group error')
+				}
+			}
+		})
+	})
 
 	//-----------------TRASLADOS-------------------
 	$("#traslado").click(function(e){

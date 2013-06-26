@@ -679,7 +679,7 @@
                             <h1>BUSCAR EFECTIVO</h1>
                             <form>
                                 <fieldset id="buscadorEfectivoPolicia">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div>
                                         <label class="radio">
                                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -688,6 +688,7 @@
                                     </div>
                                     <button id="buttonAtrasBusquedaEfectivoPolicia" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosBusquedaEfectivoPolicia" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="datosBusquedaEfectivoPolicia">
@@ -709,7 +710,7 @@
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">DNI:</label>
-                                    <label class="control-label" id="dnBusquedaEfectivoPolicia">DNI..</label>
+                                    <label class="control-label" id="dniBusquedaEfectivoPolicia">DNI..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">NÚMERO DE PLACA:</label>
@@ -736,7 +737,7 @@
                                     <label class="control-label" id="tareaBusquedaEfectivoPolicia">Tarea....</label>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">HORA DE PATRULLA:</label>
+                                    <label class="control-label">HORARIO DE PATRULLA:</label>
                                     <label class="control-label" id="horaPatrullaBusquedaEfectivoPolicia">Horario de Patrulla....</label>
                                 </div>
                             </form>
@@ -818,10 +819,11 @@
                                       <input type="text" id="inputHorarioPatrullaAltaPoliciaEfectivo" placeholder="Horarios de la Patrulla...">
                                     </div>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarAltaE'>
                                     <div class="controls">
                                       <button type="submit" class="btn" id="buttonAtrasAltaPoliciaEfectivo">Atras</button>
                                       <button type="submit" class="btn" id="buttonGuardarAltaPoliciaEfectivo">Guardar</button>
+                                      <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>
@@ -832,7 +834,7 @@
                             <h1>MODIFICACIÓN EFECTIVO</h1>
                             <form>
                                 <fieldset id="buscadorModificacionEfectivoPolicia">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div class="row-fluid">
                                         <div class="span2">
                                             <label class="radio">
@@ -843,84 +845,86 @@
                                     </div>
                                     <button id="buttonAtrasBusquedaModificacionEfectivoPolicia" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosBusquedaModificacionEfectivoPolicia" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="formularioModificacionEfectivoPolicia">
                                 <div class="control-group">
                                     <label class="control-label">Nombre:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputNombreModificacionPoliciaEfectivo" placeholder="Nombre...">
+                                      <input type="text" id="nombreModificacionPoliciaEfectivo" placeholder="Nombre...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Apellido:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputApellidoModificacionPoliciaEfectivo" placeholder="Apellido...">
+                                      <input type="text" id="apellidoModificacionPoliciaEfectivo" placeholder="Apellido...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Dirección:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputDirreccionModificacionPoliciaEfectivo" placeholder="Dirección...">
+                                      <input type="text" id="direccionModificacionPoliciaEfectivo" placeholder="Dirección...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Edad:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputEdadModificacionPoliciaEfectivo" placeholder="Edad...">
+                                      <input type="text" id="edadModificacionPoliciaEfectivo" placeholder="Edad...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">DNI:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputDniModificacionPoliciaEfectivo" placeholder="DNI...">
+                                      <input type="text" id="dniModificacionPoliciaEfectivo" placeholder="DNI..." disabled>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Número de Placa:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputNumeroPlacaModificacionPoliciaEfectivo" placeholder="Número de Placa...">
+                                      <input type="text" id="numeroPlacaModificacionPoliciaEfectivo" placeholder="Número de Placa...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Fecha de Ingreso:</label>
                                     <div class="controls">
-                                      <input type='text' id="inputFechaIngresoModificacionPoliciaEfectivo" placeholder='aaaa-mm-dd'>
+                                      <input type='text' id="fechaIngresoModificacionPoliciaEfectivo" placeholder='aaaa-mm-dd'>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Cargo:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputCargoModificacionPoliciaEfectivo" placeholder="Cargo...">
+                                      <input type="text" id="cargoModificacionPoliciaEfectivo" placeholder="Cargo...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Sueldo:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputSueldoModificacionPoliciaEfectivo" placeholder="Sueldo...">
+                                      <input type="text" id="sueldoModificacionPoliciaEfectivo" placeholder="Sueldo...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Jefe:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputJefeModificacionPoliciaEfectivo" placeholder="Jefe...">
+                                      <input type="text" id="jefeModificacionPoliciaEfectivo" placeholder="Jefe...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Tarea:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputTareaModificacionPoliciaEfectivo" placeholder="Tarea...">
+                                      <input type="text" id="tareaModificacionPoliciaEfectivo" placeholder="Tarea...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Horario de Patrulla:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputHorarioPatrullaModificacionPoliciaEfectivo" placeholder="Horarios de la Patrulla...">
+                                      <input type="text" id="horarioPatrullaModificacionPoliciaEfectivo" placeholder="Horarios de la Patrulla...">
                                     </div>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarModifE'>
                                     <div class="controls">
                                       <button id="buttonGuardarModificacionPoliciaEfectivo" type="submit" class="btn">Guardar Cambios</button>
+                                      <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>
@@ -931,7 +935,7 @@
                             <h1>BAJA DE EFECTIVO<span style="font-size:20px;">(baja lógica)</span></h1>
                             <form>
                                 <fieldset id="buscadorBajaPoliciaEfectivo">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div class="row-fluid">
                                         <div class="span2">
                                             <label class="radio">
@@ -942,61 +946,63 @@
                                     </div>
                                     <button id="buttonAtrasBajaPoliciaEfectivo" type="submit" class="btn">Atras</button>
                                     <button id="buttonBusquedaBajaPoliciaEfectivo" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="datosBajaPoliciaEfectivo">
                                 <div class="control-group">
                                     <label class="control-label">Nombre:</label>
-                                    <label class="control-label" id="inputNombreBajaPoliciaEfectivo">Nombre...</label>
+                                    <label class="control-label" id="nombreBajaPoliciaEfectivo">Nombre...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Apellido:</label>
-                                    <label class="control-label" id="inputApellidoBajaPoliciaEfectivo">Apellido...</label>
+                                    <label class="control-label" id="apellidoBajaPoliciaEfectivo">Apellido...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Dirección:</label>
-                                    <label class="control-label" id="inputDireccionBajaPoliciaEfectivo">Dirección...</label>
+                                    <label class="control-label" id="direccionBajaPoliciaEfectivo">Dirección...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Edad:</label>
-                                    <label class="control-label" id="inputEdadBajaPoliciaEfectivo">Edad...</label>
+                                    <label class="control-label" id="edadBajaPoliciaEfectivo">Edad...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">DNI:</label>
-                                    <label class="control-label" id="inputDniBajaPoliciaEfectivo">DNI...</label>
+                                    <label class="control-label" id="dniBajaPoliciaEfectivo">DNI...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Número de Placa:</label>
-                                    <label class="control-label" id="inputNumeroPlacaBajaPoliciaEfectivo">Número de Placa...</label>
+                                    <label class="control-label" id="numeroPlacaBajaPoliciaEfectivo">Número de Placa...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Fecha de Ingreso:</label>
-                                    <label class="control-label" id="inputFechaIngresoBajaPoliciaEfectivo">Fecha de Ingreso...</label>
+                                    <label class="control-label" id="fechaIngresoBajaPoliciaEfectivo">Fecha de Ingreso...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Cargo:</label>
-                                    <label class="control-label" id="inputCargoBajaPoliciaEfectivo">Cargo...</label>
+                                    <label class="control-label" id="cargoBajaPoliciaEfectivo">Cargo...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Sueldo:</label>
-                                    <label class="control-label" id="inputSueldoBajaPoliciaEfectivo">Sueldo...</label>
+                                    <label class="control-label" id="sueldoBajaPoliciaEfectivo">Sueldo...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Jefe:</label>
-                                    <label class="control-label" id="inputJefeBajaPoliciaEfectivo">Jefe...</label>
+                                    <label class="control-label" id="jefeBajaPoliciaEfectivo">Jefe...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Tarea:</label>
-                                    <label class="control-label" id="inputTareaBajaPoliciaEfectivo">Tarea...</label>
+                                    <label class="control-label" id="tareaBajaPoliciaEfectivo">Tarea...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Horario de Patrulla:</label>
-                                    <label class="control-label" id="inputHorarioPatrullaBajaPoliciaEfectivo">Horarios de la Patrulla...</label>
+                                    <label class="control-label" id="horarioPatrullaBajaPoliciaEfectivo">Horarios de la Patrulla...</label>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarBajaE'>
                                     <div class="controls">
-                                      <button id="buttonEliminarBajaPoliciaEfectivo" type="submit" class="btn">Confirmar</button>
                                       <button id="buttonCancelarBajaPoliciaEfectivo" type="submit" class="btn">Cancelar</button>
+                                      <button id="buttonEliminarBajaPoliciaEfectivo" type="submit" class="btn">Confirmar</button>
+                                      <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>
@@ -1036,7 +1042,7 @@
                             <h1>BUSCAR ADMINISTRATIVO</h1>
                             <form>
                                 <fieldset id="buscadorAdministrativoPolicia">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div>
                                         <label class="radio">
                                             <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
@@ -1045,6 +1051,7 @@
                                     </div>
                                     <button id="buttonAtrasBusquedaAdministrativoPolicia" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosBusquedaAdministrativoPolicia" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="datosBusquedaAdministrativoPolicia">
@@ -1066,7 +1073,7 @@
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">DNI:</label>
-                                    <label class="control-label" id="dnBusquedaAdministrativoPolicia">DNI..</label>
+                                    <label class="control-label" id="dniBusquedaAdministrativoPolicia">DNI..</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">NÚMERO DE PLACA:</label>
@@ -1094,7 +1101,7 @@
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">HORAS DE TRABAJO:</label>
-                                    <label class="control-label" id="horaPatrullaBusquedaAdministrativoPolicia">Horas de Trabajo:....</label>
+                                    <label class="control-label" id="horaTrabajoBusquedaAdministrativoPolicia">Horas de Trabajo:....</label>
                                 </div>
                             </form>
                         </div>
@@ -1172,13 +1179,14 @@
                                 <div class="control-group">
                                     <label class="control-label">Horas de Trabajo:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputHorarioPatrullaAltaPoliciaAdministrativo" placeholder="Horas de Trabajo...">
+                                      <input type="text" id="inputHorasTAltaPoliciaAdministrativo" placeholder="Horas de Trabajo...">
                                     </div>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarAltaA'>
                                     <div class="controls">
-                                      <button type="submit" class="btn" id="buttonAtrasAltaPoliciaAdministrativo">Atras</button>
-                                      <button type="submit" class="btn" id="buttonGuardarAltaPoliciaAdministrativo">Guardar</button>
+                                        <button type="submit" class="btn" id="buttonAtrasAltaPoliciaAdministrativo">Atras</button>
+                                        <button type="submit" class="btn" id="buttonGuardarAltaPoliciaAdministrativo">Guardar</button>
+                                        <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>
@@ -1189,7 +1197,7 @@
                             <h1>MODIFICACIÓN ADMINISTRATIVO</h1>
                             <form>
                                 <fieldset id="buscadorModificacionAdministrativoPolicia">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div class="row-fluid">
                                         <div class="span2">
                                             <label class="radio">
@@ -1200,84 +1208,86 @@
                                     </div>
                                     <button id="buttonAtrasBusquedaModificacionAdministrativoPolicia" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosBusquedaModificacionAdministrativoPolicia" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="formularioModificacionAdministrativoPolicia">
                                 <div class="control-group">
                                     <label class="control-label">Nombre:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputNombreModificacionPoliciaAdministrativo" placeholder="Nombre...">
+                                      <input type="text" id="nombreModificacionPoliciaAdministrativo" placeholder="Nombre...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Apellido:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputApellidoModificacionPoliciaAdministrativo" placeholder="Apellido...">
+                                      <input type="text" id="apellidoModificacionPoliciaAdministrativo" placeholder="Apellido...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Dirección:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputDirreccionModificacionPoliciaAdministrativo" placeholder="Dirección...">
+                                      <input type="text" id="direccionModificacionPoliciaAdministrativo" placeholder="Dirección...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Edad:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputEdadModificacionPoliciaAdministrativo" placeholder="Edad...">
+                                      <input type="text" id="edadModificacionPoliciaAdministrativo" placeholder="Edad...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">DNI:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputDniModificacionPoliciaAdministrativo" placeholder="DNI...">
+                                      <input type="text" id="dniModificacionPoliciaAdministrativo" placeholder="DNI...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Número de Placa:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputNumeroPlacaModificacionPoliciaAdministrativo" placeholder="Número de Placa...">
+                                      <input type="text" id="numeroPlacaModificacionPoliciaAdministrativo" placeholder="Número de Placa...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Fecha de Ingreso:</label>
                                     <div class="controls">
-                                      <input type='text' id="inputFechaIngresoModificacionPoliciaAdministrativo" placeholder='aaaa-mm-dd'>
+                                      <input type='text' id="fechaIngresoModificacionPoliciaAdministrativo" placeholder='aaaa-mm-dd'>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Cargo:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputCargoModificacionPoliciaAdministrativo" placeholder="Cargo...">
+                                      <input type="text" id="cargoModificacionPoliciaAdministrativo" placeholder="Cargo...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Sueldo:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputSueldoModificacionPoliciaAdministrativo" placeholder="Sueldo...">
+                                      <input type="text" id="sueldoModificacionPoliciaAdministrativo" placeholder="Sueldo...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Jefe:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputJefeModificacionPoliciaAdministrativo" placeholder="Jefe...">
+                                      <input type="text" id="jefeModificacionPoliciaAdministrativo" placeholder="Jefe...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Tarea:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputTareaModificacionPoliciaAdministrativo" placeholder="Tarea...">
+                                      <input type="text" id="tareaModificacionPoliciaAdministrativo" placeholder="Tarea...">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Horas de Trabajo:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputHorarioPatrullaModificacionPoliciaAdministrativo" placeholder="Horario de Trabajos...">
+                                      <input type="text" id="horarioTModificacionPoliciaAdministrativo" placeholder="Horario de Trabajos...">
                                     </div>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarModifA'>
                                     <div class="controls">
                                       <button id="buttonGuardarModificacionPoliciaAdministrativo" type="submit" class="btn">Guardar Cambios</button>
+                                      <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>
@@ -1288,7 +1298,7 @@
                             <h1>BAJA DE ADMINISTRATIVO<span style="font-size:20px;">(baja lógica)</span></h1>
                             <form>
                                 <fieldset id="buscadorBajaPoliciaAdministrativo">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div class="row-fluid">
                                         <div class="span2">
                                             <label class="radio">
@@ -1298,62 +1308,64 @@
                                         </div>
                                     </div>
                                     <button id="buttonAtrasBajaPoliciaAdministrativo" type="submit" class="btn">Atras</button>
-                                    <button id="buttonBusquedaBajaPoliciaAdministrativo" type="submit" class="btn">Buscar</button>
+                                    <button id="buttonBusquedaBajaPoliciaAdministrativo"  class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="datosBajaPoliciaAdministrativo">
                                 <div class="control-group">
                                     <label class="control-label">Nombre:</label>
-                                    <label class="control-label" id="inputNombreBajaPoliciaAdministrativo">Nombre...</label>
+                                    <label class="control-label" id="nombreBajaPoliciaAdministrativo">Nombre...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Apellido:</label>
-                                    <label class="control-label" id="inputApellidoBajaPoliciaAdministrativo">Apellido...</label>
+                                    <label class="control-label" id="apellidoBajaPoliciaAdministrativo">Apellido...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Dirección:</label>
-                                    <label class="control-label" id="inputDireccionBajaPoliciaAdministrativo">Dirección...</label>
+                                    <label class="control-label" id="direccionBajaPoliciaAdministrativo">Dirección...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Edad:</label>
-                                    <label class="control-label" id="inputEdadBajaPoliciaAdministrativo">Edad...</label>
+                                    <label class="control-label" id="edadBajaPoliciaAdministrativo">Edad...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">DNI:</label>
-                                    <label class="control-label" id="inputDniBajaPoliciaAdministrativo">DNI...</label>
+                                    <label class="control-label" id="dniBajaPoliciaAdministrativo">DNI...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Número de Placa:</label>
-                                    <label class="control-label" id="inputNumeroPlacaBajaPoliciaAdministrativo">Número de Placa...</label>
+                                    <label class="control-label" id="numeroPlacaBajaPoliciaAdministrativo">Número de Placa...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Fecha de Ingreso:</label>
-                                    <label class="control-label" id="inputFechaIngresoBajaPoliciaAdministrativo">Fecha de Ingreso...</label>
+                                    <label class="control-label" id="fechaIngresoBajaPoliciaAdministrativo">Fecha de Ingreso...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Cargo:</label>
-                                    <label class="control-label" id="inputCargoBajaPoliciaAdministrativo">Cargo...</label>
+                                    <label class="control-label" id="cargoBajaPoliciaAdministrativo">Cargo...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Sueldo:</label>
-                                    <label class="control-label" id="inputSueldoBajaPoliciaAdministrativo">Sueldo...</label>
+                                    <label class="control-label" id="sueldoBajaPoliciaAdministrativo">Sueldo...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Jefe:</label>
-                                    <label class="control-label" id="inputJefeBajaPoliciaAdministrativo">Jefe...</label>
+                                    <label class="control-label" id="jefeBajaPoliciaAdministrativo">Jefe...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Tarea:</label>
-                                    <label class="control-label" id="inputTareaBajaPoliciaAdministrativo">Tarea...</label>
+                                    <label class="control-label" id="tareaBajaPoliciaAdministrativo">Tarea...</label>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Horas de Trabajo:</label>
-                                    <label class="control-label" id="inputHorarioPatrullaBajaPoliciaAdministrativo">Horas de Trabajo...</label>
+                                    <label class="control-label" id="horarioTBajaPoliciaAdministrativo">Horas de Trabajo...</label>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarBajaA'>
                                     <div class="controls">
-                                      <button id="buttonEliminarBajaPoliciaAdministrativo" type="submit" class="btn">Confirmar</button>
-                                      <button id="buttonCancelarBajaPoliciaAdministrativo" type="submit" class="btn">Cancelar</button>
+                                        <button id="buttonCancelarBajaPoliciaAdministrativo" type="submit" class="btn">Cancelar</button>
+                                        <button id="buttonEliminarBajaPoliciaAdministrativo" type="submit" class="btn">Confirmar</button>
+                                        <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>
