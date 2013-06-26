@@ -616,8 +616,8 @@ header{
 
 #buttonBusquedaArticulos{
   text-align: center;
-  width: 66%;
-  float: left;
+  float: right;
+  width: 70%;
   height: 30px;
   font-size: 20px;
   text-transform: uppercase;
@@ -629,7 +629,27 @@ header{
   padding-top: 15px; 
 }
 
-#buttonBusquedaArticulos:hover{
+#buttonBusquedaArticulo:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonMoficacionArticulo{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonMoficacionArticulo:hover{
   background-color: #787978;
   border: outset black 3px;
 }
@@ -706,6 +726,294 @@ header{
 }
 
 #datosBajaArticulo{
+  display: none;
+}
+
+/*-------------MODIFICAR ARTICULO------------*/
+#articuloModificacion{
+  color: black;
+  display:none;
+}
+
+#formularioModificacionArticulo{
+  display: none;
+}
+
+/*-----------MUNICIONES-------------*/
+#municionInicio{
+  color: black; 
+  display: none;
+}
+
+#buttonMunicion1{
+  padding-top: 150px;
+}
+
+#buttonMunicion2{
+  padding-top: 20px;
+}
+
+#buttonBusquedaMunicion{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonBusquedaMunicion:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonMoficacionMunicion{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonMoficacionMunicion:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonAltaMunicion{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonAltaMunicion:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonBajaMunicion{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonBajaMunicion:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+/*------------BUSQUEDA MUNICIONES-----------*/
+#municionBusqueda{
+  color: black;
+  display: none;
+}
+
+#buscadorMunicion{
+  padding-top: 30px;
+}
+
+#datosBusquedaMunicion{
+  display: none;
+}
+
+/*---------------ALTA MUNICIONES------------*/
+#municionAlta{
+  color: black;
+  display: none;
+}
+
+#formularioAltaMunicion{
+  padding-top: 30px;
+  padding-left: 50px;
+}
+
+/*---------------BAJA MUNICIONES---------------*/
+#municionBaja{
+  color: black;
+  display: none;
+}
+
+#datosBajaMunicion{
+  display: none;
+}
+
+/*-------------MODIFICAR MUNICION------------*/
+#municionModificacion{
+  color: black;
+  display:none;
+}
+
+#formularioModificacionMunicion{
+  display: none;
+}
+
+/*-----------ARMAMENTO-------------*/
+#armamentoInicio{
+  color: black; 
+  display: none;
+}
+
+#buttonArmamento1{
+  padding-top: 150px;
+}
+
+#buttonArmamento2{
+  padding-top: 20px;
+}
+
+#buttonBusquedaArmamento{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonBusquedaArmamento:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonMoficacionArmamento{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonMoficacionArmamento:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonAltaArmamento{
+  text-align: center;
+  float: right;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonAltaArmamento:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+#buttonBajaArmamento{
+  text-align: center;
+  float: left;
+  width: 70%;
+  height: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: #454645;
+  color: white;
+  border: inset black 3px; 
+  text-decoration: none;
+  padding-top: 15px; 
+}
+
+#buttonBajaArmamento:hover{
+  background-color: #787978;
+  border: outset black 3px;
+}
+
+/*------------BUSQUEDA ARMAMENTO-----------*/
+#aramentoBusqueda{
+  color: black;
+  display: none;
+}
+
+#buscadorArmamento{
+  padding-top: 30px;
+}
+
+#datosBusquedaArmamento{
+  display: none;
+}
+
+/*---------------ALTA ARMAMENTO------------*/
+#armamentoAlta{
+  color: black;
+  display: none;
+}
+
+#formularioAltaArmamento{
+  padding-top: 30px;
+  padding-left: 50px;
+}
+
+/*---------------BAJA ARMAMENTO---------------*/
+#ArmamentoBaja{
+  color: black;
+  display: none;
+}
+
+#datosBajaArmamento{
+  display: none;
+}
+
+/*-------------MODIFICAR ARMAMENTO------------*/
+#armamentoModificacion{
+  color: black;
+  display:none;
+}
+
+#formularioModificacionArmamento{
   display: none;
 }
 

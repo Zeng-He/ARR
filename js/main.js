@@ -45,6 +45,32 @@ $(document).ready(function() {
 		//Buttons Traslado
 		$("#trasladoInicio").css({'display':'none'})
 		$("#formularioTraslado").css({'display':'none'})
+		//Button Equipamiento
+		$("#equipamientoInicio").css({'display':'none'});
+		$("#articuloInicio").css({'display':'none'})
+		$("#articuloBusqueda").css({'display':'none'})
+		$("#datosBusquedaArticulo").css({'display':'none'})
+		$("#articuloAlta").css({'display':'none'})
+		$("#articuloBaja").css({'display':'none'})
+		$("#datosBajaArticulo").css({'display':'none'})
+		$("#articuloModificacion").css({'display':'none'})
+		$("#formularioModificacionArticulo").css({'display':'none'})
+		$("#municionInicio").css({'display':'none'})
+		$("#municionBusqueda").css({'display':'none'})
+		$("#datosBusquedaMunicion").css({'display':'none'})
+		$("#municionAlta").css({'display':'none'})
+		$("#municionBaja").css({'display':'none'})
+		$("#datosBajaMunicion").css({'display':'none'})
+		$("#municionModificacion").css({'display':'none'})
+		$("#formularioModificacionMunicion").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoBusqueda").css({'display':'none'})
+		$("#datosBusquedaArmamento").css({'display':'none'})
+		$("#armamentoAlta").css({'display':'none'})
+		$("#armamentoBaja").css({'display':'none'})
+		$("#datosBajaArmamento").css({'display':'none'})
+		$("#armamentoModificacion").css({'display':'none'})
+		$("#formularioModificacionArmamento").css({'display':'none'})
 		borrar()
 	})
 
@@ -248,6 +274,32 @@ $(document).ready(function() {
 		//Buttons Traslado
 		$("#trasladoInicio").css({'display':'none'})
 		$("#formularioTraslado").css({'display':'none'})
+		//Button Equipamiento
+		$("#equipamientoInicio").css({'display':'none'});
+		$("#articuloInicio").css({'display':'none'})
+		$("#articuloBusqueda").css({'display':'none'})
+		$("#datosBusquedaArticulo").css({'display':'none'})
+		$("#articuloAlta").css({'display':'none'})
+		$("#articuloBaja").css({'display':'none'})
+		$("#datosBajaArticulo").css({'display':'none'})
+		$("#articuloModificacion").css({'display':'none'})
+		$("#formularioModificacionArticulo").css({'display':'none'})
+		$("#municionInicio").css({'display':'none'})
+		$("#municionBusqueda").css({'display':'none'})
+		$("#datosBusquedaMunicion").css({'display':'none'})
+		$("#municionAlta").css({'display':'none'})
+		$("#municionBaja").css({'display':'none'})
+		$("#datosBajaMunicion").css({'display':'none'})
+		$("#municionModificacion").css({'display':'none'})
+		$("#formularioModificacionMunicion").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoBusqueda").css({'display':'none'})
+		$("#datosBusquedaArmamento").css({'display':'none'})
+		$("#armamentoAlta").css({'display':'none'})
+		$("#armamentoBaja").css({'display':'none'})
+		$("#datosBajaArmamento").css({'display':'none'})
+		$("#armamentoModificacion").css({'display':'none'})
+		$("#formularioModificacionArmamento").css({'display':'none'})
 		borrar()
 	})
 
@@ -475,6 +527,32 @@ $(document).ready(function() {
 		$("#datosBajaPoliciaAdministrativo").css({'display':'none'})
 		//Buttons Traslado 
 		$("#formularioTraslado").css({'display':'none'})
+		//Button Equipamiento
+		$("#equipamientoInicio").css({'display':'none'});
+		$("#articuloInicio").css({'display':'none'})
+		$("#articuloBusqueda").css({'display':'none'})
+		$("#datosBusquedaArticulo").css({'display':'none'})
+		$("#articuloAlta").css({'display':'none'})
+		$("#articuloBaja").css({'display':'none'})
+		$("#datosBajaArticulo").css({'display':'none'})
+		$("#articuloModificacion").css({'display':'none'})
+		$("#formularioModificacionArticulo").css({'display':'none'})
+		$("#municionInicio").css({'display':'none'})
+		$("#municionBusqueda").css({'display':'none'})
+		$("#datosBusquedaMunicion").css({'display':'none'})
+		$("#municionAlta").css({'display':'none'})
+		$("#municionBaja").css({'display':'none'})
+		$("#datosBajaMunicion").css({'display':'none'})
+		$("#municionModificacion").css({'display':'none'})
+		$("#formularioModificacionMunicion").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoBusqueda").css({'display':'none'})
+		$("#datosBusquedaArmamento").css({'display':'none'})
+		$("#armamentoAlta").css({'display':'none'})
+		$("#armamentoBaja").css({'display':'none'})
+		$("#datosBajaArmamento").css({'display':'none'})
+		$("#armamentoModificacion").css({'display':'none'})
+		$("#formularioModificacionArmamento").css({'display':'none'})
 		borrar()
 	})
 
@@ -522,11 +600,31 @@ $(document).ready(function() {
 		//Buttons Traslado
 		$("#trasladoInicio").css({'display':'none'})
 		$("#formularioTraslado").css({'display':'none'})
+		//Buttons Equipamiento
+		$("#articuloInicio").css({'display':'none'})
 		$("#articuloBusqueda").css({'display':'none'})
 		$("#datosBusquedaArticulo").css({'display':'none'})
 		$("#articuloAlta").css({'display':'none'})
 		$("#articuloBaja").css({'display':'none'})
 		$("#datosBajaArticulo").css({'display':'none'})
+		$("#articuloModificacion").css({'display':'none'})
+		$("#formularioModificacionArticulo").css({'display':'none'})
+		$("#municionInicio").css({'display':'none'})
+		$("#municionBusqueda").css({'display':'none'})
+		$("#datosBusquedaMunicion").css({'display':'none'})
+		$("#municionAlta").css({'display':'none'})
+		$("#municionBaja").css({'display':'none'})
+		$("#datosBajaMunicion").css({'display':'none'})
+		$("#municionModificacion").css({'display':'none'})
+		$("#formularioModificacionMunicion").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoBusqueda").css({'display':'none'})
+		$("#datosBusquedaArmamento").css({'display':'none'})
+		$("#armamentoAlta").css({'display':'none'})
+		$("#armamentoBaja").css({'display':'none'})
+		$("#datosBajaArmamento").css({'display':'none'})
+		$("#armamentoModificacion").css({'display':'none'})
+		$("#formularioModificacionArmamento").css({'display':'none'})
 		borrar()
 	})
 
@@ -600,6 +698,206 @@ $(document).ready(function() {
 		$("#datosBajaArticulo").css({'display':'none'})
 		borrar()
 	})
+	
+	$("#buttonMoficacionArticulo").click(function(e){
+		e.preventDefault();
+		$("#articuloInicio").css({'display':'none'})
+		$("#articuloModificacion").css({'display':'inline'})		
+		borrar()
+	})
+	
+	$("#buttonAtrasModificacionArticulo").click(function(e){
+		e.preventDefault();
+		$("#articuloInicio").css({'display':'inline'})
+		$("#articuloModificacion").css({'display':'none'})
+		$("#formularioModificacionArticulo").css({'display':'none'})		
+		borrar()
+	})
+
+	$("#buttonDatosModificacionArticulo").click(function(e){
+		e.preventDefault();
+		$("#formularioModificacionArticulo").css({'display':'inline'})		
+	})
+
+	//Municion
+	$("#buttonMunicionesEquipamiento").click(function(e){
+		e.preventDefault();
+		$("#equipamientoInicio").css({'display':'none'})
+		$("#municionInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonBusquedaMunicion").click(function(e){
+		e.preventDefault();
+		$("#municionInicio").css({'display':'none'})
+		$("#municionBusqueda").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonDatosBusquedaMunicion").click(function(e){
+		e.preventDefault();
+		$("#datosBusquedaMunicion").css({'display':'inline'})
+	})
+
+	$("#buttonAtrasBusquedaMunicion").click(function(e){
+		e.preventDefault();
+		$("#datosBusquedaMunicion").css({'display':'none'})
+		$("#municionBusqueda").css({'display':'none'})
+		$("#municionInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonAltaMunicion").click(function(e){
+		e.preventDefault();
+		$("#municionInicio").css({'display':'none'})
+		$("#municionAlta").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonAtrasAltaMunicion").click(function(e){
+		e.preventDefault();
+		$("#municionAlta").css({'display':'none'})
+		$("#municionInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonBajaMunicion").click(function(e){
+		e.preventDefault();
+		$("#municionInicio").css({'display':'none'})
+		$("#municionBaja").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonDatosBajaMunicion").click(function(e){
+		e.preventDefault();
+		$("#datosBajaMunicion").css({'display':'inline'})
+	})
+
+	$("#buttonAtrasBajaMunicion").click(function(e){
+		e.preventDefault();
+		$("#municionBaja").css({'display':'none'})
+		$("#municionInicio").css({'display':'inline'})
+		$("#datosBajaMunicion").css({'display':'none'})
+		borrar()
+	})
+
+	$("#buttonCancelarBajaMunicion").click(function(e){
+		e.preventDefault();
+		$("#municionBaja").css({'display':'none'})
+		$("#municionInicio").css({'display':'inline'})
+		$("#datosBajaMunicion").css({'display':'none'})
+		borrar()
+	})
+
+	$("#buttonMoficacionMunicion").click(function(e){
+		e.preventDefault();
+		$("#municionInicio").css({'display':'none'})
+		$("#municionModificacion").css({'display':'inline'})		
+		borrar()
+	})
+	
+	$("#buttonAtrasModificacionMunicion").click(function(e){
+		e.preventDefault();
+		$("#municionInicio").css({'display':'inline'})
+		$("#municionModificacion").css({'display':'none'})
+		$("#formularioModificacionMunicion").css({'display':'none'})		
+		borrar()
+	})
+
+	$("#buttonDatosModificacionMunicion").click(function(e){
+		e.preventDefault();
+		$("#formularioModificacionMunicion").css({'display':'inline'})		
+	})
+
+	//Armamento
+	$("#buttonArmamentosEquipamiento").click(function(e){
+		e.preventDefault();
+		$("#equipamientoInicio").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonBusquedaArmamento").click(function(e){
+		e.preventDefault();
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoBusqueda").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonDatosBusquedaArmamento").click(function(e){
+		e.preventDefault();
+		$("#datosBusquedaArmamento").css({'display':'inline'})
+	})
+
+	$("#buttonAtrasBusquedaArmamento").click(function(e){
+		e.preventDefault();
+		$("#datosBusquedaMunicion").css({'display':'none'})
+		$("#armamentoBusqueda").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonAltaArmamento").click(function(e){
+		e.preventDefault();
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoAlta").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonAtrasAltaArmamento").click(function(e){
+		e.preventDefault();
+		$("#armamentoAlta").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonBajaArmamento").click(function(e){
+		e.preventDefault();
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoBaja").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonDatosBajaArmamento").click(function(e){
+		e.preventDefault();
+		$("#datosBajaArmamento").css({'display':'inline'})
+	})
+
+	$("#buttonAtrasBajaArmamento").click(function(e){
+		e.preventDefault();
+		$("#armamentoBaja").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'inline'})
+		$("#datosBajaArmamento").css({'display':'none'})
+		borrar()
+	})
+
+	$("#buttonCancelarBajaArmamento").click(function(e){
+		e.preventDefault();
+		$("#armamentoBaja").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'inline'})
+		$("#datosBajaArmamento").css({'display':'none'})
+		borrar()
+	})
+
+	$("#buttonMoficacionArmamento").click(function(e){
+		e.preventDefault();
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoModificacion").css({'display':'inline'})		
+		borrar()
+	})
+	
+	$("#buttonAtrasModificacionArmamento").click(function(e){
+		e.preventDefault();
+		$("#armamentoInicio").css({'display':'inline'})
+		$("#armamentoModificacion").css({'display':'none'})
+		$("#formularioModificacionArmamento").css({'display':'none'})		
+		borrar()
+	})
+
+	$("#buttonDatosModificacionArmamento").click(function(e){
+		e.preventDefault();
+		$("#formularioModificacionArmamento").css({'display':'inline'})		
+	})
 
 	//-----------------ASIGANACION-EQUIPAMIENTO-------------------
 	$("#asignacionEquipamiento").click(function(e){
@@ -646,6 +944,24 @@ $(document).ready(function() {
 		$("#articuloAlta").css({'display':'none'})
 		$("#articuloBaja").css({'display':'none'})
 		$("#datosBajaArticulo").css({'display':'none'})
+		$("#articuloModificacion").css({'display':'none'})
+		$("#formularioModificacionArticulo").css({'display':'none'})
+		$("#municionInicio").css({'display':'none'})
+		$("#municionBusqueda").css({'display':'none'})
+		$("#datosBusquedaMunicion").css({'display':'none'})
+		$("#municionAlta").css({'display':'none'})
+		$("#municionBaja").css({'display':'none'})
+		$("#datosBajaMunicion").css({'display':'none'})
+		$("#municionModificacion").css({'display':'none'})
+		$("#formularioModificacionMunicion").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoBusqueda").css({'display':'none'})
+		$("#datosBusquedaArmamento").css({'display':'none'})
+		$("#armamentoAlta").css({'display':'none'})
+		$("#armamentoBaja").css({'display':'none'})
+		$("#datosBajaArmamento").css({'display':'none'})
+		$("#armamentoModificacion").css({'display':'none'})
+		$("#formularioModificacionArmamento").css({'display':'none'})
 		borrar()
 	})
 
@@ -688,6 +1004,30 @@ $(document).ready(function() {
 		$("#formularioTraslado").css({'display':'none'})
 		//Button Equipamiento
 		$("#equipamientoInicio").css({'display':'none'});
+		$("#articuloInicio").css({'display':'none'})
+		$("#articuloBusqueda").css({'display':'none'})
+		$("#datosBusquedaArticulo").css({'display':'none'})
+		$("#articuloAlta").css({'display':'none'})
+		$("#articuloBaja").css({'display':'none'})
+		$("#datosBajaArticulo").css({'display':'none'})
+		$("#articuloModificacion").css({'display':'none'})
+		$("#formularioModificacionArticulo").css({'display':'none'})
+		$("#municionInicio").css({'display':'none'})
+		$("#municionBusqueda").css({'display':'none'})
+		$("#datosBusquedaMunicion").css({'display':'none'})
+		$("#municionAlta").css({'display':'none'})
+		$("#municionBaja").css({'display':'none'})
+		$("#datosBajaMunicion").css({'display':'none'})
+		$("#municionModificacion").css({'display':'none'})
+		$("#formularioModificacionMunicion").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoBusqueda").css({'display':'none'})
+		$("#datosBusquedaArmamento").css({'display':'none'})
+		$("#armamentoAlta").css({'display':'none'})
+		$("#armamentoBaja").css({'display':'none'})
+		$("#datosBajaArmamento").css({'display':'none'})
+		$("#armamentoModificacion").css({'display':'none'})
+		$("#formularioModificacionArmamento").css({'display':'none'})
 		borrar()
 	 })
 
@@ -730,6 +1070,30 @@ $(document).ready(function() {
 		$("#formularioTraslado").css({'display':'none'})
 		//Button Equipamiento
 		$("#equipamientoInicio").css({'display':'none'});
+		$("#articuloInicio").css({'display':'none'})
+		$("#articuloBusqueda").css({'display':'none'})
+		$("#datosBusquedaArticulo").css({'display':'none'})
+		$("#articuloAlta").css({'display':'none'})
+		$("#articuloBaja").css({'display':'none'})
+		$("#datosBajaArticulo").css({'display':'none'})
+		$("#articuloModificacion").css({'display':'none'})
+		$("#formularioModificacionArticulo").css({'display':'none'})
+		$("#municionInicio").css({'display':'none'})
+		$("#municionBusqueda").css({'display':'none'})
+		$("#datosBusquedaMunicion").css({'display':'none'})
+		$("#municionAlta").css({'display':'none'})
+		$("#municionBaja").css({'display':'none'})
+		$("#datosBajaMunicion").css({'display':'none'})
+		$("#municionModificacion").css({'display':'none'})
+		$("#formularioModificacionMunicion").css({'display':'none'})
+		$("#armamentoInicio").css({'display':'none'})
+		$("#armamentoBusqueda").css({'display':'none'})
+		$("#datosBusquedaArmamento").css({'display':'none'})
+		$("#armamentoAlta").css({'display':'none'})
+		$("#armamentoBaja").css({'display':'none'})
+		$("#datosBajaArmamento").css({'display':'none'})
+		$("#armamentoModificacion").css({'display':'none'})
+		$("#formularioModificacionArmamento").css({'display':'none'})
 		borrar()
 	 })
 })

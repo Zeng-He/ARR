@@ -131,7 +131,7 @@ class SimpleWindow(QWebView):
 	def altaMunicionInterf(self,nombre,estado,tipo,cantidad):
 		try:
 			main.altaMunicion(nombre=nombre,estado=estado,tipo=tipo,cantidad=cantidad)
-			return ("Articulo almacenado exitosamente")
+			return ("Munición almacenado exitosamente")
 		except Exception:
 			return ("Error, verifique campos")
 
