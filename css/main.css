@@ -1,8 +1,26 @@
+@font-face{
+    font-family: Texgy-bold;
+    src: url(../Font/texgyreadventor-bold.otf) format('opentype');
+}
+@font-face{
+    font-family: Texgy-bolditalic;
+    src: url(../Font/texgyreadventor-bolditalic.otf) format('opentype');
+}
+@font-face{
+    font-family: Texgy-italic;
+    src: url(../Font/texgyreadventor-italic.otf) format('opentype');
+}
+@font-face{
+    font-family: Texgy-regular;
+    src: url(../Font/texgyreadventor-regular.otf) format('opentype');
+}
+
 body{
 }
 
 /*----Header-----*/
 header{
+  font-family: Texgy-regular;
 	height: 200px;
 	background-color: #0F402A;
   border-radius: 5px;
@@ -13,15 +31,17 @@ header{
 }
 
 #textoLogo{
-	color: white;
+	font-family: Texgy-regular;
+  color: white;
 	height: 200px;
-	padding-left: 50px;
+	padding-left: 10%;
 	font-size: 180px;
 	padding-top: 90px;
 }
 
 #contendorPrincipal{
 	margin-top: 30px;
+  font-family: Texgy-regular;
 }
 
 #tituloInfoInicial{
@@ -29,12 +49,14 @@ header{
   color: black;
   text-transform: uppercase;
   font-weight: bold;
+  font-family: Texgy-regular;
 }
 
 #tituloInfoVerMasInicial{
   font-size: 30px;
   color: black;
   font-weight: bold;
+  font-family: Texgy-regular;
 }
 
 .textInfoInicio{
@@ -44,28 +66,34 @@ header{
   line-height: 25px;
   text-indent: 50px;
   word-spacing: 3px;
+  font-family: Texgy-regular;
 }
 
 #infoInicio{
   display: inline;
+  font-family: Texgy-regular;
 }
 
 #leerMas{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*----------INICIO DE PESTAÑA REOS-------------*/
 #reoInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buttonReo1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
 
 #buttonReo2{
   padding-top: 20px;
+  font-family: Texgy-regular;
 }
 
 #buttonBuscarReo{
@@ -81,6 +109,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px;
+  font-family: Texgy-regular;
 }
 
 #buttonBuscarReo:hover{
@@ -101,6 +130,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px; 
+  font-family: Texgy-regular;
 }
 
 #buttonModificarReo:hover{
@@ -121,6 +151,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px;
+  font-family: Texgy-regular;
 }
 
 #buttonAltaReo:hover{
@@ -141,6 +172,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px; 
+  font-family: Texgy-regular;
 }
 
 #buttonBajaReo:hover{
@@ -152,55 +184,66 @@ header{
 #reoBusqueda{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buscadorReo{
   padding-top: 30px;
+  font-family: Texgy-regular;
 }
 
 #datosBusquedaReo{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*---------------ALTA REOS------------*/
 #reoAlta{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #formularioAltaReo{
   padding-top: 30px;
   padding-left: 50px;
+  font-family: Texgy-regular;
 }
 
 /*-------------MODIFICAR REO------------*/
 #reoModificacion{
   color: black;
   display:none;
+  font-family: Texgy-regular;
 }
 
 #formularioModificacionReo{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*---------------BAJA REO---------------*/
 #reoBaja{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #datosBajaReo{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*----------INICIO DE PESTAÑA POLICIAS-------------*/
 #policiaInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buttonPolicia1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
 
 #buttonEfectivosPolicia{
@@ -216,6 +259,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px;
+  font-family: Texgy-regular;
 }
 
 #buttonEfectivosPolicia:hover{
@@ -236,6 +280,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px;
+  font-family: Texgy-regular;
 }
 
 #buttonAdministrativoPolicia:hover{
@@ -247,14 +292,17 @@ header{
 #policiaEfectivoInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buttonEfectivoPolicia1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
 
 #buttonEfectivoPolicia2{
   padding-top: 20px;
+  font-family: Texgy-regular;
 }
 
 #buttonBuscarEfectivoPolicia{
@@ -270,6 +318,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px;
+  font-family: Texgy-regular;
 }
 
 #buttonBuscarEfectivoPolicia:hover{
@@ -290,6 +339,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px; 
+  font-family: Texgy-regular;
 }
 
 #buttonModificarEfectivoPolicia:hover{
@@ -310,6 +360,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px;
+  font-family: Texgy-regular;
 }
 
 #buttonAltaEfectivoPolicia:hover{
@@ -326,6 +377,7 @@ header{
   text-transform: uppercase;
   cursor: pointer;
   background-color: #454645;
+  font-family: Texgy-regular;
   color: white;
   border: inset black 3px; 
   text-decoration: none;
@@ -340,11 +392,13 @@ header{
 /*------------BUSQUEDA DE EFECTIVOS---------*/
 #policiaEfectivoBusqueda{
   color: black;
+  font-family: Texgy-regular;
   display: none;
 }
 
 #buscadorEfectivoPolicia{
   padding-top: 30px;
+  font-family: Texgy-regular;
 }
 
 #datosBusquedaEfectivoPolicia{
@@ -355,6 +409,7 @@ header{
 #policiaEfectivoAlta{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #formularioAltaPoliciaEfectivo{
@@ -366,34 +421,41 @@ header{
 #policiaEfectivoModificacion{
   color: black;
   display:none;
+  font-family: Texgy-regular;
 }
 
 #formularioModificacionEfectivoPolicia{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*---------------BAJA EFECTIVO---------------*/
 #policiaEfectivoBaja{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #datosBajaPoliciaEfectivo{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*---------POLICIAS ADMINISTRATIVO--------------*/
 #policiaAdministrativoInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buttonAdministrativoPolicia1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
 
 #buttonAdministrativoPolicia2{
   padding-top: 20px;
+  font-family: Texgy-regular;
 }
 
 #buttonBuscarAdministrativoPolicia{
@@ -401,6 +463,7 @@ header{
   float: right;
   width: 70%;
   height: 30px;
+  font-family: Texgy-regular;
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
@@ -419,6 +482,7 @@ header{
 #buttonModificarAdministrativoPolicia{
   text-align: center;
   float: right;
+  font-family: Texgy-regular;
   width: 70%;
   height: 30px;
   font-size: 20px;
@@ -439,6 +503,7 @@ header{
 #buttonAltaAdministrativoPolicia{
   text-align: center;
   float: left;
+  font-family: Texgy-regular;
   width: 70%;
   height: 30px;
   font-size: 20px;
@@ -458,6 +523,7 @@ header{
 
 #buttonBajaAdministrativoPolicia{
   text-align: center;
+  font-family: Texgy-regular;
   float: left;
   width: 70%;
   height: 30px;
@@ -480,55 +546,66 @@ header{
 #policiaAdministrativoBusqueda{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buscadorAdministrativoPolicia{
   padding-top: 30px;
+  font-family: Texgy-regular;
 }
 
 #datosBusquedaAdministrativoPolicia{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*---------------ALTA ADMINISTRATIVO------------*/
 #policiaAdministrativoAlta{
   color: black;
+  font-family: Texgy-regular;
   display: none;
 }
 
 #formularioAltaPoliciaAdministrativo{
   padding-top: 30px;
   padding-left: 50px;
+  font-family: Texgy-regular;
 }
 
 /*-------------MODIFICAR ADMINISTRATIVO------------*/
 #policiaAdministrativoModificacion{
   color: black;
   display:none;
+  font-family: Texgy-regular;
 }
 
 #formularioModificacionAdministrativoPolicia{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*---------------BAJA ADMINISTRATIVO---------------*/
 #policiaAdministrativoBaja{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #datosBajaPoliciaAdministrativo{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*------------TRASLADO---------------*/
 #trasladoInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #formularioTraslado{
   display: none;
+  font-family: Texgy-regular;
   color: black;
   padding-top:10px;
   padding-left: 10px;
@@ -538,19 +615,23 @@ header{
 #equipamientoInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buttonEquipamiento1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
 
 #buttonEquipamiento2{
   padding-top: 20px;
+  font-family: Texgy-regular;
 }
 
 #buttonArticulosEquipamiento{
   text-align: center;
   width: 66%;
+  font-family: Texgy-regular;
   float: left;
   height: 30px;
   font-size: 20px;
@@ -581,6 +662,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px; 
+  font-family: Texgy-regular;
 }
 
 #buttonArmamentosEquipamiento:hover{
@@ -590,6 +672,7 @@ header{
 
 #buttonMunicionesEquipamiento{
   text-align: center;
+  font-family: Texgy-regular;
   float: left;
   width: 70%;
   height: 30px;
@@ -612,19 +695,23 @@ header{
 #articuloInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buttonArticulo1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
 
 #buttonArticulo2{
   padding-top: 20px;
+  font-family: Texgy-regular;
 }
 
 #buttonBusquedaArticulos{
   text-align: center;
   float: right;
+  font-family: Texgy-regular;
   width: 70%;
   height: 30px;
   font-size: 20px;
@@ -649,6 +736,7 @@ header{
   height: 30px;
   font-size: 20px;
   text-transform: uppercase;
+  font-family: Texgy-regular;
   cursor: pointer;
   background-color: #454645;
   color: white;
@@ -666,6 +754,7 @@ header{
   text-align: center;
   float: right;
   width: 70%;
+  font-family: Texgy-regular;
   height: 30px;
   font-size: 20px;
   text-transform: uppercase;
@@ -686,6 +775,7 @@ header{
   text-align: center;
   float: left;
   width: 70%;
+  font-family: Texgy-regular;
   height: 30px;
   font-size: 20px;
   text-transform: uppercase;
@@ -705,60 +795,73 @@ header{
 /*------------BUSQUEDA ARTICULOS-----------*/
 #articuloBusqueda{
   color: black;
+  font-family: Texgy-regular;
   display: none;
 }
 
 #buscadorArticulo{
   padding-top: 30px;
+  font-family: Texgy-regular;
 }
 
 #datosBusquedaArticulo{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*---------------ALTA ARTICULO------------*/
 #articuloAlta{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #formularioAltaArticulo{
   padding-top: 30px;
   padding-left: 50px;
+  font-family: Texgy-regular;
 }
 
 /*---------------BAJA ARTICULO---------------*/
 #articuloBaja{
   color: black;
+  font-family: Texgy-regular;
   display: none;
 }
 
 #datosBajaArticulo{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*-------------MODIFICAR ARTICULO------------*/
 #articuloModificacion{
   color: black;
   display:none;
+  font-family: Texgy-regular;
 }
 
 #formularioModificacionArticulo{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*-----------MUNICIONES-------------*/
 #municionInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buttonMunicion1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
+
 
 #buttonMunicion2{
   padding-top: 20px;
+  font-family: Texgy-regular;
 }
 
 #buttonBusquedaMunicion{
@@ -771,6 +874,7 @@ header{
   cursor: pointer;
   background-color: #454645;
   color: white;
+  font-family: Texgy-regular;
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px; 
@@ -789,6 +893,7 @@ header{
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
+  font-family: Texgy-regular;
   background-color: #454645;
   color: white;
   border: inset black 3px; 
@@ -807,6 +912,7 @@ header{
   width: 70%;
   height: 30px;
   font-size: 20px;
+  font-family: Texgy-regular;
   text-transform: uppercase;
   cursor: pointer;
   background-color: #454645;
@@ -826,6 +932,7 @@ header{
   float: left;
   width: 70%;
   height: 30px;
+  font-family: Texgy-regular;
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
@@ -845,59 +952,71 @@ header{
 #municionBusqueda{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buscadorMunicion{
   padding-top: 30px;
+  font-family: Texgy-regular;
 }
 
 #datosBusquedaMunicion{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*---------------ALTA MUNICIONES------------*/
 #municionAlta{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #formularioAltaMunicion{
   padding-top: 30px;
   padding-left: 50px;
+  font-family: Texgy-regular;
 }
 
 /*---------------BAJA MUNICIONES---------------*/
 #municionBaja{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #datosBajaMunicion{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*-------------MODIFICAR MUNICION------------*/
 #municionModificacion{
   color: black;
   display:none;
+  font-family: Texgy-regular;
 }
 
 #formularioModificacionMunicion{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*-----------ARMAMENTO-------------*/
 #armamentoInicio{
   color: black; 
+  font-family: Texgy-regular;
   display: none;
 }
 
 #buttonArmamento1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
 
 #buttonArmamento2{
   padding-top: 20px;
+  font-family: Texgy-regular;
 }
 
 #buttonBusquedaArmamento{
@@ -910,6 +1029,7 @@ header{
   cursor: pointer;
   background-color: #454645;
   color: white;
+  font-family: Texgy-regular;
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px; 
@@ -924,6 +1044,7 @@ header{
   text-align: center;
   float: left;
   width: 70%;
+  font-family: Texgy-regular;
   height: 30px;
   font-size: 20px;
   text-transform: uppercase;
@@ -933,6 +1054,7 @@ header{
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px; 
+  font-family: Texgy-regular;
 }
 
 #buttonMoficacionArmamento:hover{
@@ -950,6 +1072,7 @@ header{
   cursor: pointer;
   background-color: #454645;
   color: white;
+  font-family: Texgy-regular;
   border: inset black 3px; 
   text-decoration: none;
   padding-top: 15px; 
@@ -966,6 +1089,7 @@ header{
   width: 70%;
   height: 30px;
   font-size: 20px;
+  font-family: Texgy-regular;
   text-transform: uppercase;
   cursor: pointer;
   background-color: #454645;
@@ -984,59 +1108,71 @@ header{
 #armamentoBusqueda{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buscadorArmamento{
   padding-top: 30px;
+  font-family: Texgy-regular;
 }
 
 #datosBusquedaArmamento{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*---------------ALTA ARMAMENTO------------*/
 #armamentoAlta{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #formularioAltaArmamento{
   padding-top: 30px;
   padding-left: 50px;
+  font-family: Texgy-regular;
 }
 
 /*---------------BAJA ARMAMENTO---------------*/
 #armamentoBaja{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #datosBajaArmamento{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*-------------MODIFICAR ARMAMENTO------------*/
 #armamentoModificacion{
   color: black;
   display:none;
+  font-family: Texgy-regular;
 }
 
 #formularioModificacionArmamento{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*-----------ANTECEDENTES-------------*/
 #antecedentesInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buttonAntecedente1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
 
 #buttonAntecedente2{
   padding-top: 20px;
+  font-family: Texgy-regular;
 }
 
 #buttonBusquedaAntecedente{
@@ -1044,6 +1180,7 @@ header{
   width: 66%;
   float: left;
   height: 30px;
+  font-family: Texgy-regular;
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
@@ -1063,6 +1200,7 @@ header{
   text-align: center;
   float: right;
   width: 70%;
+  font-family: Texgy-regular;
   height: 30px;
   font-size: 20px;
   text-transform: uppercase;
@@ -1082,6 +1220,7 @@ header{
 #buttonModificacionAntecedente{
   text-align: center;
   float: left;
+  font-family: Texgy-regular;
   width: 70%;
   height: 30px;
   font-size: 20px;
@@ -1103,32 +1242,38 @@ header{
 #busquedaAntecedente{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #datosBusquedaAntecedente{
   display: none;
+  font-family: Texgy-regular;
 }
 
 /*-----------ALTA ANTECEDENTE--------------------*/
 #altaAntecedente{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #formularioAltaAntecedente{
   margin-top: 50px;
   margin-left: 50px;
+  font-family: Texgy-regular;
 }
 
 /*-----------MODIFICACION ANTECEDENTE--------------------*/
 #modificacionAntecedente{
   color: black;
   display: none;
+  font-family: Texgy-regular;
 }
 
 #formularioModificacionAntecedente{
   display: none;
   margin-top: 50px;
+  font-family: Texgy-regular;
   margin-left: 50px;
 }
 
@@ -1136,14 +1281,17 @@ header{
 #calabozoInicio{
   color: black; 
   display: none;
+  font-family: Texgy-regular;
 }
 
 #buttonCalabozo1{
   padding-top: 150px;
+  font-family: Texgy-regular;
 }
 
 #buttonCalabozo2{
   padding-top: 20px;
+  font-family: Texgy-regular;
 }
 
 #buttonBuscarCalabozo{
@@ -1151,6 +1299,7 @@ header{
   float: right;
   width: 70%;
   height: 30px;
+  font-family: Texgy-regular;
   font-size: 20px;
   text-transform: uppercase;
   cursor: pointer;
@@ -1170,6 +1319,7 @@ header{
   text-align: center;
   float: right;
   width: 70%;
+  font-family: Texgy-regular;
   height: 30px;
   font-size: 20px;
   text-transform: uppercase;
@@ -1190,6 +1340,7 @@ header{
   text-align: center;
   float: left;
   width: 70%;
+  font-family: Texgy-regular;
   height: 30px;
   font-size: 20px;
   text-transform: uppercase;
@@ -1210,6 +1361,7 @@ header{
   text-align: center;
   float: left;
   width: 70%;
+  font-family: Texgy-regular;
   height: 30px;
   font-size: 20px;
   text-transform: uppercase;
@@ -1230,39 +1382,46 @@ header{
 #busquedaCalabozo{
   display: none;
   color: black;
+  font-family: Texgy-regular;
 }
 
 #datosBusquedaCalabozo{
   margin-left: 30px;
   margin-top: 30px;
+  font-family: Texgy-regular;
 }
 
 /*---------------ALTA CALABOZO-------------*/
 #altaCalabozo{
   display: none;
   color: black;
+  font-family: Texgy-regular;
 }
 
 #formularioAltaCalabozo{
   margin-left: 50px;
   margin-top: 50px;
+  font-family: Texgy-regular;
 }
 
 /*---------------ALTA CALABOZO-------------*/
 #bajaCalabozo{
   display: none;
+  font-family: Texgy-regular;
   color: black;
 }
 
 #datosBajaCalabozo{
   display: none;
   margin-top: 20px;
+  font-family: Texgy-regular;
   margin-left: 20px;
 }
 
 /*---------------ALTA CALABOZO-------------*/
 #modificacionCalabozo{
   display: none;
+  font-family: Texgy-regular;
   color: black;
 }
 
@@ -1270,17 +1429,20 @@ header{
   display: none;
   margin-top: 20px;
   margin-left: 20px; 
+  font-family: Texgy-regular;
 }
 
 /*-------------ASIGNACION EQUIPAMIENTO----------------*/
 #asignacionEquipamientoInicio{
   display: none;
   color: black;
+  font-family: Texgy-regular;
 }
 
 #formularioAsignacionEquipamiento{
   margin-top: 20px;
   margin-left: 20px;
+  font-family: Texgy-regular;
 }
 
 /* ==========================================================================
@@ -1297,12 +1459,14 @@ header{
   -webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
      -moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
           box-shadow: 0 1px 4px rgba(0,0,0,.065);
+  font-family: Texgy-regular;
 }
 .bs-docs-sidenav > li > a {
   display: block;
   width: 190px \9;
   margin: 0 0 -1px;
   padding: 8px 14px;
+  font-family: Texgy-regular;
   border: 1px solid black;
 }
 .bs-docs-sidenav > li:first-child > a {
@@ -1318,6 +1482,7 @@ header{
 .bs-docs-sidenav > .active > a {
   position: relative;
   z-index: 2;
+  font-family: Texgy-regular;
   padding: 9px 15px;
   border: 0;
   text-shadow: 0 1px 0 rgba(0,0,0,.15);
@@ -1329,6 +1494,7 @@ header{
 .bs-docs-sidenav .icon-chevron-right {
   float: right;
   margin-top: 2px;
+  font-family: Texgy-regular;
   margin-right: -6px;
   opacity: .25;
 }
@@ -1339,19 +1505,23 @@ header{
 }
 .bs-docs-sidenav a:hover .icon-chevron-right {
   opacity: .5;
+  font-family: Texgy-regular;
 }
 .bs-docs-sidenav .active .icon-chevron-right,
 .bs-docs-sidenav .active a:hover .icon-chevron-right {
   background-image: url(../img/glyphicons-halflings-white.png);
   opacity: 1;
+  font-family: Texgy-regular;
 }
 .bs-docs-sidenav.affix {
   top: 40px;
+  font-family: Texgy-regular;
 }
 .bs-docs-sidenav.affix-bottom {
   position: absolute;
   top: auto;
   bottom: 270px;
+  font-family: Texgy-regular;
 }
 
 
