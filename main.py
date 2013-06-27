@@ -33,26 +33,15 @@ def modificar(r,**kw):
 # Altas
 
 def altaAntecedente(**kw):
-	error = False
-	if ((kw["antecedente"]!='')and(kw["condena"] !='')and(kw["reo"] !='')):
-		if (not(isinstance(kw['antecedente'],str))):
-			error=True
-		elif (not(isinstance(kw['condena'],str))):
-			error=True
-		elif (not(isinstance(kw['reo'],Reo))):
-			error=True
-	else:
-		error=True
-
-	if(error):
-		raise Exception
-
 	a = Antecedentes()
-	try:
-		alta(a,**kw)
-		return(a)
-	except Exception, e:
-		raise e
+	if ((kw["antecedente"]!='')and(kw["condena"] !='')and(kw["reo"] !='')):
+		try:
+			alta(a,**kw)
+			return(a)
+		except Exception, e:
+			raise e
+	else:
+		raise Exception
 
 def altaEfectivo(**kw):
 	a = Efectivo()
@@ -193,14 +182,14 @@ def buscarEfectivo(dni):
 		raise Exception
 
 def buscarTraslado(idReo):
-	e=Traslados.objects.filter(Reo_id=idReo)
+	e=Traslados.objects.filter(reo_id=idReo)
 	if r :
 		return(e)
 	else:
 		raise Exception
 
 def buscarAntecedentes(idReo):
-	a=Antecedentes.objects.filter(Reo_id=idReo)
+	a=Antecedentes.objects.filter(reo_id=idReo)
 	if a :
 		return(a)
 	else:
@@ -360,6 +349,13 @@ def regHuella(obj):
 	id_h=str(id_h).zfill(4)
 	try:
 		returned=obj.registrarhuella(id_h)
+		return(id_h)
 	except Exception, e:
 		raise e
-	return(id_h)
+
+def obtenerHuella(obj):
+	returned=Huella2.obtenerid(obj)
+	if returned:
+		return returned
+	else:
+		raise Exception

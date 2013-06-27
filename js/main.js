@@ -353,13 +353,13 @@ $(document).ready(function() {
 		PyAsync('regHuella',{
 			args:[],
 			callback:function(data) {
-				if (data==false) {
-					$('#huella_alta').attr('class','control-group error')
-					$('#formularioAltaReo span').text('Error')
-				} else{
+				if (data) {
 					$('#formularioAltaReo span').text('')
 					$('#huella_alta').attr('class','control-group')
-					$('inputHuellaReoAlta').text(data)
+					$('#inputHuellaReoAlta').val(data)
+				} else{
+					$('#huella_alta').attr('class','control-group error')
+					$('#formularioAltaReo span').text('Error')
 				};
 				$('#capturarHuella').modal('hide')
 			}
@@ -1560,6 +1560,42 @@ $(document).ready(function() {
 
 	$("#buttonDatosBusquedaReoAntecedente").click(function(e){
 		e.preventDefault();
+		huella=$('#buscadorAntecedente #optionsRadios1').is(':checked')
+		dni=$('#buscadorAntecedente #optionsRadios2').is(':checked')
+		if (huella==true) {
+			valor='huella'
+			op=0
+		}else{
+			valor=$('#buscadorAntecedente #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorAntecedente').attr('class','control-group error')
+				$('#buscadorAntecedente span').text('Campo vacio')
+				return
+			};
+			op=1
+		};
+		attr=['antecedente','condena']
+		PyAsync('buscarAntecedentesInterf',{
+			args:[Number(valor),op],
+			callback:function(data) {
+				if (data){
+					$('#buscadorAntecedente').attr('class','control-group')
+					$('#buscadorAntecedente span').text('')
+					$.each(data,function(i,l) {
+						$('#tablaBusquedaAntecedente').append('<tr id=linea'+i+'></tr>')
+						$.each(l,function(k,dt) {
+							$('#linea'+i).append('<td>'+dt+'</td>')
+						})
+					})
+					$("#datosBusquedaAntecedente").css({'display':'inline'})
+				}else{
+					$("#datosBusquedaAntecedente").css({'display':'none'})
+					$('#buscadorAntecedente').attr('class','control-group error')
+					$('#buscadorAntecedente span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				}
+			}
+		})
 		$("#datosBusquedaAntecedente").css({'display':'inline'})
 	})
 
@@ -1588,8 +1624,58 @@ $(document).ready(function() {
 
 	$("#buttonDatosAltaAntecedente").click(function(e){
 		e.preventDefault();
-		$("#formularioAltaAntecedente").css({'display':'inline'})
-		borrar()
+		huella=$('#buscadorAntecedenteAlta #optionsRadios1').is(':checked')
+		dni=$('#buscadorAntecedenteAlta #optionsRadios2').is(':checked')
+		if (huella==true) {
+			valor='huella'
+			op=0
+		}else{
+			valor=$('#buscadorAntecedenteAlta #paramBusqueda').val()
+			if (valor=='') {
+				$('#buscadorAntecedenteAlta').attr('class','control-group error')
+				$('#buscadorAntecedenteAlta span').text('Campo vacio')
+				return
+			};
+			op=1
+		};
+		PyAsync('buscarReoInterf',{
+			args:[Number(valor),op],
+			callback:function(data) {
+				if (data){
+					$('#buscadorAntecedenteAlta').attr('class','control-group')
+					$('#buscadorAntecedenteAlta span').text('')
+					$('#inputNombreAltaAntecedente').val(data[0])
+					$('#inputApellidoAltaAntecedente').val(data[1])
+					$('#inputDniAltaAntecedente').val(data[4])
+					$("#formularioAltaAntecedente").css({'display':'inline'})
+				}else{
+					$("#formularioAltaAntecedente").css({'display':'none'})
+					$('#buscadorAntecedenteAlta').attr('class','control-group error')
+					$('#buscadorAntecedenteAlta span').text("Error, verifique los valores de la busqueda")
+					borrar()
+				}
+			}
+		})
+	})
+
+	$('#buttonGuardarAltaAntecedente').click(function(e) {
+		e.preventDefault();
+		ant=$('#inputAntecedenteAltaAntecedente').val()
+		con=$('#inputCondenaAltaAntecedente').val()
+		dni=Number($('#inputDniAltaAntecedente').val())
+		PyAsync('altaAntecedenteInterf',{
+			args:[ant,con,dni],
+			callback: function(data) {
+				if (data) {
+					$('#guardarAltaAn span').text(data)
+					$('#guardarAltaAn').attr('class','control-group')
+					borrar()
+				}else{
+					$('#guardarAltaAn span').text('Verifique los campos')
+					$('#guardarAltaAn').attr('class','control-group error')
+				}
+			}
+		})
 	})
 
 		//-----------------CALABOZO-------------------

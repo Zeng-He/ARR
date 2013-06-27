@@ -2,7 +2,7 @@
 <html class="no-js">
     <head>
         <meta charset="utf-8">
-        <title>ARR</title>
+        <title>SARR</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
         <link rel="stylesheet" href="css/main.css">
@@ -228,7 +228,7 @@
                                 <div class="control-group" id='huella_alta'>
                                     <label class="control-label">Id Huella:</label>
                                     <div class="controls">
-                                      <input type="text" title="Click en Capturar para obtener ID" id="inputHuellaReoAlta" placeholder="Id Huella...">
+                                      <input type="text" title="Click en Capturar para obtener ID" id="inputHuellaReoAlta" placeholder="Id Huella..." disabled>
                                       <button id='huella_button'class="btn">Capturar</button>
                                       <span class="help-inline"></span>
                                     </div>
@@ -453,7 +453,7 @@
                             <h1>BÚSQUEDA ANTECEDENTES</h1>
                             <form>
                                 <fieldset id="buscadorAntecedente">
-                                    <input type="text" placeholder="Buscador...">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div class="row-fluid">
                                         <div class="span2">
                                             <label class="radio">
@@ -470,23 +470,18 @@
                                     </div>
                                     <button id="buttonAtrasBusquedaAntecedente" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosBusquedaReoAntecedente" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <table class="table table-hover" id="datosBusquedaAntecedente">
                                 <caption>ANTECEDENTES</caption>
                                 <thead>
                                     <tr>
-                                        <th>DNI</th>
                                         <th>ANTECEDENTE</th>
                                         <th>CONDENA</th>
                                     </tr>   
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>12345678</td>
-                                        <td>Robo</td>
-                                        <td>24 meses</td>
-                                    </tr>
+                                <tbody id='tablaBusquedaAntecedente' >
                                 </tbody>
                             </table>
                         </div>
@@ -495,8 +490,8 @@
                         <div class="span12">
                             <h1>ALTA ANTECEDENTE</h1>
                             <form>
-                                <fieldset id="buscadorAntecedente">
-                                    <input type="text" placeholder="Buscador...">
+                                <fieldset id="buscadorAntecedenteAlta">
+                                    <input type="text" id='paramBusqueda' placeholder="Buscador...">
                                     <div class="row-fluid">
                                         <div class="span2">
                                             <label class="radio">
@@ -513,13 +508,26 @@
                                     </div>
                                     <button id="buttonAtrasAltaAntecedente" type="submit" class="btn">Atras</button>
                                     <button id="buttonDatosAltaAntecedente" type="submit" class="btn">Buscar</button>
+                                    <span class="help-inline"></span>
                                 </fieldset>
                             </form>
                             <form class="form-horizontal" id="formularioAltaAntecedente">
                                 <div class="control-group">
-                                    <label class="control-label">Id Huella:</label>
+                                    <label class="control-label">Nombre</label>
                                     <div class="controls">
-                                      <input type="text" title="Click en Capturar para obtener ID" id="inputHuellaReoAltaAntecedente" placeholder="Id Huella..." disabled>
+                                      <input type="text" id="inputNombreAltaAntecedente" placeholder="Antecedente..." disabled>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Apellido</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputApellidoAltaAntecedente" placeholder="Antecedente..." disabled>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">DNI:</label>
+                                    <div class="controls">
+                                      <input type="text" id="inputDniAltaAntecedente" placeholder="Antecedente..." disabled>
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -534,9 +542,10 @@
                                       <input type="text" id="inputCondenaAltaAntecedente" placeholder="Condena...">
                                     </div>
                                 </div>
-                                <div class="control-group">
+                                <div class="control-group" id='guardarAltaAn'>
                                     <div class="controls">
-                                      <button type="submit" class="btn" id="buttonGuardarAltaAntecedente">Guardar</button>
+                                        <button type="submit" class="btn" id="buttonGuardarAltaAntecedente">Guardar</button>
+                                        <span class="help-inline"></span>
                                     </div>
                                 </div>
                             </form>

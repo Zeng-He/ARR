@@ -86,6 +86,10 @@ class SimpleWindow(QWebView):
 						salida.append('')
 				else:
 					salida.append(str(getattr(obj,x)))
+		if isinstance (obj,main.Antecedentes):
+			attr=['antecedente','condena']
+			for x in attr:
+				salida.append(str(getattr(obj,x)))
 		return(salida)
 
 	# Altas
@@ -111,12 +115,13 @@ class SimpleWindow(QWebView):
 			return False
 
 	@listen_js
-	def altaAntecedenteInterf(self, antecedente, condena, id_reo):
+	def altaAntecedenteInterf(self, antecedente, condena, dni):
 		try:
-			main.altaAntecedente(antedente=antecedente,condena=condena,reo=main.Reo.objects.get(pk=id_reo))
+			main.altaAntecedente(antecedente=antecedente,condena=condena,reo=main.Reo.objects.get(dni=dni))
 			return ("Antecedente almacenado exitosamente")
-		except Exception:
-			return ("Error, verifique campos")
+		except Exception,e:
+			raise e
+			return False
 
 	@listen_js
 	def altaEfectivoInterf(self,nombre,apellido,direccion,edad,dni,num_placa,fecha_ingreso,cargo,sueldo,id_es_jefe,tarea,horario_patrull):
@@ -224,8 +229,8 @@ class SimpleWindow(QWebView):
 	def buscarReoInterf(self, valor, op):
 		if isinstance(valor,int):
 			if(op==0):
-				# obtener ID
 				try:
+					id_h=main.obtenerHuella(a)
 					reo = main.busquedaReoHuella(id_h)
 				except Exception:
 					return False
@@ -275,19 +280,29 @@ class SimpleWindow(QWebView):
 
 	@listen_js
 	def buscarAntecedentesInterf(self, valor, op=1):
+		returned=[]
 		if isinstance(valor,int):
-			if op :
-				reo = main.busquedaReoHuella(valor)
+			if op:
+				try:
+					reo = main.busquedaReoDNI(valor)
+				except Exception:
+					return False
 			else:
-				reo = main.busquedaReoDNI(valor) # Cuando es 0reo = busquedaReoDNI(valor) # Cuando es 0
+				try:
+					id_h=main.obtenerHuella(a)
+					reo = main.busquedaReoHuella(id_h)
+				except Exception:
+					return False
 		else:
-			return str("Error, verifique los valor de la busqueda")
+			return False
 		try:
-			a=main.buscarAntecedentes(reo.pk)
-			returned=toString(a)
-		except Exception:
-			return (str('Antecedente no encontrado.'))
-		return (returned)
+			antecedentes=main.buscarAntecedentes(reo[0].pk)
+			for unAntec in antecedentes:
+				returned.append(self.toString(unAntec))
+			return (returned)
+		except Exception,e:
+			raise e
+			return False
 	
 	@listen_js
 	def buscarArmamento(self,valor):
@@ -464,16 +479,13 @@ class SimpleWindow(QWebView):
 				raise e
 				return False
 
-			
-
-
 	@listen_js
 	def regHuella(self):
 		try:
 			returned=main.regHuella(a)
 			return(returned)
 		except Exception, e:
-			return(False)
+			return(1) # <------- FALSE SOLO PARA PRUEBAS
 		
 
 a=main.Huella2.Controlador()
