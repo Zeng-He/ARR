@@ -85,8 +85,6 @@ $(document).ready(function() {
 		$("#busquedaAntecedente").css({'display':'none'})
 		$("#datosBusquedaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})
-		$("#modificacionAntecedente").css({'display':'none'})
-		$("#formularioModificacionAntecedente").css({'display':'none'})
 		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
@@ -457,8 +455,6 @@ $(document).ready(function() {
 		$("#busquedaAntecedente").css({'display':'none'})
 		$("#datosBusquedaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})
-		$("#modificacionAntecedente").css({'display':'none'})
-		$("#formularioModificacionAntecedente").css({'display':'none'})
 		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
@@ -1016,8 +1012,6 @@ $(document).ready(function() {
 		$("#busquedaAntecedente").css({'display':'none'})
 		$("#datosBusquedaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})
-		$("#modificacionAntecedente").css({'display':'none'})
-		$("#formularioModificacionAntecedente").css({'display':'none'})
 		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
@@ -1107,8 +1101,6 @@ $(document).ready(function() {
 		$("#busquedaAntecedente").css({'display':'none'})
 		$("#datosBusquedaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})
-		$("#modificacionAntecedente").css({'display':'none'})
-		$("#formularioModificacionAntecedente").css({'display':'none'})
 		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
@@ -1464,8 +1456,6 @@ $(document).ready(function() {
 		$("#busquedaAntecedente").css({'display':'none'})
 		$("#datosBusquedaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})
-		$("#modificacionAntecedente").css({'display':'none'})
-		$("#formularioModificacionAntecedente").css({'display':'none'})
 		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
@@ -1548,8 +1538,6 @@ $(document).ready(function() {
 		$("#busquedaAntecedente").css({'display':'none'})
 		$("#datosBusquedaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})
-		$("#modificacionAntecedente").css({'display':'none'})
-		$("#formularioModificacionAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
 		$("#busquedaCalabozo").css({'display':'none'})
@@ -1595,26 +1583,6 @@ $(document).ready(function() {
 		$("#antecedentesInicio").css({'display':'inline'})
 		$("#formularioAltaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})		
-		borrar()
-	})
-
-	$("#buttonModificacionAntecedente").click(function(e){
-		e.preventDefault();
-		$("#antecedentesInicio").css({'display':'none'})
-		$("#modificacionAntecedente").css({'display':'inline'})		
-		borrar()
-	})
-
-	$("#buttonDatosModificacionReoAntecedente").click(function(e){
-		e.preventDefault();
-		$("#formularioModificacionAntecedente").css({'display':'inline'})
-	})
-
-	$("#buttonAtrasModificacionAntecedente").click(function(e){
-		e.preventDefault();
-		$("#formularioModificacionAntecedente").css({'display':'none'})		
-		$("#modificacionAntecedente").css({'display':'none'})
-		$("#antecedentesInicio").css({'display':'inline'})
 		borrar()
 	})
 
@@ -1694,8 +1662,6 @@ $(document).ready(function() {
 		$("#busquedaAntecedente").css({'display':'none'})
 		$("#datosBusquedaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})
-		$("#modificacionAntecedente").css({'display':'none'})
-		$("#formularioModificacionAntecedente").css({'display':'none'})
 		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#busquedaCalabozo").css({'display':'none'})

@@ -1170,32 +1170,6 @@ header{
   font-family: Texgy-regular;
 }
 
-#buttonAntecedente2{
-  padding-top: 20px;
-  font-family: Texgy-regular;
-}
-
-#buttonBusquedaAntecedente{
-  text-align: center;
-  width: 66%;
-  float: left;
-  height: 30px;
-  font-family: Texgy-regular;
-  font-size: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
-  background-color: #454645;
-  color: white;
-  border: inset black 3px; 
-  text-decoration: none;
-  padding-top: 15px; 
-}
-
-#buttonBusquedaAntecedente:hover{
-  background-color: #787978;
-  border: outset black 3px;
-}
-
 #buttonAltaAntecedente{
   text-align: center;
   float: right;
@@ -1217,7 +1191,7 @@ header{
   border: outset black 3px;
 }
 
-#buttonModificacionAntecedente{
+#buttonBusquedaAntecedente{
   text-align: center;
   float: left;
   font-family: Texgy-regular;
@@ -1233,7 +1207,7 @@ header{
   padding-top: 15px; 
 }
 
-#buttonModificacionAntecedente:hover{
+#buttonBusquedaAntecedente:hover{
   background-color: #787978;
   border: outset black 3px;
 }
@@ -1396,7 +1370,6 @@ td{
 }
 
 #datosBusquedaCalabozo{
-  margin-left: 30px;
   margin-top: 30px;
   font-family: Texgy-regular;
 }
