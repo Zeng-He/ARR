@@ -1250,6 +1250,15 @@ header{
   font-family: Texgy-regular;
 }
 
+th{
+  width: 8%;
+  background-color: #F2D47C;
+}
+
+td{
+  width: 8%; 
+}
+
 /*-----------ALTA ANTECEDENTE--------------------*/
 #altaAntecedente{
   color: black;
