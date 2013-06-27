@@ -226,15 +226,43 @@ class SimpleWindow(QWebView):
 		return (returned)
 
 	@listen_js
-	def buscarReoInterf(self, valor, op):
+	def buscarReoInterf_vieja(self, valor, op):
 		if isinstance(valor,int):
 			if(op==0):
 				try:
-					id_h=main.obtenerHuella(a)
+					id_h=main.obtenerid(a)
 					reo = main.busquedaReoHuella(id_h)
 				except Exception:
 					return False
 			else:
+				try:
+					reo = main.busquedaReoDNI(valor)
+				except Exception:
+					return False
+		else:
+			return False
+		try:
+			returned = self.toString(reo[0])
+		except Exception,e:
+			return False
+		return(returned)
+
+	@listen_js
+	def buscarReoInterf(self, valor, op):
+		print(op)
+		print (valor)
+		if(op == 0):#comentar
+			if(op==0):
+				# obtener ID
+				#------------
+				print("Buscamos por id")#
+				id_h = a.obtenerid();
+				#------------
+				try:
+					reo = main.busquedaReoHuella(id_h)
+				except Exception:
+					return False
+		elif isinstance(valor,int):
 				try:
 					reo = main.busquedaReoDNI(valor)
 				except Exception:
@@ -279,7 +307,7 @@ class SimpleWindow(QWebView):
 		return (returned)
 
 	@listen_js
-	def buscarAntecedentesInterf(self, valor, op=1):
+	def buscarAntecedentesInterf_vieja(self, valor, op=1):
 		returned=[]
 		if isinstance(valor,int):
 			if op:
@@ -293,6 +321,33 @@ class SimpleWindow(QWebView):
 					reo = main.busquedaReoHuella(id_h)
 				except Exception:
 					return False
+		else:
+			return False
+		try:
+			antecedentes=main.buscarAntecedentes(reo[0].pk)
+			for unAntec in antecedentes:
+				returned.append(self.toString(unAntec))
+			return (returned)
+		except Exception,e:
+			raise e
+			return False
+
+	@listen_js
+	def buscarAntecedentesInterf(self, valor, op=1):
+		returned=[]
+		if op:
+			if isinstance(valor,int):
+				try:
+					reo = main.busquedaReoDNI(valor)
+				except Exception:
+					return False
+		elif op == 0:
+			try:
+				id_h=a.obtenerid();
+				print "buscar antecedentes"
+				reo = main.busquedaReoHuella(id_h)
+			except Exception:
+				return False
 		else:
 			return False
 		try:
