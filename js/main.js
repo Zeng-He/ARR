@@ -87,6 +87,7 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
 		$("#busquedaCalabozo").css({'display':'none'})
@@ -458,6 +459,7 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
 		$("#busquedaCalabozo").css({'display':'none'})
@@ -1016,6 +1018,7 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
 		$("#busquedaCalabozo").css({'display':'none'})
@@ -1106,6 +1109,7 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
 		$("#busquedaCalabozo").css({'display':'none'})
@@ -1462,6 +1466,7 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#calabozoInicio").css({'display':'none'})
 		$("#busquedaCalabozo").css({'display':'none'})
@@ -1539,6 +1544,7 @@ $(document).ready(function() {
 		$("#armamentoModificacion").css({'display':'none'})
 		$("#formularioModificacionArmamento").css({'display':'none'})
 		//Buttons Antecedentes
+		$("#formularioAltaAntecedente").css({'display':'none'})
 		$("#busquedaAntecedente").css({'display':'none'})
 		$("#datosBusquedaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})
@@ -1587,6 +1593,7 @@ $(document).ready(function() {
 	$("#buttonAtrasAltaAntecedente").click(function(e){
 		e.preventDefault();
 		$("#antecedentesInicio").css({'display':'inline'})
+		$("#formularioAltaAntecedente").css({'display':'none'})
 		$("#altaAntecedente").css({'display':'none'})		
 		borrar()
 	})
@@ -1608,6 +1615,12 @@ $(document).ready(function() {
 		$("#formularioModificacionAntecedente").css({'display':'none'})		
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#antecedentesInicio").css({'display':'inline'})
+		borrar()
+	})
+
+	$("#buttonDatosAltaAntecedente").click(function(e){
+		e.preventDefault();
+		$("#formularioAltaAntecedente").css({'display':'inline'})
 		borrar()
 	})
 
@@ -1683,6 +1696,7 @@ $(document).ready(function() {
 		$("#altaAntecedente").css({'display':'none'})
 		$("#modificacionAntecedente").css({'display':'none'})
 		$("#formularioModificacionAntecedente").css({'display':'none'})
+		$("#formularioAltaAntecedente").css({'display':'none'})
 		//Buttons Calabozo
 		$("#busquedaCalabozo").css({'display':'none'})
 		$("#altaCalabozo").css({'display':'none'})

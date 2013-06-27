@@ -510,46 +510,38 @@
                     <div class="row-fluid" id="altaAntecedente">
                         <div class="span12">
                             <h1>ALTA ANTECEDENTE</h1>
-                            <form class="form-horizontal" id="formularioAltaAntecedente">
-                                <div class="control-group">
-                                    <label class="control-label">Antecedente:</label>
-                                    <div class="controls">
-                                      <input type="text" id="inputAntecedenteAltaAntecedente" placeholder="Antecedente...">
+                            <form>
+                                <fieldset id="buscadorAntecedente">
+                                    <input type="text" placeholder="Buscador...">
+                                    <div class="row-fluid">
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                              Huella Digital
+                                            </label>
+                                        </div>
+                                        <div class="span2">
+                                            <label class="radio">
+                                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                              DNI
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
+                                    <button id="buttonAtrasAltaAntecedente" type="submit" class="btn">Atras</button>
+                                    <button id="buttonDatosAltaAntecedente" type="submit" class="btn">Buscar</button>
+                                </fieldset>
+                            </form>
+                            <form class="form-horizontal" id="formularioAltaAntecedente">
                                 <div class="control-group">
                                     <label class="control-label">Id Huella:</label>
                                     <div class="controls">
                                       <input type="text" title="Click en Capturar para obtener ID" id="inputHuellaReoAltaAntecedente" placeholder="Id Huella..." disabled>
-                                      <button id='huella_button'class="btn">Capturar</button>
-                                      <span class="help-inline"></span>
-                                    </div>
-                                </div>
-                                <div class="modal hide fade" id="capturarHuellaAltaAntecedente">
-                                    <div class="modal-header" style="background-color:#0F402A; color:white;">
-                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                        <h3>Capturar Huella</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Capturando Huella…</p>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Nombre:</label>
+                                    <label class="control-label">Antecedente:</label>
                                     <div class="controls">
-                                      <input type="text" id="inputNombreReoAltaAntecedente" placeholder="Nombre...">
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">Apellido:</label>
-                                    <div class="controls">
-                                      <input type="text" id="inputApellidoReoAltaAntecedente" placeholder="Apellido...">
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label">DNI:</label>
-                                    <div class="controls">
-                                      <input type="text" id="inputDniReoAltaAntecedente" placeholder="DNI...">
+                                      <input type="text" id="inputAntecedenteAltaAntecedente" placeholder="Antecedente...">
                                     </div>
                                 </div>
                                 <div class="control-group">
@@ -560,7 +552,6 @@
                                 </div>
                                 <div class="control-group">
                                     <div class="controls">
-                                      <button type="submit" class="btn" id="buttonAtrasAltaAntecedente">Atras</button>
                                       <button type="submit" class="btn" id="buttonGuardarAltaAntecedente">Guardar</button>
                                     </div>
                                 </div>
